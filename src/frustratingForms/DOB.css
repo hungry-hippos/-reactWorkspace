@@ -1,0 +1,107 @@
+#DOBMainSection{width:400px;
+background-color: whitesmoke;
+box-shadow: 0 0 5px black;
+padding:20px;
+box-sizing: border-box;
+display:block;
+margin:100px auto;
+}
+
+#DOBheader{width:100%;
+background-color: tomato;
+box-shadow: 0 0 5px black;
+height:100px;
+box-sizing: border-box;
+padding:20px 10px;
+display:block;
+margin: 0 auto;
+}
+
+#DOBmessage{font-size:17px;
+font-weight:400;
+margin:0;
+}
+
+#DOBData{display:block;
+margin:10px auto;
+font-size:20px;
+text-align: center;
+}
+
+#DOBInputMonth{width:100%;
+height:120px;
+box-sizing: border-box;
+margin:10px auto 0 auto;
+background-color: tomato;
+display:block;
+box-shadow: 0 0 5px black;
+padding:20px 10px 10px 10px;
+position:relative;
+}
+
+#DOBAddLetterBtn{    padding: 5px;
+    box-shadow: 0 0 5px black;
+    position:absolute;
+    left:20px;
+    bottom:20px;
+    font-family: 'Montserrat';
+}
+
+#DOBEnterBtn{padding: 5px;
+    box-shadow: 0 0 5px black;
+    position:absolute;
+    right:20px;
+    bottom:20px;
+    font-family: 'Montserrat';
+}
+
+#DOBInvalidMonthError{
+    position: absolute;
+    bottom: -120px;
+    background: red;
+    left: -20px;
+    right: -20px;
+    padding: 10px 20px;
+    border-radius:10px;
+}
+
+.DOBWrongMonth{margin:0;
+font-size:13px;
+color:black;
+}
+
+
+
+
+
+
+#DOBInputDay{
+width:100%;
+box-sizing: border-box;
+margin:10px auto 0 auto;
+background-color: tomato;
+display:block;
+box-shadow: 0 0 5px black;
+padding:20px 10px 10px 10px;
+position:relative;
+}
+#DOBElementsHolder{display:block;
+text-align: center;
+}
+.DOBInputDayPostureImage{border:thin solid black;
+height:100px;
+width:37px;
+display: inline-block;
+}
+#DOBInputDayNumber{height:80px;
+width:80px;
+background-color: white;
+box-sizing: border-box;
+display: inline-block;
+margin-bottom:10px;
+}
+#DOBDayStartBtn{padding:5px 10px;
+font-size:15px;
+display:block;
+margin:0 auto;
+}
