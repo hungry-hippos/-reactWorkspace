@@ -90,6 +90,7 @@ const InputMonth=(props)=>{
 //day section
 var runTimer={
     isRunning:false,
+    isImageIn:false,
     intCode:"",
     start(){
         runTimer.isRunning=true;
@@ -97,7 +98,18 @@ var runTimer={
             var time=parseInt(document.getElementById('DOBInputDayNumber').textContent,10);
             time=(time===31)?1:time+1;
             document.getElementById('DOBInputDayNumber').textContent=time;
-        },100);
+            var images=document.getElementsByClassName('DOBInputDayPostureImage');
+            if(!runTimer.isImageIn){
+                images[0].setAttribute('src','/pictures/posture/posture2.png');
+                images[1].setAttribute('src','/pictures/posture/posture2.png');
+                runTimer.isImageIn=true;
+            }else{
+                images[0].setAttribute('src','/pictures/posture/posture3.png');
+                images[1].setAttribute('src','/pictures/posture/posture3.png');
+                runTimer.isImageIn=false;
+            }
+
+        },300);
         document.getElementById('DOBDayStartBtn').textContent="Stop";
     },
     stop(){
@@ -121,14 +133,47 @@ const InputDay=()=>{
 
 
     
-    return <div id="DOBInputDay">
+    return <React.Fragment>
+    <div id="DOBInputDay">
         <div id='DOBElementsHolder'>
-            <img className='DOBInputDayPostureImage' src="/pictures/posture/posture4.png" alt="" />
+            <div id='leftAlley' className='DOBAlley'>
+                <img className='DOBInputDayPostureImage leftMan' src="/pictures/posture/posture4.png" alt=""/>
+            </div>
             <div id="DOBInputDayNumber">0</div>
-            <img className='DOBInputDayPostureImage' src="/pictures/posture/posture4.png" alt="" />
+            <div id='rightAlley' className='DOBAlley'>
+                <img className='DOBInputDayPostureImage rightMan' src="/pictures/posture/posture4.png" alt="" />
+            </div>
         </div>
         <button id="DOBDayStartBtn" onClick={runTimer.toggle}>START</button>
     </div>
+    <div id="DOBAnswersDisplay">
+        <p className='DOBSubmissions'>Your submissions:</p>
+        <div id='eqLeftSide'>
+            <div id='eqTop'>
+                <div className='DOBDaySubmission'></div>
+                <div className='DOBPlus'>+</div>
+                <div className='DOBDaySubmission'></div>
+                <div className='DOBPlus'>+</div>
+                <div className='DOBDaySubmission'></div>
+                <div className='DOBPlus'>+</div>
+                <div className='DOBDaySubmission'></div>
+                <div className='DOBPlus'>+</div>
+                <div className='DOBDaySubmission'></div>
+            </div>
+            <hr id='DOBDivisorLine'></hr>
+            <div id='eqBtm'>
+                <div className='DOBDaySubmission'></div>
+            </div>
+        </div>
+        <div id='eqRightSide'></div>
+        <p className='DOBSubmissions avgDayDisplay'>Your average day-of-birth submission is: <span style={{fontWeight:'bold',margin:'0'}}>23.23</span></p>
+        <div className='DOBSubmissions DOBConfirmDay'>
+            Please confirm.
+            <button className='DOBYesBtn'>YES</button>
+            <button className='DOBYesBtn'>YES</button>
+        </div>
+    </div>
+    </React.Fragment>
 }
 
 const InputYear=()=>{
@@ -149,8 +194,8 @@ const DOB=()=>{
 
     return <div id='DOBMainSection'>
             < Header data={data}/>
-            {month==="MONTH" && < InputMonth setMonth={setMonth} />}
-            {month!=='MONTH' && <InputDay setDay={setDay} />}
+            {/* {month==="MONTH" && < InputMonth setMonth={setMonth} />} */}
+            {/* {month!=='MONTH' && */ <InputDay setDay={setDay} />}
             {day!=='DD' && <InputYear setYear={setYear} />}
         </div>
 }
