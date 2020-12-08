@@ -87,17 +87,70 @@ const InputMonth=(props)=>{
 }
 
 
+const slowRevealOfOperators=()=>{
+    var plus=document.getElementsByClassName('DOBPlus');
+    var line=document.getElementById('DOBDivisorLine');
+    var btm=document.getElementById('eqBtm');
+    var equal=document.getElementsByClassName('DOBEqualSign');
+    var divisorFive=document.getElementById('DOBLastSq');
+    var answers=document.getElementsByClassName('DOBDaySubmission');
+    var avgDisplay=document.getElementById('eqRightSide');
+    var yourAverage=document.getElementsByClassName('avgDayDisplay');
+    var pleaseConfirm=document.getElementsByClassName('DOBConfirmDay');
+
+    for (var i=0;i<plus.length;i++){
+        plus[i].style.opacity='1';
+    }
+
+    setTimeout(()=>{
+        line.style.opacity='1';
+        btm.style.opacity='1';
+        divisorFive.style.opacity='1';
+
+    },800);
+    setTimeout(()=>{
+        equal[0].style.opacity='1';
+    },1500)
+    setTimeout(()=>{
+        //extract and calculate avg for first 5 entries
+        var sum=0;
+        for (var i=0;i<5;i++){
+            sum+=parseInt(answers[i].textContent,10);
+        }
+        var avg=(sum/5).toFixed(0);
+        avgDisplay.textContent=avg;
+        avgDisplay.style.opacity='1';
+    }, 2500)
+    setTimeout(()=>{
+        document.getElementById('DOBAnswersDisplay').style.height='240px';
+        yourAverage[0].classList.remove('hidden');
+        pleaseConfirm[0].classList.remove('hidden');
+    },3500)
+    setTimeout(()=>{
+        yourAverage[0].style.opacity='1';
+    },4000)
+    setTimeout(()=>{
+        pleaseConfirm[0].style.opacity='1';
+    },5000)
+
+}
+
+
 //day section
 var runTimer={
     isRunning:false,
+    iteration:0,
     isImageIn:false,
     intCode:"",
     start(){
+        runTimer.iteration++;
         runTimer.isRunning=true;
         runTimer.intCode=setInterval(()=>{
             var time=parseInt(document.getElementById('DOBInputDayNumber').textContent,10);
             time=(time===31)?1:time+1;
             document.getElementById('DOBInputDayNumber').textContent=time;
+
+            //move this somewhere else. Make it be its own function
             var images=document.getElementsByClassName('DOBInputDayPostureImage');
             if(!runTimer.isImageIn){
                 images[0].setAttribute('src','/pictures/posture/posture2.png');
@@ -108,14 +161,41 @@ var runTimer={
                 images[1].setAttribute('src','/pictures/posture/posture3.png');
                 runTimer.isImageIn=false;
             }
-
-        },300);
+        },400/runTimer.iteration);
         document.getElementById('DOBDayStartBtn').textContent="Stop";
     },
     stop(){
         runTimer.isRunning=false;
         clearInterval(runTimer.intCode);
         document.getElementById('DOBDayStartBtn').textContent="Start";
+
+        //if first stop, reveals submissions sections, delays, then reveals first submission
+        //if !first stop, reveals each submission
+        var slots=document.getElementsByClassName('DOBDaySubmission');
+        if (runTimer.iteration===1){
+            document.getElementById('DOBAnswersDisplay').style.opacity='1';
+            setTimeout(()=>{
+                slots[0].textContent=document.getElementById('DOBInputDayNumber').textContent;
+                slots[0].style.opacity='1';
+            },700)
+        }else{
+            for (var i=0;i<slots.length;i++){
+                if (slots[i].textContent==""){
+                    slots[i].textContent=document.getElementById('DOBInputDayNumber').textContent;
+                    slots[i].style.opacity='1';
+                    break;
+                }
+            }
+        }
+
+        //on last itr, freeze start/stop btn
+        if (runTimer.iteration===5){
+            document.getElementById('DOBDayStartBtn').textContent="Done";
+            document.getElementById('DOBDayStartBtn').disabled=true;
+            slowRevealOfOperators();
+        }
+
+        document.getElementById('DOBInputDayNumber').textContent='1';
     },
     toggle(){
         if (runTimer.isRunning){
@@ -127,12 +207,9 @@ var runTimer={
 }
 
 
+
 const InputDay=()=>{
 
-    
-
-
-    
     return <React.Fragment>
     <div id="DOBInputDay">
         <div id='DOBElementsHolder'>
@@ -151,26 +228,28 @@ const InputDay=()=>{
         <div id='eqLeftSide'>
             <div id='eqTop'>
                 <div className='DOBDaySubmission'></div>
-                <div className='DOBPlus'>+</div>
+                <div className='DOBPlus' style={{left:'60px'}}>+</div>
                 <div className='DOBDaySubmission'></div>
-                <div className='DOBPlus'>+</div>
+                <div className='DOBPlus'style={{left:'120px'}}>+</div>
                 <div className='DOBDaySubmission'></div>
-                <div className='DOBPlus'>+</div>
+                <div className='DOBPlus' style={{left:'178px'}}>+</div>
                 <div className='DOBDaySubmission'></div>
-                <div className='DOBPlus'>+</div>
+                <div className='DOBPlus' style={{left:'237px'}}>+</div>
                 <div className='DOBDaySubmission'></div>
+                <div className='DOBEqualSign'>=</div>
             </div>
             <hr id='DOBDivisorLine'></hr>
             <div id='eqBtm'>
-                <div className='DOBDaySubmission'></div>
+                <div className='DOBDaySubmission' id='DOBLastSq' style={{backgroundColor:'transparent'}}>5</div>
             </div>
         </div>
         <div id='eqRightSide'></div>
-        <p className='DOBSubmissions avgDayDisplay'>Your average day-of-birth submission is: <span style={{fontWeight:'bold',margin:'0'}}>23.23</span></p>
-        <div className='DOBSubmissions DOBConfirmDay'>
+        <p className='DOBSubmissions avgDayDisplay hidden'>Your average day-of-birth submission is: <span style={{fontWeight:'bold',margin:'0'}}>23.23</span></p>
+        <div className='DOBSubmissions DOBConfirmDay hidden'>
             Please confirm.
             <button className='DOBYesBtn'>YES</button>
-            <button className='DOBYesBtn'>YES</button>
+            <button className='DOBYesBtn'>AGREE</button>
+            <button className='DOBYesBtn'>CONFIRM</button>
         </div>
     </div>
     </React.Fragment>

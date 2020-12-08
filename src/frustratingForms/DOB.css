@@ -121,13 +121,16 @@ width:41%;
 #rightAlley{margin-left:64px}
 
 #DOBAnswersDisplay{position: absolute;
-    height: 230px;
+    height: 140px;
     left: 0px;
     display: block;
     top: 325px;
     width: 400px;
-    border: thin solid black;
+    box-shadow: 0 0 3px black;
     box-sizing: border-box;
+    opacity:0;
+    transition:.5s;
+    background-color: #c7c3c5;
 }
 .DOBSubmissions{margin: 10px;
 color: black;
@@ -137,7 +140,6 @@ font-family:'Montserrat';
 #eqLeftSide{width:80%;
 height:80px;
 display: inline-block;
-background-color: red;
 box-sizing: border-box;
 position:absolute;
 top:43px;
@@ -145,53 +147,86 @@ left:0;
 }
 #eqTop{display: flex;
 width:100%;
-background-color: orange;
 height:50%;
 box-sizing: border-box;
-padding:0 20px;
+padding:0 0 0 20px;
 }
 #eqBtm{display: block;
     width:100%;
-    background-color: purple;
     height:50%;
     text-align: center;
     padding-top:2px;
-    box-sizing: border-box;}
+    box-sizing: border-box;
+    opacity:0;
+    transition:.5s;
+}
 
 #eqRightSide{width:20%;
 height:80px;
 display: inline-block;
-background-color: green;
 box-sizing: border-box;
 position:absolute;
 top:43px;
 right:0;
+opacity: 1;
+transition:.5s;
+font-size:55px;
+font-weight: bold;
+font-family: 'Montserrat';
+text-align: center;
 }
 .DOBDaySubmission{display:inline-block;
 height:35px;
 width:35px;
 box-sizing: border-box;
 background-color: white;
+font-size:20px;
+text-align: center;
+font-family:'Montserrat';
+font-weight:bold;
+padding-top:3px;
+margin-right:24px;
+opacity:0;
+transition:.5s;
 }
 .DOBPlus{width:14px;
 font-size:20px;
 display: inline-block;
 font-weight:bold;
-margin:0 5px;
+position:absolute;
+opacity:0;
+transition: 1s;
+}
+.DOBEqualSign{width:14px;
+    font-size:25px;
+    display: inline-block;
+    font-weight:bold;
+    position:absolute;
+    right: -5px;
+    bottom: 20px;
+    opacity:0;
+    transition:1s;
+    z-index:3;
 }
 #DOBDivisorLine{margin:2px auto;
 width:85%;
-color:black;
+border-top:2px solid black;
+opacity:0;
+transition:1s;
 }
 .avgDayDisplay{position:absolute;
 top:125px;
+opacity:0;
 }
 .DOBConfirmDay{position:absolute;
 bottom:0;
 width:95%;
 box-sizing: border-box;
+opacity:0;
 }
 .DOBYesBtn{float:right;
 margin:30px 10px 0 0;
 padding: 5px 10px;
 }
+
+.hidden{display:none !important;}
