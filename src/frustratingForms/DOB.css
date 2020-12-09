@@ -227,6 +227,19 @@ opacity:0;
 .DOBYesBtn{float:right;
 margin:30px 10px 0 0;
 padding: 5px 10px;
+font-family:'Montserrat';
+border-radius: 5px;
+box-shadow: 0 0 3px #928f8f;;
+opacity:0;
+transition:1s;
+font-weight: bold;
 }
+.DOBYesBtn:hover{
+    background: rgb(70, 68, 68);
+    color: white;
+    cursor:pointer;
+}
+#DOBDecimalAvg{opacity:0;
+transition:1s;}
 
 .hidden{display:none !important;}
