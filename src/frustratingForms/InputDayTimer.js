@@ -4,6 +4,7 @@ var runTimer={
     iteration:0,
     isImageIn:false,
     intCode:"",
+    dancingMenIntervalCode:0,
     slowRevealOfOperators(){
         var plus=document.getElementsByClassName('DOBPlus');
         var line=document.getElementById('DOBDivisorLine');
@@ -76,6 +77,106 @@ var runTimer={
             confirmBtns[0].style.opacity='1';
         },19000)
     },
+    hideDancingMen(){
+        const men=document.getElementsByClassName('DOBInputDayPostureImage');
+        for (var i=0;i<men.length;i++){
+            men[i].style.opacity='0';
+        }
+    },
+    spawnManOnLeftEdge(){
+        const newMan=document.createElement('img');
+        const magic8Ball=(Math.random()).toFixed(0);
+        if (magic8Ball){
+            newMan.setAttribute('src',"/pictures/posture/posture4.png");
+        }else{
+            newMan.setAttribute('src',"/pictures/posture/posture2.png");
+        }
+
+        newMan.classList.add('DOBInputDayPostureImage');
+        newMan.classList.add('rightMan');
+        document.getElementById('DOBAlley').append(newMan);
+        newMan.style.left='-10px';
+    },
+    spawnManOnRightEdge(){
+        const newMan=document.createElement('img');
+        const magic8Ball=(Math.random()).toFixed(0);
+        if (magic8Ball){
+            newMan.setAttribute('src',"/pictures/posture/posture4.png");
+        }else{
+            newMan.setAttribute('src',"/pictures/posture/posture2.png");
+        }
+
+        newMan.classList.add('DOBInputDayPostureImage');
+        newMan.classList.add('leftMan');
+        document.getElementById('DOBAlley').append(newMan);
+        newMan.style.left='330px';
+    },
+    showDancingMen(){
+        const thrustIn="/pictures/posture/posture4.png";
+        const thrustOut="/pictures/posture/posture2.png";
+        if (runTimer.iteration===3){
+
+            const rightMan=document.getElementById('firstRightMan');
+            rightMan.style.opacity='1';
+            runTimer.dancingMenIntervalCode = setInterval(()=>{
+            rightMan.setAttribute('src', (rightMan.getAttribute('src')===thrustIn)?thrustOut:thrustIn );
+            },300);
+        };
+        if (runTimer.iteration===2){
+
+            //setting both men to thrustIn pos
+            const men=document.getElementsByClassName("DOBInputDayPostureImage");
+            for (var i=0;i<men.length;i++){
+                men[i].setAttribute('src',thrustIn);
+            }
+
+            runTimer.dancingMenIntervalCode = setInterval(()=>{
+
+                for (var i=0;i<men.length;i++){
+                    men[i].style.opacity='1';
+                    men[i].setAttribute('src', (men[i].getAttribute('src')===thrustIn)?thrustOut:thrustIn )
+                }
+
+                },300)
+        }
+        if (runTimer.iteration===1){
+            const allMen=document.getElementsByClassName('DOBInputDayPostureImage');
+            
+            setInterval(()=>{
+                runTimer.spawnManOnLeftEdge();
+                runTimer.spawnManOnRightEdge();
+            },1000)
+
+            runTimer.dancingMenIntervalCode = setInterval(()=>{
+                
+
+                for (var i=0;i<allMen.length;i++){
+                    var xLoc=allMen[i].offsetLeft;
+                    allMen[i].style.opacity='1';
+                    if (allMen[i].classList.contains('rightMan')){
+                        if (parseInt(xLoc,10)===330){
+                            allMen[i].classList.remove('rightMan');
+                            allMen[i].classList.add('leftMan');
+                            continue;
+                        }
+                        xLoc+=10;
+                        allMen[i].style.left=xLoc+'px';
+                    }else if (allMen[i].classList.contains('leftMan')){
+                        if (parseInt(xLoc,10)===-10){
+                            allMen[i].classList.remove('leftMan');
+                            allMen[i].classList.add('rightMan');
+                            continue;
+                        }
+                        xLoc-=10;
+                        allMen[i].style.left=xLoc+'px';
+                    }
+
+                    //change his hip placement
+                    allMen[i].setAttribute('src', (allMen[i].getAttribute('src')===thrustIn)?thrustOut:thrustIn )
+                }
+                },100)
+        }
+    },
     start(){
         runTimer.iteration++;
         runTimer.isRunning=true;
@@ -83,24 +184,16 @@ var runTimer={
             var time=parseInt(document.getElementById('DOBInputDayNumber').textContent,10);
             time=(time===31)?1:time+1;
             document.getElementById('DOBInputDayNumber').textContent=time;
-
-            //move this somewhere else. Make it be its own function
-            var images=document.getElementsByClassName('DOBInputDayPostureImage');
-            if(!runTimer.isImageIn){
-                images[0].setAttribute('src','/pictures/posture/posture2.png');
-                images[1].setAttribute('src','/pictures/posture/posture2.png');
-                runTimer.isImageIn=true;
-            }else{
-                images[0].setAttribute('src','/pictures/posture/posture3.png');
-                images[1].setAttribute('src','/pictures/posture/posture3.png');
-                runTimer.isImageIn=false;
-            }
         },400/runTimer.iteration);
         document.getElementById('DOBDayStartBtn').textContent="Stop";
+
+        runTimer.showDancingMen();
     },
     stop(){
         runTimer.isRunning=false;
         clearInterval(runTimer.intCode);
+        clearInterval(runTimer.dancingMenIntervalCode);
+        runTimer.hideDancingMen();
         document.getElementById('DOBDayStartBtn').textContent="Start";
 
         //if first stop, reveals submissions sections, delays, then reveals first submission
@@ -114,7 +207,7 @@ var runTimer={
             },700)
         }else{
             for (var i=0;i<slots.length;i++){
-                if (slots[i].textContent==""){
+                if (slots[i].textContent===""){
                     slots[i].textContent=document.getElementById('DOBInputDayNumber').textContent;
                     slots[i].style.opacity='1';
                     break;

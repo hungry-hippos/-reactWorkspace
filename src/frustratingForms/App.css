@@ -1,0 +1,10 @@
+#mainPageSidebar{position:absolute;
+left:0;
+top:50px;
+width:200px;
+border:thin solid black;
+}
+
+.mainPageBtn{display:block;
+padding:10px;
+}

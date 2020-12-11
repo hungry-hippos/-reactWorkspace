@@ -6,13 +6,11 @@ const InputDay=()=>{
     return <React.Fragment>
     <div id="DOBInputDay">
         <div id='DOBElementsHolder'>
-            <div id='leftAlley' className='DOBAlley'>
-                <img className='DOBInputDayPostureImage leftMan' src="/pictures/posture/posture4.png" alt=""/>
+            <div id='DOBAlley'>
+                <img className='DOBInputDayPostureImage leftMan' id='firstLeftMan' src="/pictures/posture/posture4.png" alt=""/>
+                <img className='DOBInputDayPostureImage rightMan' id='firstRightMan' src="/pictures/posture/posture4.png" alt="" />
             </div>
             <div id="DOBInputDayNumber">0</div>
-            <div id='rightAlley' className='DOBAlley'>
-                <img className='DOBInputDayPostureImage rightMan' src="/pictures/posture/posture4.png" alt="" />
-            </div>
         </div>
         <button id="DOBDayStartBtn" onClick={runTimer.toggle}>START</button>
     </div>
