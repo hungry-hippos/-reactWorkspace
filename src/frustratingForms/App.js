@@ -22,6 +22,8 @@ const SideBar=(props)=>{
       case "dob":
         setShowDOB(true);
         break;
+      default:
+        break;
     }
   }
   return <div id='mainPageSidebar'>

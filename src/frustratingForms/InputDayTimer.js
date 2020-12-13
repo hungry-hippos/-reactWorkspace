@@ -2,9 +2,10 @@
 var runTimer={
     isRunning:false,
     iteration:0,
-    isImageIn:false,
     intCode:"",
-    dancingMenIntervalCode:0,
+    lastMidAlleySpawned:0,
+    spawnIntervalCodes:[],
+    dancingMenIntervalCodes:[],
     slowRevealOfOperators(){
         var plus=document.getElementsByClassName('DOBPlus');
         var line=document.getElementById('DOBDivisorLine');
@@ -78,12 +79,101 @@ var runTimer={
         },19000)
     },
     hideDancingMen(){
-        const men=document.getElementsByClassName('DOBInputDayPostureImage');
+        const men=document.getElementsByTagName('img');
         for (var i=0;i<men.length;i++){
             men[i].style.opacity='0';
         }
     },
-    spawnManOnLeftEdge(){
+    spawnLargeAlley(){
+
+        //stops large men spawn after 16 spawned men
+        var largeMen=document.getElementsByClassName('largeMan');
+        if (largeMen.length>=16){
+            clearInterval(runTimer.spawnIntervalCodes[3]);
+            console.log("large spawn stopped");
+            return;
+        }
+
+        const topMan=document.createElement('img');
+        const bottomMan=document.createElement('img');
+        const magic8Ball=(Math.random()).toFixed(0);
+        if (magic8Ball){
+            topMan.setAttribute('src',"/pictures/posture/posture4.png");
+            bottomMan.setAttribute('src',"/pictures/posture/posture4.png");
+        }else{
+            topMan.setAttribute('src',"/pictures/posture/posture2.png");
+            bottomMan.setAttribute('src',"/pictures/posture/posture2.png");
+        }
+        topMan.classList.add('largeMan');
+        bottomMan.classList.add('largeMan');
+
+        topMan.classList.add('rightMan');
+        bottomMan.classList.add('leftMan');
+        document.getElementById('topLargeAlley').append(topMan);
+        document.getElementById('bottomLargeAlley').append(bottomMan);
+        topMan.style.left='-10px';
+        bottomMan.style.left='1400px';
+
+       
+    },
+    spawnMediumAlley(){
+
+        const midMen=document.getElementsByClassName('midMan');
+        if (midMen.length>150){
+            clearInterval(runTimer.spawnIntervalCodes[2]);
+            console.log("mid spawn stopped");
+            return;
+        }
+        
+        for (var i=0;i<6;i++ ){
+            const num=(Math.random()).toFixed(1);
+            setTimeout(()=>{
+                const alleys=document.getElementsByClassName('midAlley');
+                const man=document.createElement('img');
+                const magic8Ball=(Math.random()).toFixed(0);
+                if (magic8Ball){
+                    man.setAttribute('src',"/pictures/posture/posture4.png");
+                }else{
+                    man.setAttribute('src',"/pictures/posture/posture2.png");
+                }
+                man.classList.add('midMan');
+                
+                if (runTimer.lastMidAlleySpawned%2===0){
+                    man.classList.add('leftMan');
+                    man.style.left='1460px';
+                }else{
+                    man.classList.add('rightMan');
+                    man.style.left='-10px';
+                }
+
+                alleys[runTimer.lastMidAlleySpawned].appendChild(man);
+                runTimer.lastMidAlleySpawned++;
+                if (runTimer.lastMidAlleySpawned===6){
+                    runTimer.lastMidAlleySpawned=0;
+                }
+            },num*3000)
+        }
+
+    },
+    spawnManOnLeftEdge(name){
+
+        if (name==='littleMan'){
+            const allLittleMen=document.getElementsByClassName('littleMan');
+            if (allLittleMen.length>8){
+                clearInterval(runTimer.spawnIntervalCodes[1]);
+                console.log("little spawn stopped");
+                return;
+            }
+        }
+        if (name==='tinyMan'){
+            const allLittleMen=document.getElementsByClassName('tinyMan');
+            if (allLittleMen.length>20){
+                clearInterval(runTimer.spawnIntervalCodes[0]);
+                console.log("tiny spawn stopped");
+                return;
+            }
+        }
+
         const newMan=document.createElement('img');
         const magic8Ball=(Math.random()).toFixed(0);
         if (magic8Ball){
@@ -92,12 +182,30 @@ var runTimer={
             newMan.setAttribute('src',"/pictures/posture/posture2.png");
         }
 
-        newMan.classList.add('DOBInputDayPostureImage');
+        newMan.classList.add(name);
         newMan.classList.add('rightMan');
         document.getElementById('DOBAlley').append(newMan);
         newMan.style.left='-10px';
     },
-    spawnManOnRightEdge(){
+    spawnManOnRightEdge(name){
+
+        if (name==='littleMan'){
+            const allLittleMen=document.getElementsByClassName('littleMan');
+            if (allLittleMen.length>8){
+                clearInterval(runTimer.spawnIntervalCodes[1]);
+                console.log("little spawn stopped");
+                return;
+            }
+        }
+        if (name==='tinyMan'){
+            const allLittleMen=document.getElementsByClassName('tinyMan');
+            if (allLittleMen.length>20){
+                clearInterval(runTimer.spawnIntervalCodes[0]);
+                console.log("tiny spawn stopped");
+                return;
+            }
+        }
+
         const newMan=document.createElement('img');
         const magic8Ball=(Math.random()).toFixed(0);
         if (magic8Ball){
@@ -106,7 +214,7 @@ var runTimer={
             newMan.setAttribute('src',"/pictures/posture/posture2.png");
         }
 
-        newMan.classList.add('DOBInputDayPostureImage');
+        newMan.classList.add(name);
         newMan.classList.add('leftMan');
         document.getElementById('DOBAlley').append(newMan);
         newMan.style.left='330px';
@@ -114,42 +222,51 @@ var runTimer={
     showDancingMen(){
         const thrustIn="/pictures/posture/posture4.png";
         const thrustOut="/pictures/posture/posture2.png";
-        if (runTimer.iteration===3){
+        if (runTimer.iteration===2){
 
             const rightMan=document.getElementById('firstRightMan');
             rightMan.style.opacity='1';
-            runTimer.dancingMenIntervalCode = setInterval(()=>{
+            const dancingCode = setInterval(()=>{
             rightMan.setAttribute('src', (rightMan.getAttribute('src')===thrustIn)?thrustOut:thrustIn );
             },300);
+            runTimer.dancingMenIntervalCodes.push(dancingCode);
         };
-        if (runTimer.iteration===2){
+        if (runTimer.iteration===3){
 
             //setting both men to thrustIn pos
-            const men=document.getElementsByClassName("DOBInputDayPostureImage");
+            const men=document.getElementsByClassName("tinyMan");
             for (var i=0;i<men.length;i++){
                 men[i].setAttribute('src',thrustIn);
             }
 
-            runTimer.dancingMenIntervalCode = setInterval(()=>{
+            const dancingCode = setInterval(()=>{
 
                 for (var i=0;i<men.length;i++){
                     men[i].style.opacity='1';
                     men[i].setAttribute('src', (men[i].getAttribute('src')===thrustIn)?thrustOut:thrustIn )
                 }
 
-                },300)
+            },300)
+
+            runTimer.dancingMenIntervalCodes.push(dancingCode);
         }
-        if (runTimer.iteration===1){
-            const allMen=document.getElementsByClassName('DOBInputDayPostureImage');
+        if (runTimer.iteration===4){
             
-            setInterval(()=>{
-                runTimer.spawnManOnLeftEdge();
-                runTimer.spawnManOnRightEdge();
+            const tinyMenSpawnCode= setInterval(()=>{
+                var num=(Math.random()).toFixed(1);
+                setTimeout(()=>{
+                runTimer.spawnManOnRightEdge("tinyMan");
+                },num*1000)
+
+                num=(Math.random()).toFixed(1);
+                setTimeout(()=>{
+                runTimer.spawnManOnLeftEdge("tinyMan");
+                },num*1000)
+                
             },1000)
 
-            runTimer.dancingMenIntervalCode = setInterval(()=>{
-                
-
+            const tinyMenDancingCode = setInterval(()=>{
+                var allMen=document.getElementsByClassName('tinyMan');
                 for (var i=0;i<allMen.length;i++){
                     var xLoc=allMen[i].offsetLeft;
                     allMen[i].style.opacity='1';
@@ -174,7 +291,182 @@ var runTimer={
                     //change his hip placement
                     allMen[i].setAttribute('src', (allMen[i].getAttribute('src')===thrustIn)?thrustOut:thrustIn )
                 }
-                },100)
+            },100)
+            
+            runTimer.spawnIntervalCodes.push(tinyMenSpawnCode);
+            runTimer.dancingMenIntervalCodes.push(tinyMenDancingCode);
+        
+        }
+        if (runTimer.iteration===5){
+
+        //spawns tiny men 
+        const tinyMenSpawnCode= setInterval(()=>{
+            var num=(Math.random()).toFixed(1);
+            setTimeout(()=>{
+            runTimer.spawnManOnRightEdge("tinyMan");
+            },num*1000)
+
+            num=(Math.random()).toFixed(1);
+            setTimeout(()=>{
+            runTimer.spawnManOnLeftEdge("tinyMan");
+            },num*1000)
+            
+        },1000)
+
+        const tinyMenDancingCode = setInterval(()=>{
+            var allMen=document.getElementsByClassName('tinyMan');
+            for (var i=0;i<allMen.length;i++){
+                var xLoc=allMen[i].offsetLeft;
+                allMen[i].style.opacity='1';
+                if (allMen[i].classList.contains('rightMan')){
+                    if (parseInt(xLoc,10)===330){
+                        allMen[i].classList.remove('rightMan');
+                        allMen[i].classList.add('leftMan');
+                        continue;
+                    }
+                    xLoc+=10;
+                    allMen[i].style.left=xLoc+'px';
+                }else if (allMen[i].classList.contains('leftMan')){
+                    if (parseInt(xLoc,10)===-10){
+                        allMen[i].classList.remove('leftMan');
+                        allMen[i].classList.add('rightMan');
+                        continue;
+                    }
+                    xLoc-=10;
+                    allMen[i].style.left=xLoc+'px';
+                }
+
+                //change his hip placement
+                allMen[i].setAttribute('src', (allMen[i].getAttribute('src')===thrustIn)?thrustOut:thrustIn )
+            }
+        },100)
+        
+        runTimer.spawnIntervalCodes.push(tinyMenSpawnCode);
+        runTimer.dancingMenIntervalCodes.push(tinyMenDancingCode);
+
+        //spawns little men
+        const littleMenSpawnCode= setInterval(()=>{
+            var num=(Math.random()).toFixed(1);
+            setTimeout(()=>{
+            runTimer.spawnManOnRightEdge("littleMan");
+            },num*1000)
+
+            num=(Math.random()).toFixed(1);
+            setTimeout(()=>{
+            runTimer.spawnManOnLeftEdge("littleMan");
+            },num*1000)
+        },1000);
+
+        const littleMenDancingCode = setInterval(()=>{
+            var littleMen=document.getElementsByClassName('littleMan');
+            for (var i=0;i<littleMen.length;i++){
+                var xLoc=littleMen[i].offsetLeft;
+                littleMen[i].style.opacity='1';
+                if (littleMen[i].classList.contains('rightMan')){
+                    if (parseInt(xLoc,10)===330){
+                        littleMen[i].classList.remove('rightMan');
+                        littleMen[i].classList.add('leftMan');
+                        continue;
+                    }
+                    xLoc+=10;
+                    littleMen[i].style.left=xLoc+'px';
+                }else if (littleMen[i].classList.contains('leftMan')){
+                    if (parseInt(xLoc,10)===-10){
+                        littleMen[i].classList.remove('leftMan');
+                        littleMen[i].classList.add('rightMan');
+                        continue;
+                    }
+                    xLoc-=10;
+                    littleMen[i].style.left=xLoc+'px';
+                }
+
+                //change his hip placement
+                littleMen[i].setAttribute('src', (littleMen[i].getAttribute('src')===thrustIn)?thrustOut:thrustIn )
+            }
+            },100)
+
+        runTimer.spawnIntervalCodes.push(littleMenSpawnCode);
+        runTimer.dancingMenIntervalCodes.push(littleMenDancingCode);
+
+
+        //spawns mid men
+        runTimer.spawnMediumAlley();
+        const midMenSpawnCode=setInterval(()=>{
+            runTimer.spawnMediumAlley();
+        },500);
+
+        const midMenDancingCode= setInterval(()=>{
+            var midMen=document.getElementsByClassName('midMan');
+
+            for (var i=0;i<midMen.length;i++){
+                var xLoc=midMen[i].offsetLeft;
+                midMen[i].style.opacity='1';
+                if (midMen[i].classList.contains('rightMan')){
+                    if (parseInt(xLoc,10)===1450){
+                        midMen[i].classList.remove('rightMan');
+                        midMen[i].classList.add('leftMan');
+                        continue;
+                    }
+                    xLoc+=10;
+                    midMen[i].style.left=xLoc+'px';
+                }else if (midMen[i].classList.contains('leftMan')){
+                    if (parseInt(xLoc,10)===-10){
+                        midMen[i].classList.remove('leftMan');
+                        midMen[i].classList.add('rightMan');
+                        continue;
+                    }
+                    xLoc-=10;
+                    midMen[i].style.left=xLoc+'px';
+                }
+
+                //change his hip placement
+                midMen[i].setAttribute('src', (midMen[i].getAttribute('src')===thrustIn)?thrustOut:thrustIn );
+            }
+        },100)
+
+        runTimer.spawnIntervalCodes.push(midMenSpawnCode);
+        runTimer.dancingMenIntervalCodes.push(midMenDancingCode);
+
+        
+        //spawns large men
+        runTimer.spawnLargeAlley();
+        const largeMenSpawnCode= setInterval(()=>{
+            const num=(Math.random()).toFixed(1);
+            setTimeout(()=>{
+            runTimer.spawnLargeAlley();
+            },num*1000)
+        },1000)
+        
+        const largeMenDanceCode = setInterval(()=>{
+        const largeMen=document.getElementsByClassName('largeMan');
+            for (var i=0;i<largeMen.length;i++){
+                var xLoc=largeMen[i].offsetLeft;
+                largeMen[i].style.opacity='1';
+                if (largeMen[i].classList.contains('rightMan')){
+                    if (parseInt(xLoc,10)===1400){
+                        largeMen[i].classList.remove('rightMan');
+                        largeMen[i].classList.add('leftMan');
+                        continue;
+                    }
+                    xLoc+=10;
+                    largeMen[i].style.left=xLoc+'px';
+                }else if (largeMen[i].classList.contains('leftMan')){
+                    if (parseInt(xLoc,10)===-10){
+                        largeMen[i].classList.remove('leftMan');
+                        largeMen[i].classList.add('rightMan');
+                        continue;
+                    }
+                    xLoc-=10;
+                    largeMen[i].style.left=xLoc+'px';
+                }
+
+                //change his hip placement
+                largeMen[i].setAttribute('src', (largeMen[i].getAttribute('src')===thrustIn)?thrustOut:thrustIn );
+            }
+        },100)
+    
+        runTimer.spawnIntervalCodes.push(largeMenSpawnCode);
+        runTimer.dancingMenIntervalCodes.push(largeMenDanceCode);
         }
     },
     start(){
@@ -192,8 +484,20 @@ var runTimer={
     stop(){
         runTimer.isRunning=false;
         clearInterval(runTimer.intCode);
-        clearInterval(runTimer.dancingMenIntervalCode);
-        runTimer.hideDancingMen();
+        for (var i=0;i<runTimer.dancingMenIntervalCodes.length;i++){
+            clearInterval(runTimer.dancingMenIntervalCodes[i]);
+            clearInterval(runTimer.spawnIntervalCodes[i]);
+        }
+
+        if (runTimer.iteration===4){
+            var tinyMen=document.getElementsByClassName('tinyMan');
+            while (tinyMen.length>0){
+                tinyMen[0].remove();
+            }
+        }
+
+        runTimer.dancingMenIntervalCodes=[];
+        runTimer.spawnIntervalCodes=[];
         document.getElementById('DOBDayStartBtn').textContent="Start";
 
         //if first stop, reveals submissions sections, delays, then reveals first submission
@@ -206,10 +510,10 @@ var runTimer={
                 slots[0].style.opacity='1';
             },700)
         }else{
-            for (var i=0;i<slots.length;i++){
-                if (slots[i].textContent===""){
-                    slots[i].textContent=document.getElementById('DOBInputDayNumber').textContent;
-                    slots[i].style.opacity='1';
+            for (var j=0;j<slots.length;j++){
+                if (slots[j].textContent===""){
+                    slots[j].textContent=document.getElementById('DOBInputDayNumber').textContent;
+                    slots[j].style.opacity='1';
                     break;
                 }
             }
@@ -221,8 +525,12 @@ var runTimer={
             document.getElementById('DOBDayStartBtn').disabled=true;
             runTimer.slowRevealOfOperators();
         }
+        
+        if (runTimer.iteration!==5){
+            runTimer.hideDancingMen();
+            document.getElementById('DOBInputDayNumber').textContent='1';
+        }
 
-        document.getElementById('DOBInputDayNumber').textContent='1';
     },
     toggle(){
         if (runTimer.isRunning){

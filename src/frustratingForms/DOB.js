@@ -1,4 +1,4 @@
-import React,{useEffect, useState} from 'react'
+import React,{useState} from 'react'
 
 import InputDay from './InputDay'
 import InputMonth from './InputMonth'
@@ -31,6 +31,8 @@ const ComponentToggle=(props)=>{
             case "year":
                 setShowYear(true);
                 break;
+            default:
+                break;
         }
     }
 
@@ -43,6 +45,20 @@ const ComponentToggle=(props)=>{
 
 const InputYear=()=>{
     return <></>
+}
+
+const BackgroundAlleys=()=>{
+    return <React.Fragment>
+        <div className='largeAlley' id='topLargeAlley'></div>
+        <div className='largeAlley' id='bottomLargeAlley'></div>
+        <div className='midAlley'></div>
+        <div className='midAlley' style={{top:'16%'}}></div>
+        <div className='midAlley' style={{top:'32%'}}></div>
+        <div className='midAlley' style={{top:'48%'}}></div>
+        <div className='midAlley' style={{top:'64%'}}></div>
+        <div className='midAlley' style={{top:'80%'}}></div>
+        
+    </React.Fragment>
 }
 
 
@@ -59,11 +75,9 @@ const DOB=()=>{
 
     var data=[month,day,year];
 
-    //use an useEffect to change which section is displayed
-
-
     return <React.Fragment>
         < ComponentToggle setters={setters} />
+        < BackgroundAlleys />
         <div id='DOBMainSection'>
             < Header data={data}/>
             { showMonth && < InputMonth setMonth={setMonth} />} 

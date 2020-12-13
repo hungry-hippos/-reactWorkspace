@@ -7,8 +7,8 @@ const InputDay=()=>{
     <div id="DOBInputDay">
         <div id='DOBElementsHolder'>
             <div id='DOBAlley'>
-                <img className='DOBInputDayPostureImage leftMan' id='firstLeftMan' src="/pictures/posture/posture4.png" alt=""/>
-                <img className='DOBInputDayPostureImage rightMan' id='firstRightMan' src="/pictures/posture/posture4.png" alt="" />
+                <img className='tinyMan leftMan' id='firstLeftMan' src="/pictures/posture/posture4.png" alt=""/>
+                <img className='tinyMan rightMan' id='firstRightMan' src="/pictures/posture/posture4.png" alt="" />
             </div>
             <div id="DOBInputDayNumber">0</div>
         </div>

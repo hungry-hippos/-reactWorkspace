@@ -86,10 +86,10 @@ background-color: tomato;
 display:block;
 box-shadow: 0 0 5px black;
 padding:20px 0 10px 0;
-position:relative;
+position:static;
 }
 #DOBElementsHolder{display:block;
-position:relative;
+position:static;
 }
 #DOBInputDayNumber{height:80px;
 width:80px;
@@ -110,25 +110,65 @@ display:block;
 margin:20px auto 0 auto;
 font-family: 'Montserrat';
 }
+#DOBDayStartBtn:hover {background-color: black;}
 
-.DOBInputDayPostureImage{height:100px;
-width:37px;
+.tinyMan{height:100px;
+    width:45px;
+    display: inline-block;
+    position:absolute;
+    top:0;
+    opacity:0;
+    z-index:20;
+    }
+
+.littleMan{height:130px;
+width:45px;
 display: inline-block;
 position:absolute;
-top:0;
-opacity:1;
+top:10px;
+opacity:0;
+z-index:20;
 }
-
-.leftMan{transform: scaleX(-1);}
-#firstLeftMan{left:220px;}
-#firstRightMan{left:100px}
 
 #DOBAlley{display: inline-block;
     position: absolute;
     border: thin solid black;
-    width: 100%;
+    width: 360px;
     z-index: 3;
 }
+
+.largeAlley{height:50%;
+width:100%;
+box-sizing: border-box;
+display: block;
+position: absolute;
+top:0;
+left:0;
+z-index: -1;
+}
+#bottomLargeAlley{top:50%;
+left:0;}
+.largeMan{position:absolute;
+height:95%;
+}
+.midMan{position:absolute;
+height:95%;
+z-index:100;
+}
+
+.midAlley{position:absolute;
+height:16%;
+width:100%;
+display:block;
+box-sizing: border-box;
+z-index:-1;
+top:0;
+}
+.leftMan{transform: scaleX(-1);}
+#firstLeftMan{left:210px;}
+#firstRightMan{left:100px}
+
+
 
 
 
