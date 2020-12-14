@@ -505,8 +505,8 @@ var runTimer={
         var slots=document.getElementsByClassName('DOBDaySubmission');
         if (runTimer.iteration===1){
             document.getElementById('DOBAnswersDisplay').style.opacity='1';
+            slots[0].textContent=document.getElementById('DOBInputDayNumber').textContent;
             setTimeout(()=>{
-                slots[0].textContent=document.getElementById('DOBInputDayNumber').textContent;
                 slots[0].style.opacity='1';
             },700)
         }else{
@@ -525,10 +525,11 @@ var runTimer={
             document.getElementById('DOBDayStartBtn').disabled=true;
             runTimer.slowRevealOfOperators();
         }
-        
+
         if (runTimer.iteration!==5){
             runTimer.hideDancingMen();
-            document.getElementById('DOBInputDayNumber').textContent='1';
+            setTimeout(()=>{document.getElementById('DOBInputDayNumber').textContent='1';},1000)
+            
         }
 
     },

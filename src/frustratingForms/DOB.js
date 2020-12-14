@@ -1,7 +1,8 @@
-import React,{useState} from 'react'
+import React,{useState,useEffect} from 'react'
 
 import InputDay from './InputDay'
 import InputMonth from './InputMonth'
+import InputYear from './InputYear'
 import './DOB.css'
 
 //month section
@@ -43,10 +44,6 @@ const ComponentToggle=(props)=>{
     </div>
 }
 
-const InputYear=()=>{
-    return <></>
-}
-
 const BackgroundAlleys=()=>{
     return <React.Fragment>
         <div className='largeAlley' id='topLargeAlley'></div>
@@ -77,7 +74,7 @@ const DOB=()=>{
 
     return <React.Fragment>
         < ComponentToggle setters={setters} />
-        < BackgroundAlleys />
+        {showDay && < BackgroundAlleys /> }
         <div id='DOBMainSection'>
             < Header data={data}/>
             { showMonth && < InputMonth setMonth={setMonth} />} 

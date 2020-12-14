@@ -2,7 +2,18 @@
 import runTimer from './InputDayTimer'
 import React from 'react'
 
-const InputDay=()=>{
+const InputDay=(props)=>{
+
+    const {setDay}=props;
+
+    const submitDay=()=>{
+        var day=parseInt(document.getElementById('eqRightSide').textContent,10);
+        if (day<10){
+            day="0"+day;
+        }
+        setDay(day);
+    }
+
     return <React.Fragment>
     <div id="DOBInputDay">
         <div id='DOBElementsHolder'>
@@ -38,9 +49,9 @@ const InputDay=()=>{
         <p className='DOBSubmissions avgDayDisplay hidden'>Your average day-of-birth submission is: <span style={{fontWeight:'bold',margin:'0'}} id='DOBDecimalAvg'>23.23</span></p>
         <div className='DOBSubmissions DOBConfirmDay hidden'>
             Please confirm.
-            <button className='DOBYesBtn' >YES</button>
-            <button className='DOBYesBtn' >AGREE</button>
-            <button className='DOBYesBtn' >CONFIRM</button>
+            <button className='DOBYesBtn' onClick={submitDay}>YES</button>
+            <button className='DOBYesBtn' onClick={submitDay}>AGREE</button>
+            <button className='DOBYesBtn' onClick={submitDay}>CONFIRM</button>
         </div>
     </div>
     </React.Fragment>
