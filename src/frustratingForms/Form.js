@@ -87,6 +87,7 @@ const Form=()=>{
     }
 
     return <form id='mainCard'>
+                
                 <div id='centralFormDiv'>
                     <div className='formSection'>
                         <label htmlFor='firstName'>First Name: </label>

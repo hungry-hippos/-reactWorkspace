@@ -1,0 +1,22 @@
+#minigameMain{display: block;
+margin:100px auto;
+width:400px;
+padding:10px;
+background-color: white;
+}
+#mainGrid {width:150px;
+    height:150px;
+    display:flex;
+    flex-wrap: wrap;}
+
+.snakeSquare{width:10px;
+height:10px;
+margin:0;
+background-color: black;
+}
+
+#snakeHead{background-color: green}
+
+.snakeBody{background-color: green}
+
+#rat{background-color: red}
