@@ -1,13 +1,69 @@
+.nameLabel{width:100px;
+box-sizing: border-box;
+font-size:17px;
+margin:5px;
+}
+
+.nameInput{height: 25px;
+    width: 250px;
+    border: thin solid #a2a2a2;
+    background: #cecece;
+    border-radius: 5px;
+    font-size: 17px;
+    letter-spacing: 1px;
+    padding-left: 5px;
+}
+#submitGameBtn{display: block;
+    font-size: 15px;
+    margin-top: 7px;
+    margin-left: 273px;
+    padding: 5px 6px;
+    border-radius: 5px;
+    border: thin solid #414179;
+    background: #8597ea;
+    box-sizing: content-box;
+    color: #2d2d3a;
+    width: 75px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    font-family: 'Montserrat';
+    transition:.5s;}
+#submitGameBtn:focus{outline:none; border: 2px solid blue;}
 #minigameMain{display: block;
-margin:100px auto;
+margin: 100px auto 20px auto;
 width:400px;
+height:127px;
+box-sizing: border-box;
 padding:10px;
 background-color: white;
 }
-#mainGrid {width:150px;
+
+#gameConfirmDiv{position:relative;
+width:400px;
+background-color: #c7c3c5;
+box-shadow: 0 0 3px black;
+display: block;
+margin:10px auto;
+padding:10px 23px;
+border-radius:10px;
+opacity:0;
+transition:1s;
+}
+
+#gameConfirmBtn{padding:5px 10px;
+font-size:15px;
+letter-spacing: 1px;
+border-radius:7px;
+display: block;
+margin: 0 0 0 74%;
+font-family: 'Montserrat';
+font-weight:bold;
+}
+#mainGrid {width:350px;
     height:150px;
     display:flex;
-    flex-wrap: wrap;}
+    flex-wrap: wrap;
+    margin: 13px 0;}
 
 .snakeSquare{width:10px;
 height:10px;
@@ -15,8 +71,12 @@ margin:0;
 background-color: black;
 }
 
-#snakeHead{background-color: green}
+#snakeHead{background-color: green;
+border:thin solid rgb(2, 59, 10);
+}
 
-.snakeBody{background-color: green}
+.snakeBody{background-color: rgb(7, 202, 7);
+border:thin solid rgb(2, 59, 10);
+}
 
 #rat{background-color: red}
