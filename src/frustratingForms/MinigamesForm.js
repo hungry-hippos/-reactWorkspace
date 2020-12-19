@@ -39,6 +39,7 @@ const MinigamesForm=()=>{
         <div id='gameConfirmDiv'>
             <div id='gameConfirmText'>Eat <div id='appleCounter' style={{fontWeight:'bold', display:'inline'}}>10</div> apples to submit.</div>
             <div id="mainGrid"></div>
+            <div id='initialInstructions'>Press any arrow key.</div>
             <button id='gameConfirmBtn' disabled>SUBMIT</button>
         </div>
         </>

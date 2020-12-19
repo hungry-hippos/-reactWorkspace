@@ -80,3 +80,11 @@ border:thin solid rgb(2, 59, 10);
 }
 
 #rat{background-color: red}
+#initialInstructions{display: inline-block;
+width: 300px;
+font-size: 25px;
+color: white;
+position: absolute;
+left: 70px;
+top: 100px;
+}

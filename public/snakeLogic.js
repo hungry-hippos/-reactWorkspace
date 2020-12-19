@@ -144,22 +144,27 @@ var currentIntervalCode=0;
 var movementDirection="";
 var time=150;
 function changeDirection(event){
+	
 	clearInterval(currentIntervalCode);
 	if (event.keyCode==37 && movementDirection!='right'){
 		//move left
 		movementDirection='left';
+		document.getElementById('initialInstructions').style.display='none';
 	}
 	if (event.keyCode==38 && movementDirection!='down'){
 		//move up
 		movementDirection='up';
+		document.getElementById('initialInstructions').style.display='none';
 	}
 	if (event.keyCode==39 && movementDirection!='left'){
 		//move right
 		movementDirection='right';
+		document.getElementById('initialInstructions').style.display='none';
 	}
 	if (event.keyCode==40 && movementDirection!='up'){
 		//move down
 		movementDirection='down';
+		document.getElementById('initialInstructions').style.display='none';
 	}
 	currentIntervalCode=setInterval(headMovement,time);
 }

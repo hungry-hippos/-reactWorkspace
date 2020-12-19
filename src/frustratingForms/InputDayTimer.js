@@ -226,31 +226,87 @@ var runTimer={
 
             const rightMan=document.getElementById('firstRightMan');
             rightMan.style.opacity='1';
-            const dancingCode = setInterval(()=>{
-            rightMan.setAttribute('src', (rightMan.getAttribute('src')===thrustIn)?thrustOut:thrustIn );
-            },300);
-            runTimer.dancingMenIntervalCodes.push(dancingCode);
+            const tinyMenDancingCode = setInterval(()=>{
+                const rightMan=document.getElementById('firstRightMan');
+                var xLoc=rightMan.offsetLeft;
+                if (rightMan.classList.contains('rightMan')){
+                    if (parseInt(xLoc,10)===330){
+                        rightMan.classList.remove('rightMan');
+                        rightMan.classList.add('leftMan');
+                        return;
+                    }
+                    xLoc+=10;
+                    rightMan.style.left=xLoc+'px';
+                }else if (rightMan.classList.contains('leftMan')){
+                    if (parseInt(xLoc,10)===-10){
+                        rightMan.classList.remove('leftMan');
+                        rightMan.classList.add('rightMan');
+                        return;
+                    }
+                    xLoc-=10;
+                    rightMan.style.left=xLoc+'px';
+                }
+
+                //change his hip placement
+                rightMan.setAttribute('src', (rightMan.getAttribute('src')===thrustIn)?thrustOut:thrustIn )
+            },100)
+            
+            runTimer.dancingMenIntervalCodes.push(tinyMenDancingCode);
+
+
+
+
+
+
         };
         if (runTimer.iteration===3){
 
             //setting both men to thrustIn pos
+            const rightMan=document.getElementById('firstRightMan');
+            rightMan.style.left='100px';
             const men=document.getElementsByClassName("tinyMan");
             for (var i=0;i<men.length;i++){
                 men[i].setAttribute('src',thrustIn);
+                men[i].style.opacity='1';
             }
 
-            const dancingCode = setInterval(()=>{
+            const tinyMenDancingCode = setInterval(()=>{
+                var allMen=document.getElementsByClassName('tinyMan');
+                for (var i=0;i<allMen.length;i++){
+                    var xLoc=allMen[i].offsetLeft;
+                    allMen[i].style.opacity='1';
+                    if (allMen[i].classList.contains('rightMan')){
+                        if (parseInt(xLoc,10)===330){
+                            allMen[i].classList.remove('rightMan');
+                            allMen[i].classList.add('leftMan');
+                            continue;
+                        }
+                        xLoc+=10;
+                        allMen[i].style.left=xLoc+'px';
+                    }else if (allMen[i].classList.contains('leftMan')){
+                        if (parseInt(xLoc,10)===-10){
+                            allMen[i].classList.remove('leftMan');
+                            allMen[i].classList.add('rightMan');
+                            continue;
+                        }
+                        xLoc-=10;
+                        allMen[i].style.left=xLoc+'px';
+                    }
 
-                for (var i=0;i<men.length;i++){
-                    men[i].style.opacity='1';
-                    men[i].setAttribute('src', (men[i].getAttribute('src')===thrustIn)?thrustOut:thrustIn )
+                    //change his hip placement
+                    allMen[i].setAttribute('src', (allMen[i].getAttribute('src')===thrustIn)?thrustOut:thrustIn )
                 }
+            },100)
+            
+            runTimer.dancingMenIntervalCodes.push(tinyMenDancingCode);
+            
 
-            },300)
-
-            runTimer.dancingMenIntervalCodes.push(dancingCode);
-        }
+        };
         if (runTimer.iteration===4){
+            const rightMan=document.getElementById('firstRightMan');
+            rightMan.style.left='100px';
+            const leftMan=document.getElementById('firstLeftMan');
+            leftMan.style.left='210px';
             
             const tinyMenSpawnCode= setInterval(()=>{
                 var num=(Math.random()).toFixed(1);
