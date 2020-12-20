@@ -1,5 +1,6 @@
 //hold timer functions, and slow reveal function
 import runTimer from './InputDayTimer'
+import Button from 'react-bootstrap/Button'
 import React from 'react'
 
 const InputDay=(props)=>{
@@ -23,7 +24,7 @@ const InputDay=(props)=>{
             </div>
             <div id="DOBInputDayNumber">0</div>
         </div>
-        <button id="DOBDayStartBtn" onClick={runTimer.toggle}>START</button>
+        <Button variant="light" id="DOBDayStartBtn" className='DOBStart' onClick={runTimer.toggle}>START</Button>
     </div>
     <div id="DOBAnswersDisplay">
         <p className='DOBSubmissions'>Your submissions:</p>

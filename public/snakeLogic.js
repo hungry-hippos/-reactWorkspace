@@ -120,7 +120,7 @@ function snakeEats(nextHead){
 		num--;
 		if (num===0){
 			document.getElementById('gameConfirmText').textContent='Submit when ready.'
-			document.getElementById('gameConfirmBtn').disabled=false;
+			document.getElementById('gameConfirmBtn').style.opacity='1';
 			return;
 		}
 		counter.textContent=num;

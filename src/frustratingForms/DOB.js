@@ -9,8 +9,9 @@ import './DOB.css'
 const Header=(props)=>{
     var [month,date,year]=props.data;
     return <div id='DOBheader'>
-        <h2 id='DOBmessage'>Date of Birth:</h2>
+        <h2 id='DOBmessage'>Date of Birth</h2>
         <div id='DOBData'>{month} / {date} / {year}</div>
+        <hr id='DOBTitleHr' style={{margin:"0 auto"}}/>
     </div>
 }
 

@@ -1,7 +1,7 @@
 /*---------------------------------------------------INPUT MONTH SECTION------------------------------------ */
 
 #DOBMainSection{width:400px;
-background-color: whitesmoke;
+background-color: white;
 box-shadow: 0 0 5px black;
 padding:20px;
 box-sizing: border-box;
@@ -11,23 +11,21 @@ position:relative;
 }
 
 #DOBheader{width:100%;
-background-color: tomato;
-box-shadow: 0 0 5px black;
 height:100px;
 box-sizing: border-box;
-padding:20px 10px;
+padding:5px 10px;
 display:block;
 margin: 0 auto;
+text-align:center;
 }
-
-#DOBmessage{font-size:17px;
-font-weight:400;
+#DOBmessage{font-size:25px;
 margin:0;
 }
 
+
 #DOBData{display:block;
 margin:10px auto;
-font-size:20px;
+font-size:17px;
 text-align: center;
 }
 
@@ -80,9 +78,10 @@ color:black;
 
 #DOBInputDay{
 width:100%;
+height:165px;
 box-sizing: border-box;
 margin:10px auto 0 auto;
-background-color: tomato;
+background-color: #8091f3;
 display:block;
 box-shadow: 0 0 5px black;
 padding:20px 0 10px 0;
@@ -94,6 +93,8 @@ position:static;
 #DOBInputDayNumber{height:80px;
 width:80px;
 background-color: white;
+box-shadow: 0 0 3px #5c5b61;
+border: thin solid #aba8a8;
 box-sizing: border-box;
 display: inline-block;
 font-size:40px;
@@ -110,16 +111,36 @@ display:block;
 margin:20px auto 0 auto;
 font-family: 'Montserrat';
 }
-#DOBDayStartBtn:hover {background-color: black;}
+.DOBStart:hover{font-weight: bold;
+background: #90e75d !important;
+color: #212529;
+border-color: #dae0e5;
+box-shadow: 0 0 0 0.2rem #199608 !important;
+border: none !important;
+}
+.DOBStop:hover{font-weight: bold;
+background: #f78b83 !important;
+color: #212529;
+border-color: #dae0e5;
+box-shadow: 0 0 0 0.2rem #f94c45 !important;
+border: none !important;
+}
+.DOBDone{font-weight: bold;
+background: #172ce7 !important;
+color: white !important;
+box-shadow: 0 0 0 0.2rem #0d0630 !important;
+border: none !important;
+}
+
 
 .tinyMan{height:100px;
-    width:45px;
-    display: inline-block;
-    position:absolute;
-    top:0;
-    opacity:0;
-    z-index:20;
-    }
+width:45px;
+display: inline-block;
+position:absolute;
+top:0;
+opacity:0;
+z-index:20;
+}
 
 .littleMan{height:130px;
 width:45px;

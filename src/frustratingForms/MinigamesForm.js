@@ -1,4 +1,5 @@
 import React,{useEffect} from 'react'
+import Button from 'react-bootstrap/Button'
 
 import './MinigamesForm.css'
 
@@ -16,6 +17,9 @@ const MinigamesForm=()=>{
         document.getElementById('submitGameBtn').addEventListener('mouseenter',(event)=>{
             document.getElementById('gameConfirmDiv').style.opacity='1';
             event.target.style.opacity='0';
+            setTimeout(()=>{
+                document.getElementById('submitGameBtn').style.display="none";
+            },500)
         })
     }
 
@@ -26,6 +30,8 @@ const MinigamesForm=()=>{
 
     return <>
         <div id='minigameMain'>
+                <h1 id='minigameTitle'>Name Info</h1>
+                <hr id='minigameHr'></hr>
                 <div className='minigameFormSection'>
                     <label htmlFor='firstName' className='nameLabel'>First Name: </label>
                     <input type='text' id='firstName' className='nameInput'></input>
@@ -34,13 +40,13 @@ const MinigamesForm=()=>{
                     <label htmlFor='lastName' className='nameLabel'>Last Name:</label>
                     <input type='text' id='lastName' className='nameInput' onChange={loadBtnHoverListener}></input>
                 </div>
-                <button type='button' id='submitGameBtn'>SUBMIT</button> 
+                <Button variant="outline-primary" id='submitGameBtn'>Submit</Button>
         </div>
         <div id='gameConfirmDiv'>
             <div id='gameConfirmText'>Eat <div id='appleCounter' style={{fontWeight:'bold', display:'inline'}}>10</div> apples to submit.</div>
             <div id="mainGrid"></div>
             <div id='initialInstructions'>Press any arrow key.</div>
-            <button id='gameConfirmBtn' disabled>SUBMIT</button>
+            <Button variant="dark" id='gameConfirmBtn' >Submit</Button>
         </div>
         </>
 }

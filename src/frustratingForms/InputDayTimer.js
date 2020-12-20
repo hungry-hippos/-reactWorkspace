@@ -107,19 +107,29 @@ var runTimer={
         topMan.classList.add('largeMan');
         bottomMan.classList.add('largeMan');
 
-        topMan.classList.add('rightMan');
-        bottomMan.classList.add('leftMan');
+        if(largeMen.length%4===0){
+            topMan.classList.add('rightMan');
+            topMan.style.left='-10px';
+            bottomMan.classList.add('leftMan');
+            bottomMan.style.left='1400px';
+        }else{
+            topMan.classList.add('leftMan');
+            topMan.style.left='1400px';
+            bottomMan.classList.add('rightMan');
+            bottomMan.style.left='-10px';
+        }
+        
         document.getElementById('topLargeAlley').append(topMan);
         document.getElementById('bottomLargeAlley').append(bottomMan);
-        topMan.style.left='-10px';
-        bottomMan.style.left='1400px';
+
+        
 
        
     },
     spawnMediumAlley(){
 
         const midMen=document.getElementsByClassName('midMan');
-        if (midMen.length>150){
+        if (midMen.length>100){
             clearInterval(runTimer.spawnIntervalCodes[2]);
             console.log("mid spawn stopped");
             return;
@@ -138,7 +148,7 @@ var runTimer={
                 }
                 man.classList.add('midMan');
                 
-                if (runTimer.lastMidAlleySpawned%2===0){
+                if (Date.now()%2===0){
                     man.classList.add('leftMan');
                     man.style.left='1460px';
                 }else{
@@ -159,7 +169,7 @@ var runTimer={
 
         if (name==='littleMan'){
             const allLittleMen=document.getElementsByClassName('littleMan');
-            if (allLittleMen.length>8){
+            if (allLittleMen.length>5){
                 clearInterval(runTimer.spawnIntervalCodes[1]);
                 console.log("little spawn stopped");
                 return;
@@ -167,7 +177,7 @@ var runTimer={
         }
         if (name==='tinyMan'){
             const allLittleMen=document.getElementsByClassName('tinyMan');
-            if (allLittleMen.length>20){
+            if (allLittleMen.length>15){
                 clearInterval(runTimer.spawnIntervalCodes[0]);
                 console.log("tiny spawn stopped");
                 return;
@@ -405,12 +415,12 @@ var runTimer={
             var num=(Math.random()).toFixed(1);
             setTimeout(()=>{
             runTimer.spawnManOnRightEdge("littleMan");
-            },num*1000)
+            },num*3000)
 
             num=(Math.random()).toFixed(1);
             setTimeout(()=>{
             runTimer.spawnManOnLeftEdge("littleMan");
-            },num*1000)
+            },num*3000)
         },1000);
 
         const littleMenDancingCode = setInterval(()=>{
@@ -533,7 +543,9 @@ var runTimer={
             time=(time===31)?1:time+1;
             document.getElementById('DOBInputDayNumber').textContent=time;
         },400/runTimer.iteration);
-        document.getElementById('DOBDayStartBtn').textContent="Stop";
+        document.getElementById('DOBDayStartBtn').textContent="STOP";
+        document.getElementById('DOBDayStartBtn').classList.add('DOBStop');
+        document.getElementById('DOBDayStartBtn').classList.remove('DOBStart');
 
         runTimer.showDancingMen();
     },
@@ -554,7 +566,9 @@ var runTimer={
 
         runTimer.dancingMenIntervalCodes=[];
         runTimer.spawnIntervalCodes=[];
-        document.getElementById('DOBDayStartBtn').textContent="Start";
+        document.getElementById('DOBDayStartBtn').textContent="START";
+        document.getElementById('DOBDayStartBtn').classList.remove('DOBStop');
+        document.getElementById('DOBDayStartBtn').classList.add('DOBStart');
 
         //if first stop, reveals submissions sections, delays, then reveals first submission
         //if !first stop, reveals each submission
@@ -577,7 +591,9 @@ var runTimer={
 
         //on last itr, freeze start/stop btn and start reveal show
         if (runTimer.iteration===5){
-            document.getElementById('DOBDayStartBtn').textContent="Done";
+            document.getElementById('DOBDayStartBtn').textContent="DONE";
+            document.getElementById('DOBDayStartBtn').classList.remove('DOBStart');
+            document.getElementById('DOBDayStartBtn').classList.add('DOBDone');
             document.getElementById('DOBDayStartBtn').disabled=true;
             runTimer.slowRevealOfOperators();
         }

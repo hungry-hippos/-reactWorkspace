@@ -4,7 +4,9 @@ import Form from './Form'
 import DOB from './DOB'
 import Minigame from './MinigamesForm'
 import MapContainer from './MapContainer'
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css'
+
 
 
 const SideBar=(props)=>{
