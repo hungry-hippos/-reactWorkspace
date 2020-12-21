@@ -9,6 +9,7 @@ display:block;
 margin:100px auto;
 position:relative;
 }
+.DOBAlphabet{font-size:14px}
 
 #DOBheader{width:100%;
 height:100px;
@@ -35,39 +36,54 @@ box-sizing: border-box;
 margin:10px auto 0 auto;
 background-color: tomato;
 display:block;
-box-shadow: 0 0 5px black;
+box-shadow: 0 0 5px #717171;
 padding:20px 10px 10px 10px;
 position:relative;
 }
 
-#DOBAddLetterBtn{    padding: 5px;
-    box-shadow: 0 0 5px black;
+.DOBAddLetterBtn{padding: 5px;
     position:absolute;
-    left:20px;
-    bottom:20px;
+    left:5px;
+    bottom:10px;
     font-family: 'Montserrat';
+    box-shadow: 0 0 3px #313131;
 }
+.DOBAddLetterBtn:focus{box-shadow: 0 0 3px #313131 !important;}
 
 #DOBEnterBtn{padding: 5px;
-    box-shadow: 0 0 5px black;
+    box-shadow: 0 0 5px #676666;
     position:absolute;
-    right:20px;
-    bottom:20px;
+    right:10px;
+    bottom:10px;
     font-family: 'Montserrat';
+    background-color: #4787ff !important;
 }
+#DOBEnterBtn:hover{background-color: #007bff !important;}
 
 #DOBInvalidMonthError{
     position: absolute;
-    bottom: -120px;
-    background: red;
-    left: -20px;
-    right: -20px;
+    top: -110px;
+    bottom: 0;
+    background: #ff2140;
+    left: 0px;
+    right: 0px;
     padding: 10px 20px;
-    border-radius:10px;
+    font-family: "Montserrat";
 }
+#DOBErrorHr{margin: 0 0 15px 0;
+border-top: thin solid #211d1d;
+}
+#DOBErrorX{position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 25px;
+    height: 25px;
+}
+#DOBErrorX:hover{cursor:pointer}
 
-.DOBWrongMonth{margin:0;
-font-size:13px;
+
+.DOBWrongMonth{margin-top:10px;
+font-size:15px;
 color:black;
 }
 
@@ -287,26 +303,23 @@ top:125px;
 opacity:0;
 }
 .DOBConfirmDay{position:absolute;
-bottom:0;
+bottom:0px;
 width:95%;
 box-sizing: border-box;
 opacity:0;
 }
 .DOBYesBtn{float:right;
 margin:30px 10px 0 0;
-padding: 5px 10px;
+padding: 5px 5px;
 font-family:'Montserrat';
+font-size:15px !important;
 border-radius: 5px;
-box-shadow: 0 0 3px #928f8f;;
 opacity:0;
 transition:1s;
 font-weight: bold;
 }
-.DOBYesBtn:hover{
-    background: rgb(70, 68, 68);
-    color: white;
-    cursor:pointer;
-}
+
+
 #DOBDecimalAvg{opacity:0;
 transition:1s;}
 
@@ -352,29 +365,30 @@ border-radius: 7px;
 }
 
 #yearRangeSubmitBtn{position:absolute;
-top: 230px;
-left: 280px;
-padding:5px 15px;
+top: 205px;
+left: 265px;
+padding:5px 10px;
 opacity:0;
 transition: .5s;
 font-family: 'Montserrat';
-font-size: 20px;
+font-size: 17px;
 border-radius: 5px;
 }
 #yearRangeSubmitBtn:focus{outline:0}
 
 .yearEnterBtn{position:absolute;
-top: 230px;
-left: 280px;
+top: 205px;
+left: 265px;
 padding:5px 15px;
 opacity:1;
 transition: .5s;
 font-family: 'Montserrat';
 font-size: 20px;
 border-radius: 5px;
-border:2px solid black;
-box-shadow: 0 0 3px rgb(99, 97, 97);
+display:inline-block;
 }
 .yearEnterBtn:focus{outline:0}
+
+.hitEnter:hover{cursor:default}
 
 .hidden{display:none}

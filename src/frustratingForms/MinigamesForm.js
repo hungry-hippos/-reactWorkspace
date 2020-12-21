@@ -43,10 +43,10 @@ const MinigamesForm=()=>{
                 <Button variant="outline-primary" id='submitGameBtn'>Submit</Button>
         </div>
         <div id='gameConfirmDiv'>
-            <div id='gameConfirmText'>Eat <div id='appleCounter' style={{fontWeight:'bold', display:'inline'}}>10</div> apples to submit.</div>
+            <div id='gameConfirmText' style={{fontSize:"17px"}}>Eat <div id='appleCounter' style={{fontWeight:'bold', display:'inline'}}>10</div> apples to submit.</div>
             <div id="mainGrid"></div>
             <div id='initialInstructions'>Press any arrow key.</div>
-            <Button variant="dark" id='gameConfirmBtn' >Submit</Button>
+            <Button variant="outline-primary" id='gameConfirmBtn' >Submit</Button>
         </div>
         </>
 }

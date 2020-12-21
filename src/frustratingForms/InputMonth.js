@@ -1,4 +1,6 @@
 import React,{useState} from 'react'
+import Button from "react-bootstrap/Button"
+import {AiOutlineCloseCircle} from 'react-icons/ai'
 
 
 const arrayAlphabetLetters=()=>{
@@ -66,13 +68,15 @@ const InputMonth=(props)=>{
             i++;
             return <DropDownAlphabet key={i}/>
         })}
-        <button onClick={addLetter} id='DOBAddLetterBtn'>Add a letter</button>
-        {letterMenus.length >2 && <button onClick={enterMonth} id='DOBEnterBtn'>Enter</button>}
+        <Button variant="secondary" onClick={addLetter} className='DOBAddLetterBtn'>Add a letter</Button>
+        {letterMenus.length >2 && <Button variant='primary' onClick={enterMonth} id='DOBEnterBtn'>Submit</Button>}
         {wrongMonth && <div id='DOBInvalidMonthError'>
-                <p className="DOBWrongMonth" style={{fontWeight:'bold'}}>ERROR!</p>
+                <p className="DOBWrongMonth" style={{fontWeight:'bold',fontSize:"20px"}}>ERROR!</p>
+                < AiOutlineCloseCircle id="DOBErrorX" onClick={()=>{setWrongMonth(false)}}/>
+                <hr id="DOBErrorHr"></hr>
                 <p className="DOBWrongMonth">{wrongMonth} is not a real month.</p>
                 <p className="DOBWrongMonth">Please enter a valid month using standard American English.</p>
-                <p className="DOBWrongMonth">Examples include May, October, and July.</p>
+                <p className="DOBWrongMonth">Examples include <span style={{fontWeight:'bold'}}>May</span>,<span style={{fontWeight:'bold'}}>October</span>, and <span style={{fontWeight:'bold'}}>July</span>.</p>
             </div>}
     </div>
 }

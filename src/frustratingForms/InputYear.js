@@ -1,10 +1,13 @@
 import React,{useState} from 'react'
+import Button from 'react-bootstrap/Button'
 
 const InputYear=(props)=>{
     const {setYear}=props;
-    const [yearShown,setYearShown]=useState(1990);
+    const [yearShown,setYearShown]=useState(0);
     const [hasEnterSpawn,setHasEnterSpawn]=useState(false);
     var intCodes=[0,1,2,3,4,5,6,7,8,9];
+    var btnKeyCounter=-1;
+    var variants=['success','success','danger','danger','warning','warning','outline-danger','warning','primary','primary'];
 
     const flee=()=>{
                 
@@ -79,11 +82,19 @@ const InputYear=(props)=>{
     }
 
     const clickedJitteryEnter=(e)=>{
-        e.target.classList.add('hitEnter');
-        e.target.style.opacity='0';
 
-        const k=e.target.getAttribute('key');
-        clearInterval(intCodes[k]);
+        var key=-1;
+        if (e.target.tagName=="BUTTON"){
+            const parentDiv=e.target.parentElement;
+            parentDiv.classList.add('hitEnter');
+            parentDiv.style.opacity='0';
+            key=parentDiv.getAttribute('id');
+        }else{
+            e.target.classList.add('hitEnter');
+            e.target.style.opacity='0';
+            key=e.target.getAttribute('id');
+        }
+        clearInterval(intCodes[key]);
 
         if (document.getElementsByClassName('hitEnter').length===10){
             document.getElementById('yearRangeSubmitBtn').style.opacity='0';
@@ -100,20 +111,13 @@ const InputYear=(props)=>{
             return;
         }
 
+
         //hides og button, fixes input bar
         document.getElementById('yearRangeSubmitBtn').classList.add('hidden');
         document.getElementById('yearRange').disabled=true;
-
-        const colors=["#4500ff","#ffc107","#1ff327","#009688","#9c27b0"];
-        //creates button elements
-        for (var i=0;i<10;i++){
-            const btn=document.createElement('button');
-            btn.classList.add('yearEnterBtn');
-            btn.textContent="ENTER";
-            btn.style.backgroundColor=colors[Math.floor(i/2)];
-            btn.setAttribute('key',i);
-            btn.addEventListener('click',(e)=>{clickedJitteryEnter(e)});
-            document.getElementById('yearMainCard').append(btn);
+        const btns=document.getElementsByClassName('yearEnterBtn');
+        for (var i=0;i<btns.length;i++){
+            btns[i].classList.remove('hidden');
         }
 
         //assigns intervals for each button
@@ -131,12 +135,24 @@ const InputYear=(props)=>{
 
         setHasEnterSpawn(true);
     }
+    const changeOnRange=()=>{
+        setYearShown(document.getElementById('yearRange').value);
+        document.getElementById('yearRangeSubmitBtn').classList.remove('hidden');
+        document.getElementById('yearRangeSubmitBtn').style.opacity='1';
+    }
 
     return <div id="yearMainCard">
-        <input type="range" id="yearRange" name="yearRange" min="1900" max="2020" 
-        onChange={()=>{setYearShown(document.getElementById('yearRange').value); document.getElementById('yearRangeSubmitBtn').style.opacity='1';}} />
+        <input type="range" id="yearRange" name="yearRange" min="0" max="2020" 
+        onChange={changeOnRange} />
         <div id='rangeValDisplay'>{yearShown}</div>
-        <button id='yearRangeSubmitBtn' onMouseOver={intervalMotion} onClick={win}>Enter</button>
+
+        { variants.map((variant)=>{
+            btnKeyCounter++;
+            return <div id={btnKeyCounter} className='yearEnterBtn hidden' key={btnKeyCounter} onClick={(e)=>{clickedJitteryEnter(e)}}>
+                    < Button variant={variant}>SUBMIT</Button>
+                </div>
+        })}
+        <Button variant='primary' id='yearRangeSubmitBtn' className='hidden' onMouseOver={intervalMotion} onClick={win}>SUBMIT</Button>
     </div>
 }
 

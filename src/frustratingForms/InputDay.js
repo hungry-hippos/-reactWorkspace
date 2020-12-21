@@ -50,9 +50,9 @@ const InputDay=(props)=>{
         <p className='DOBSubmissions avgDayDisplay hidden'>Your average day-of-birth submission is: <span style={{fontWeight:'bold',margin:'0'}} id='DOBDecimalAvg'>23.23</span></p>
         <div className='DOBSubmissions DOBConfirmDay hidden'>
             Please confirm.
-            <button className='DOBYesBtn' onClick={submitDay}>YES</button>
-            <button className='DOBYesBtn' onClick={submitDay}>AGREE</button>
-            <button className='DOBYesBtn' onClick={submitDay}>CONFIRM</button>
+            <Button variant='primary' className='DOBYesBtn' onClick={submitDay}>YES</Button>
+            <Button variant='primary' className='DOBYesBtn' onClick={submitDay}>AGREE</Button>
+            <Button variant='primary' className='DOBYesBtn' onClick={submitDay} style={{marginTop:"7px"}}>CONFIRM</Button>
         </div>
     </div>
     </React.Fragment>
