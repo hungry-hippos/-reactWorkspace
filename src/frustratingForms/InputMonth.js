@@ -28,8 +28,6 @@ const InputMonth=(props)=>{
     const [wrongMonth,setWrongMonth]=useState();
     const {setMonth}=props;
 
-    //add feature: letter is added in a random position
-    //add feature: remove letter... removes a random letter
     const addLetter=()=>{
         if (letterMenus.length < 9){
             const update=letterMenus.concat([1]);

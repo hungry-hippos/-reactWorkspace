@@ -77,7 +77,7 @@ const ContactInfo=()=>{
     }
 
     const unveilBottom=()=>{
-        document.getElementById('contactInfoMain').style.height="450px";
+        document.getElementById('contactInfoMain').style.height="420px";
         setTimeout(()=>{document.getElementById('confirmationBottom').style.opacity="1";
         document.getElementById('contactThisIsIt').style.display='none';
             },1000)
@@ -108,9 +108,10 @@ const ContactInfo=()=>{
                 <div id='SMStext'>Please verify your phone number. Enter the 4 digit SMS verification code you received.</div>
                 <div id='disclaimer'>* Standard rates and fees may apply</div>
             </div>
-            <input type='text' id='SMScode'></input>
+            
 
             <div id='confirmationBtns'>
+                <input type='text' id='SMScode'></input>
                 <Button id='confirmationSubmit'>SUBMIT</Button>
                 <Button variant='outline-dark' id='confirmationSkip'>SKIP THIS STEP</Button>
             </div>

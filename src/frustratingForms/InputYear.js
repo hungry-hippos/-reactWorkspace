@@ -5,7 +5,7 @@ const InputYear=(props)=>{
     const {setYear}=props;
     const [yearShown,setYearShown]=useState(0);
     const [hasEnterSpawn,setHasEnterSpawn]=useState(false);
-    var intCodes=[0,1,2,3,4,5,6,7,8,9];
+    const [intCodes,setIntCodes]=useState([0,0,0,0,0,0,0,0,0,0]);
     var btnKeyCounter=-1;
     var variants=['success','success','danger','danger','warning','warning','outline-danger','warning','primary','primary'];
 
@@ -88,10 +88,12 @@ const InputYear=(props)=>{
             const parentDiv=e.target.parentElement;
             parentDiv.classList.add('hitEnter');
             parentDiv.style.opacity='0';
+            parentDiv.style.zIndex='20';
             key=parentDiv.getAttribute('id');
         }else{
             e.target.classList.add('hitEnter');
             e.target.style.opacity='0';
+            e.target.style.zIndex='20';
             key=e.target.getAttribute('id');
         }
         clearInterval(intCodes[key]);
@@ -102,6 +104,16 @@ const InputYear=(props)=>{
             document.getElementById('yearRangeSubmitBtn').style.opacity='1';
             document.getElementById('yearRangeSubmitBtn').addEventListener('mouseenter',flee);
             document.getElementById('yearRangeSubmitBtn').addEventListener('click',win);
+            
+            for (var i=0;i<intCodes.length;i++){
+                clearInterval(intCodes[i]);
+            }
+
+            const btns=document.getElementsByClassName('yearEnterBtn');
+            for (var i=0;i<btns.length;i++){
+                btns[i].classList.add('hidden');
+            }
+
         }
     }
 
@@ -121,17 +133,18 @@ const InputYear=(props)=>{
         }
 
         //assigns intervals for each button
-        intCodes[0]=setInterval(()=>{randMotion(0)},Math.random()*300+50)
-        intCodes[1]=setInterval(()=>{randMotion(1)},Math.random()*300+50)
-        intCodes[2]=setInterval(()=>{randMotion(2)},Math.random()*300+50)
-        intCodes[3]=setInterval(()=>{randMotion(3)},Math.random()*300+50)
-        intCodes[4]=setInterval(()=>{randMotion(4)},Math.random()*300+50)
-        intCodes[5]=setInterval(()=>{randMotion(5)},Math.random()*300+50)
-        intCodes[6]=setInterval(()=>{randMotion(6)},Math.random()*300+50)
-        intCodes[7]=setInterval(()=>{randMotion(7)},Math.random()*300+50)
-        intCodes[8]=setInterval(()=>{randMotion(8)},Math.random()*300+50)
-        intCodes[9]=setInterval(()=>{randMotion(9)},Math.random()*300+50)
-        
+        var codesArr=[0,0,0,0,0,0,0,0,0,0];
+        codesArr[0]=setInterval(()=>{randMotion(0)},Math.random()*300+50);
+        codesArr[1]=setInterval(()=>{randMotion(1)},Math.random()*300+50);
+        codesArr[2]=setInterval(()=>{randMotion(2)},Math.random()*300+50);
+        codesArr[3]=setInterval(()=>{randMotion(3)},Math.random()*300+50);
+        codesArr[4]=setInterval(()=>{randMotion(4)},Math.random()*300+50);
+        codesArr[5]=setInterval(()=>{randMotion(5)},Math.random()*300+50);
+        codesArr[6]=setInterval(()=>{randMotion(6)},Math.random()*300+50);
+        codesArr[7]=setInterval(()=>{randMotion(7)},Math.random()*300+50);
+        codesArr[8]=setInterval(()=>{randMotion(8)},Math.random()*300+50);
+        codesArr[9]=setInterval(()=>{randMotion(9)},Math.random()*300+50);
+        setIntCodes(codesArr);
 
         setHasEnterSpawn(true);
     }

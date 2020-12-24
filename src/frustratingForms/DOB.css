@@ -57,6 +57,7 @@ position:relative;
     bottom:10px;
     font-family: 'Montserrat';
     background-color: #4787ff !important;
+    z-index:100;
 }
 #DOBEnterBtn:hover{background-color: #007bff !important;}
 
@@ -64,7 +65,7 @@ position:relative;
     position: absolute;
     top: -110px;
     bottom: 0;
-    background: #ff2140;
+    background: rgb(239 60 28);
     left: 0px;
     right: 0px;
     padding: 10px 20px;

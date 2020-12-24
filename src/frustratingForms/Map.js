@@ -1,5 +1,5 @@
 import React,{useState,useEffect} from 'react'
-import { GoogleMap, Marker,useLoadScript,infoWindow } from "@react-google-maps/api"
+import { GoogleMap, Marker,useLoadScript } from "@react-google-maps/api"
 
 
 const libraries=['places'];
@@ -52,6 +52,9 @@ export default function App(){
                     lat:e.latLng.lat(),
                     lng:e.latLng.lng()
                 });
+                const btn=document.getElementById('mapSubmitBtn');
+                btn.classList.remove('hidden');
+                btn.style.opacity="1";
             }}
             >
         { marker===0 || <Marker position={{lat:marker.lat, lng:marker.lng}} />}
