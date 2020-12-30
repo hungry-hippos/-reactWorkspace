@@ -25,6 +25,16 @@ const MinigamesForm=()=>{
 
     useEffect(()=>{
         appendScript();
+        window.addEventListener("keydown", function(e) {
+            switch(e.key){
+                case "ArrowLeft":case "ArrowUp": case "ArrowRight": case "ArrowDown":
+                    e.preventDefault();
+                    break;
+                default:
+                    break; 
+            }
+        });
+        
     },[])
 
 

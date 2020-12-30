@@ -11,18 +11,18 @@ const Header=(props)=>{
     var [showMonth,showDay,showYear]=props.isComponentActive;
 
     useEffect(()=>{
-        document.getElementById('headerMonth').style.fontWeight='normal';
-        document.getElementById('headerDay').style.fontWeight='normal';
-        document.getElementById('headerYear').style.fontWeight='normal';
+        document.getElementById('headerMonth').classList.remove('currentComponent');
+        document.getElementById('headerDay').classList.remove('currentComponent');
+        document.getElementById('headerYear').classList.remove('currentComponent');
 
         if (showMonth){
-            document.getElementById('headerMonth').style.fontWeight='bold';
+            document.getElementById('headerMonth').classList.add('currentComponent');
         }
         if (showDay){
-            document.getElementById('headerDay').style.fontWeight='bold';
+            document.getElementById('headerDay').classList.add('currentComponent');
         }
         if (showYear){
-            document.getElementById('headerYear').style.fontWeight='bold';
+            document.getElementById('headerYear').classList.add('currentComponent');
         }
     },[showMonth,showDay,showYear])
 
@@ -84,8 +84,8 @@ const DOB=()=>{
     var [day,setDay]=useState('DD');
     var [year,setYear]=useState('YYYY');
 
-    const [showMonth,setShowMonth]=useState(false);
-    const [showDay,setShowDay]=useState(true);
+    const [showMonth,setShowMonth]=useState(true);
+    const [showDay,setShowDay]=useState(false);
     const [showYear,setShowYear]=useState(false);
     const setters={setShowMonth,setShowDay,setShowYear};
 

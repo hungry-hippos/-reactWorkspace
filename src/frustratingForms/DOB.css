@@ -1,5 +1,9 @@
 /*---------------------------------------------------INPUT MONTH SECTION------------------------------------ */
 
+.currentComponent{font-style:italic;
+text-decoration: underline;
+}
+
 #DOBMainSection{width:400px;
 background-color: white;
 box-shadow: 0 0 5px black;
@@ -47,8 +51,12 @@ position:relative;
     bottom:10px;
     font-family: 'Montserrat';
     box-shadow: 0 0 3px #313131;
+    background-color: #6cff47 !important;
+    color:black !important;
+    font-weight:bold !important;
 }
 .DOBAddLetterBtn:focus{box-shadow: 0 0 3px #313131 !important;}
+.DOBAddLetterBtn:hover{background-color: #55ca38 !important;}
 
 #DOBEnterBtn{padding: 5px;
     box-shadow: 0 0 5px #676666;
@@ -56,7 +64,7 @@ position:relative;
     right:10px;
     bottom:10px;
     font-family: 'Montserrat';
-    background-color: #4787ff !important;
+    background-color: #478eff !important;
     z-index:100;
 }
 #DOBEnterBtn:hover{background-color: #007bff !important;}
@@ -98,7 +106,7 @@ width:100%;
 height:165px;
 box-sizing: border-box;
 margin:10px auto 0 auto;
-background-color: #8091f3;
+background-color: rgb(241, 126, 105);
 display:block;
 box-shadow: 0 0 5px black;
 padding:20px 0 10px 0;
@@ -127,23 +135,22 @@ font-size:15px;
 display:block;
 margin:20px auto 0 auto;
 font-family: 'Montserrat';
+border:none !important;
 }
 .DOBStart:hover{font-weight: bold;
 background: #90e75d !important;
 color: #212529;
-border-color: #dae0e5;
-box-shadow: 0 0 0 0.2rem #199608 !important;
+box-shadow: 0 0 0 0.2rem #90e75d  !important;
 border: none !important;
 }
 .DOBStop:hover{font-weight: bold;
-background: #f78b83 !important;
+background: #ff0000 !important;
 color: #212529;
-border-color: #dae0e5;
-box-shadow: 0 0 0 0.2rem #f94c45 !important;
+box-shadow: 0 0 0 0.2rem #ff0000 !important;
 border: none !important;
 }
 .DOBDone{font-weight: bold;
-background: #172ce7 !important;
+background: black !important;
 color: white !important;
 box-shadow: 0 0 0 0.2rem #0d0630 !important;
 border: none !important;
