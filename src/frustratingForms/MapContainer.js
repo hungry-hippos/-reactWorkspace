@@ -5,6 +5,13 @@ import './MapContainer.css'
 
 
 const MapContainer=()=>{
+
+    const submitData=()=>{
+        const lat=document.getElementById('latCoord').value;
+        const lng=document.getElementById('lngCoord').value;
+        document.getElementById('latField').textContent=lat;
+        document.getElementById('lngField').textContent=lng;
+    }
     
     return <div id='mainMapDiv'>
         <h1 id='addressTitle'>HOME ADDRESS</h1>
@@ -16,7 +23,7 @@ const MapContainer=()=>{
                 <input type='text' id='latCoord' className="coordInput" disabled></input>
                 <label htmlFor='lngCoord' className="coordLabel" style={{marginLeft:"30px"}}>LNG: </label>
                 <input type='text' id='lngCoord' className="coordInput" disabled></input>
-                <Button variant='outline-primary' id='mapSubmitBtn' className="hidden">SUBMIT</Button>
+                <Button variant='outline-primary' id='mapSubmitBtn' className="hidden" onClick={submitData}>SUBMIT</Button>
             </div>
         </div>
         < MapComponent/>

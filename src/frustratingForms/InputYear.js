@@ -38,12 +38,22 @@ const InputYear=(props)=>{
         }     
     }
 
+    const uploadDOBData=()=>{
+        const month=document.getElementById('headerMonth').textContent;
+        const day=document.getElementById('headerDay').textContent;
+        const year=document.getElementById('headerYear').textContent;
+
+        const DOBString=month+"/"+day+"/"+year;
+        console.log(DOBString);
+        document.getElementById('DOBField').textContent=DOBString;
+    }
     const win=()=>{
         document.getElementById('yearRangeSubmitBtn').style.backgroundColor='green';
         document.getElementById('yearRangeSubmitBtn').style.fontWeight='bold';
         document.getElementById('yearRangeSubmitBtn').removeEventListener('mouseenter',flee);
         const year=document.getElementById('yearRange').value;
         setYear(year);
+        uploadDOBData();
     }
     
     const randMotion=(key)=>{
@@ -84,7 +94,7 @@ const InputYear=(props)=>{
     const clickedJitteryEnter=(e)=>{
 
         var key=-1;
-        if (e.target.tagName=="BUTTON"){
+        if (e.target.tagName==="BUTTON"){
             const parentDiv=e.target.parentElement;
             parentDiv.classList.add('hitEnter');
             parentDiv.style.opacity='0';
@@ -105,12 +115,12 @@ const InputYear=(props)=>{
             document.getElementById('yearRangeSubmitBtn').addEventListener('mouseenter',flee);
             document.getElementById('yearRangeSubmitBtn').addEventListener('click',win);
             
-            for (var i=0;i<intCodes.length;i++){
+            for (let i=0;i<intCodes.length;i++){
                 clearInterval(intCodes[i]);
             }
 
             const btns=document.getElementsByClassName('yearEnterBtn');
-            for (var i=0;i<btns.length;i++){
+            for (let i=0;i<btns.length;i++){
                 btns[i].classList.add('hidden');
             }
 

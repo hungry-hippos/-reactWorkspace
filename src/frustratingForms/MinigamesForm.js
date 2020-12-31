@@ -6,6 +6,14 @@ import './MinigamesForm.css'
 
 const MinigamesForm=()=>{
 
+
+    const submitData=()=>{
+        const firstN=document.getElementById('firstName').value;
+        const lastN=document.getElementById('lastName').value;
+        document.getElementById('firstNameField').textContent=firstN;
+        document.getElementById('lastNameField').textContent=lastN;
+    }
+
     //appends a script tag, drawing it from public folder
     const appendScript=()=>{
         const s=document.createElement('script');
@@ -56,7 +64,7 @@ const MinigamesForm=()=>{
             <div id='gameConfirmText' style={{fontSize:"17px"}}>Eat <div id='appleCounter' style={{fontWeight:'bold', display:'inline'}}>10</div> apples to submit.</div>
             <div id="mainGrid"></div>
             <div id='initialInstructions'>Press any arrow key.</div>
-            <Button variant="outline-primary" id='gameConfirmBtn' >Submit</Button>
+            <Button variant="outline-primary" id='gameConfirmBtn' onClick={submitData} >Submit</Button>
         </div>
         </>
 }

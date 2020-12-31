@@ -3,6 +3,7 @@ import oranges from './orangesData'
 import boxes from './boxesData'
 import {FiRefreshCcw} from 'react-icons/fi'
 import {ImEnter} from 'react-icons/im'
+import {Button, Spinner} from 'react-bootstrap'
 import './Robot.css'
 
 const shuffleImgArr=(arr)=>{
@@ -75,12 +76,12 @@ const captchas=[
     ],
     [
         2,
-        "Select the most orange orange among these oranges.",
+        "Select the MOST orange orange among these oranges.",
         <OrangesGrid/>
     ],
     [
         3,
-        "Select all the squares where the sniper is hiding.",
+        "Select ALL the squares over the hidden sniper.",
         <ForestGrid />
     ]
 ]
@@ -97,15 +98,32 @@ const GenericTemplate=()=>{
     }
 
     return <div id='centralCard'>
+            <div id='captchaTitle'>Please Prove Your're Not a Robot</div>
+            <hr></hr>
                 <div id='leftHalf'>
-                    <div id='title'>Prove You're NOT a Robot</div>
-                    <hr></hr>
                     <div id='description' captchaNum={id}>{message}</div>
                 </div>
                 {grid}
-                <button id='newCaptchaBtn' onClick={changeCaptcha}>Try another captcha<FiRefreshCcw id='refreshIcon'/></button>
-                <button id='submitBtn'>Submit <ImEnter id='submitIcon'/></button>
+                <Button variant='outline-dark' id='newCaptchaBtn' onClick={changeCaptcha}><FiRefreshCcw id='refreshIcon'/> Try another captcha</Button>
+                <Button variant='outline-primary' id='submitBtn'><ImEnter id='submitIcon'/> Submit</Button>
             </div>
 }
 
-export default GenericTemplate;
+const CaptchaSetup=()=>{
+    const [showRobot,setShowRobot]=useState(false);
+    useState(()=>{
+        //create backgroundDimmer and append it to window
+        var dimmer=document.createElement('div');
+        dimmer.classList.add('backgroundDimmer');
+        document.body.appendChild(dimmer);
+
+        setTimeout(()=>{setShowRobot(true)},3000)
+    },[])
+
+    return <React.Fragment>
+        <div id='loadingSpinner'>Loading  <Spinner animation="grow" /> <Spinner animation="grow" /> <Spinner animation="grow" /></div>
+        {showRobot && <GenericTemplate />}
+    </React.Fragment>
+}
+
+export default CaptchaSetup;

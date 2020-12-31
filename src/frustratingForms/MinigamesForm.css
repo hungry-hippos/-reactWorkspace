@@ -93,4 +93,6 @@ top: 100px;
 #minigameTitle{font-size: 25px;
     text-align: center;
     margin: 5px;}
-#minigameHr{margin:10px auto 20px auto}
+#minigameHr{margin:10px auto 20px auto;
+border-color: #a0a0a0;
+}

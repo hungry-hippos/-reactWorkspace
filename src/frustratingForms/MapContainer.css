@@ -14,7 +14,9 @@ padding: 20px;
 text-align: center;
 margin:0;
 }
-#addressHr{margin:0 auto}
+#addressHr{margin:0 auto;
+border-color:#a0a0a0;
+}
 #addressTextDiv{padding:20px;}
 
 .coordLabel{width:60px;

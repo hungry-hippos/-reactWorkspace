@@ -1,31 +1,31 @@
-body{background:red}
 
-#centralCard{height:350px;
-width:600px;
+#centralCard{height:410px;
+width:620px;
 box-shadow: 0 0 5px black;
-display: block;
-margin:5% auto;
-background-color: whitesmoke;
-position:relative;
+position:absolute;
+top: 80px;
+left: 40px;
 padding:25px 25px 25px 25px;
+font-family: 'Montserrat';
+background-color: white;
+z-index:5;
 }
 
 #leftHalf{width:230px;
 display: inline-block;
 }
 
-#title{width:230px;
-font-size:15px;
+#captchaTitle{font-size:20px;
 font-weight: bold;
-letter-spacing: 1px;
 text-align: center;
 }
 
-hr{margin:20px auto;
+hr{margin:0px auto;
+border:#a0a0a0;
 width:80%}
 
-#description{font-size:15px;
-margin-top:30px;
+#description{font-size:18px;
+margin-top:80px;
 }
 
 #grid{width:300px;
@@ -79,48 +79,51 @@ border:2px solid black;
 }
 .clickedOrangeImg{border:3px solid blue !important}
 
-#newCaptchaBtn{    background-color: black;
-    color: white;
-    font-size: 12px;
-    padding: 5px 10px;
-    border-radius: 9px;
+#newCaptchaBtn{font-size: 13px;
+    line-height: 1.2;
     margin: 10px 0px;
-    cursor: pointer;
     position: absolute;
     bottom: 50px;
     left: 25px;
-    height:30px;
-    width:150px;
-    box-sizing: border-box;
-    border: 1px solid black;
+    height: 30px;
+    width: 210px;
+    letter-spacing: .6px;
+    font-weight: bold;
 }
-#newCaptchaBtn:hover{font-weight: bold;
-height:32px;
-width:152px;}
-#newCaptchaBtn:focus{outline:0}
 #refreshIcon{position: relative;
-    top: 2px;
-    left: 5px;}
+    top: -2px;}
 
-#submitBtn{background-color: #5151d2;
-    border: 1px solid #2a3ca5;
-    color: white;
-    font-size: 12px;
-    padding: 5px 10px;
-    border-radius: 8px;
+#submitBtn{
+    font-size: 13px;
     margin: 10px 0px;
-    cursor: pointer;
     position: absolute;
     bottom: 10px;
     left: 25px;
+    letter-spacing: .6px;
     height: 30px;
-    width: 80px;
+    width: 100px;
     box-sizing: border-box;
+    font-weight: bold;
 }
-#submitBtn:hover{font-weight:bold;
-height:32px;
-width:82px}
 #submitIcon{position: relative;
-    top: 2px;
-    left: 2px;}
-#submitBtn:focus{outline:0};
+    top: -2px;}
+#submitBtn:focus{outline:0}
+
+.backgroundDimmer{background-color:#00000096;
+box-sizing: border-box;
+position:absolute;
+top:0;
+bottom:0;
+left:0;
+right:0;
+z-index:1;
+}
+
+#loadingSpinner{position:absolute;
+top:200px;
+left:250px;
+font-size:25px;
+font-family: 'Montserrat';
+z-index:2;
+color:white;
+}

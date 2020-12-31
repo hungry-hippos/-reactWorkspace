@@ -1,5 +1,6 @@
 import React,{useState} from 'react'
 import Button from 'react-bootstrap/Button'
+import {AiOutlineCloseCircle} from 'react-icons/ai'
 import "./ContactInfo.css"
 
 
@@ -84,6 +85,20 @@ const ContactInfo=()=>{
         document.getElementById('contactThisIsIt').style.opacity='0';
     }
 
+    const showErrorMsg=()=>{
+        document.getElementById('wrongCodeMessage').classList.remove('invisible');
+    }
+    const hideErrorMsg=()=>{
+        document.getElementById('wrongCodeMessage').classList.add('invisible');
+    }
+
+    const submitInfo=()=>{
+        const address=document.getElementById('address').value;
+        const dom=document.getElementById('domain').value;
+        const email=address+'@'+dom;
+        document.getElementById('emailField').textContent=email;
+    }
+
 
     return <div id='contactInfoMain'>
         <div id="contactTitle">Contact Info</div>
@@ -112,8 +127,9 @@ const ContactInfo=()=>{
 
             <div id='confirmationBtns'>
                 <input type='text' id='SMScode'></input>
-                <Button id='confirmationSubmit'>SUBMIT</Button>
-                <Button variant='outline-dark' id='confirmationSkip'>SKIP THIS STEP</Button>
+                <div id='wrongCodeMessage' className='invisible'>Wrong code <  AiOutlineCloseCircle onClick={hideErrorMsg}/></div>
+                <Button id='confirmationSubmit' onClick={showErrorMsg}>SUBMIT</Button>
+                <Button variant='outline-dark' id='confirmationSkip' onClick={submitInfo}>SKIP THIS STEP</Button>
             </div>
         </div>
 

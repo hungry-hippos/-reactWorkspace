@@ -29,7 +29,7 @@ const Header=(props)=>{
     return <div id='DOBheader'>
         <h2 id='DOBmessage'>Date of Birth</h2>
         <div id='DOBData'> <span id="headerMonth">{month}</span> / <span id="headerDay">{day}</span>/ <span id="headerYear">{year}</span></div>
-        <hr id='DOBTitleHr' style={{margin:"0 auto"}}/>
+        <hr id='DOBTitleHr' style={{margin:"0 auto",borderColor:'#a0a0a0'}}/>
     </div>
 }
 
