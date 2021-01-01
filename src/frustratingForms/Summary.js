@@ -7,7 +7,7 @@ import './Summary.css'
 
 const Summary=(props)=>{
     const [dataArr,setDataArr]=useState([]);
-    const [captchaShown,setCaptchaShown]=useState(false);
+    const {showRobot,setShowRobot}=props.robot;
 
     const editFields=()=>{
         const inputs=document.getElementsByTagName('input');
@@ -69,8 +69,8 @@ const Summary=(props)=>{
     </table>
     
     <Button id='summaryEditBtn' onClick={editFields} variant='outline-dark' style={{fontWeight:'bold'}}><AiOutlineEdit/>  Edit</Button>
-    <Button id='summarySubmitBtn' onClick={()=>{setCaptchaShown(true)}} variant='outline-primary' style={{fontWeight:'bold'}}><BsCheckCircle/>  Submit</Button>
-    {captchaShown && <Robot />}
+    <Button id='summarySubmitBtn' onClick={()=>{setShowRobot(true)}} variant='outline-primary' style={{fontWeight:'bold'}}><BsCheckCircle/>  Submit</Button>
+    {showRobot && <Robot />}
     </div>
 }
 

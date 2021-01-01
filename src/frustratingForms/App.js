@@ -1,17 +1,17 @@
 import React,{useState} from 'react'
-import Robot from './Robot.js'
 import DOB from './DOB'
 import Minigame from './MinigamesForm'
 import MapContainer from './MapContainer'
 import ContactInfo from './ContactInfo'
 import Summary from './Summary'
+import Home from './Home'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css'
 
 
 
 const SideBar=(props)=>{
-  const {setShowRobot,setShowDOB,setShowMinigame,setShowMap,setShowContactInfo,setShowSummary}=props.setters;
+  const {setShowRobot,setShowDOB,setShowMinigame,setShowMap,setShowContactInfo,setShowSummary,setShowHome}=props.setters;
 
   const show=(component)=>{
     setShowRobot(false);
@@ -20,9 +20,11 @@ const SideBar=(props)=>{
     setShowMap(false);
     setShowContactInfo(false);
     setShowSummary(false);
+    setShowHome(false);
     switch(component){
       case "robot":
         setShowRobot(true);
+        setShowSummary(true);
         break;
       case "dob":
         setShowDOB(true);
@@ -39,6 +41,9 @@ const SideBar=(props)=>{
       case 'summary':
         setShowSummary(true);
         break;
+      case 'home':
+        setShowHome(true);
+        break;
       default:
         break;
     }
@@ -50,7 +55,7 @@ const SideBar=(props)=>{
     <button onClick={()=>{show('map')}} className='mainPageBtn'>Map</button>
     <button onClick={()=>{show('contact')}} className='mainPageBtn'>Contact</button>
     <button onClick={()=>{show('summary')}} className='mainPageBtn'>Summary</button>
-
+    <button onClick={()=>{show('home')}} className='mainPageBtn' id='homeSideBar'>Home</button>
   </div>
 
 };
@@ -100,19 +105,20 @@ function App() {
   const [showMinigame,setShowMinigame]=useState(false);
   const [showMap,setShowMap]=useState(false);
   const [showContactInfo,setShowContactInfo]=useState(false);
-  const [showSummary,setShowSummary]=useState(true);
+  const [showHome,setShowHome]=useState(true);
+  const [showSummary,setShowSummary]=useState(false);
 
-  const setters={setShowRobot,setShowDOB,setShowMinigame,setShowMap,setShowContactInfo, setShowSummary};
+  const setters={setShowRobot,setShowDOB,setShowMinigame,setShowMap,setShowContactInfo, setShowSummary,setShowHome};
   
   return <React.Fragment>
         <SideBar setters={setters} />
         <CollectedData />
+        {showHome && <Home/>}
         {showMinigame && <Minigame />}
         {showDOB && <DOB />}
         {showMap && <MapContainer />}
         {showContactInfo && <ContactInfo />}
-        {showSummary && <Summary />}
-        {showRobot && <Robot />}
+        {showSummary && <Summary robot={{setShowRobot,showRobot}} />}
   </React.Fragment>
   
   
