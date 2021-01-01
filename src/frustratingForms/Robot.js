@@ -99,7 +99,7 @@ const GenericTemplate=()=>{
 
     return <div id='centralCard'>
             <div id='captchaTitle'>Please Prove Your're Not a Robot</div>
-            <hr></hr>
+            <hr style={{borderColor:'#a0a0a0'}}></hr>
                 <div id='leftHalf'>
                     <div id='description' captchaNum={id}>{message}</div>
                 </div>

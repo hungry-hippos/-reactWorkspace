@@ -120,7 +120,7 @@ const ContactInfo=()=>{
 
         <div id='confirmationBottom'>
             <div id='SMSverification'>
-                <div id='SMStext'>Please verify your phone number. Enter the 4 digit SMS verification code you received.</div>
+                <div id='SMStext'>Please verify your phone number. Enter the 4 digit SMS verification code you have received.</div>
                 <div id='disclaimer'>* Standard rates and fees may apply</div>
             </div>
             

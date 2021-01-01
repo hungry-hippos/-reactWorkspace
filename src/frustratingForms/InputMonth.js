@@ -66,7 +66,7 @@ const InputMonth=(props)=>{
             i++;
             return <DropDownAlphabet key={i}/>
         })}
-        <Button variant="secondary" onClick={addLetter} className='DOBAddLetterBtn'>Add a letter</Button>
+        <Button variant="outline-dark" onClick={addLetter} className='DOBAddLetterBtn'>Add a letter</Button>
         {letterMenus.length >2 && <Button variant='primary' onClick={enterMonth} id='DOBEnterBtn'>Submit</Button>}
         {wrongMonth && <div id='DOBInvalidMonthError'>
                 <p className="DOBWrongMonth" style={{fontWeight:'bold',fontSize:"20px"}}>ERROR!</p>

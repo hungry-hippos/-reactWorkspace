@@ -24,7 +24,7 @@ const InputDay=(props)=>{
             </div>
             <div id="DOBInputDayNumber">0</div>
         </div>
-        <Button variant="light" id="DOBDayStartBtn" className='DOBStart' onClick={runTimer.toggle}>START</Button>
+        <Button variant="outline-dark" id="DOBDayStartBtn" className='DOBStart' onClick={runTimer.toggle}>START</Button>
     </div>
     <div id="DOBAnswersDisplay">
         <p className='DOBSubmissions'>Your submissions:</p>
