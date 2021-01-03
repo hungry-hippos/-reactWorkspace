@@ -111,7 +111,7 @@ border:2px solid black;
 
 .backgroundDimmer{background-color:#00000096;
 box-sizing: border-box;
-position:absolute;
+position:fixed;
 top:0;
 bottom:0;
 left:0;

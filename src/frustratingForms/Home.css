@@ -1,7 +1,32 @@
-#homeMainDiv{width:600px;
-height:400px;
+#homeMainDiv{width:1000px;
+height:500px;
 box-sizing: border-box;
 display: block;
-margin:200px auto;
+margin:20px auto;
 background-color: white;
+font-family: 'Montserrat';
+padding-top:20px;
+}
+
+#logo{font-size:50px;
+color:#3838ef;
+text-align: center;
+font-weight: bold;
+margin-bottom: 20px;
+letter-spacing: 5px;
+}
+#homeNavbar{background-color: black;
+width:18%;
+float:left;
+height:332px;
+box-sizing: border-box;
+}
+.navbarBtn{width:100%;
+margin:0;
+margin-top:10px;
+text-align: left !important;
+}
+#welcomeIntro{width:79%;
+display: inline-block;
+padding:10px;
 }

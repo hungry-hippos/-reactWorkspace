@@ -39,31 +39,31 @@ const Summary=(props)=>{
     <tbody>
       <tr>
         <td>First Name</td>
-        <td> <input type='text' value={dataArr[0]} disabled/></td>
+        <td> <input type='text' defaultValue={dataArr[0]} disabled/></td>
       </tr>
       <tr>
         <td>Last Name</td>
-        <td> <input type='text' value={dataArr[1]} disabled/></td>
+        <td> <input type='text' defaultValue={dataArr[1]} disabled/></td>
       </tr>
       <tr>
         <td>Date of Birth</td>
-        <td><input type='text' value={dataArr[2]} disabled/></td>
+        <td><input type='text' defaultValue={dataArr[2]} disabled/></td>
       </tr>
       <tr>
         <td>Address Lng</td>
-        <td><input type='text' value={dataArr[3]} disabled/></td>
+        <td><input type='text' defaultValue={dataArr[3]} disabled/></td>
       </tr>
       <tr>
         <td>Address Lat</td>
-        <td><input type='text' value={dataArr[4]} disabled/></td>
+        <td><input type='text' defaultValue={dataArr[4]} disabled/></td>
       </tr>
       <tr>
         <td>Email</td>
-        <td><input type='text' value={dataArr[5]} disabled/></td>
+        <td><input type='text' defaultValue={dataArr[5]} disabled/></td>
       </tr>
       <tr>
         <td>Phone</td>
-        <td><input type='text' value={dataArr[6]} disabled/></td>
+        <td><input type='text' defaultValue={dataArr[6]} disabled/></td>
       </tr>
     </tbody>
     </table>

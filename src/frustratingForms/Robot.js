@@ -1,7 +1,6 @@
 import React,{useEffect,useState} from 'react'
 import oranges from './orangesData'
 import boxes from './boxesData'
-import {FiRefreshCcw} from 'react-icons/fi'
 import {ImEnter} from 'react-icons/im'
 import {Button, Spinner} from 'react-bootstrap'
 import {VscChromeClose} from 'react-icons/vsc'
@@ -151,7 +150,6 @@ const GenericTemplate=(props)=>{
                     <div id='description' key={id}>{message}</div>
                 </div>
                 {grid}
-                <Button variant='outline-dark' id='newCaptchaBtn' onClick={changeCaptcha}><FiRefreshCcw id='refreshIcon'/> Try another captcha</Button>
                 <Button variant='outline-primary' id='submitBtn' onClick={deleteCaptcha}><ImEnter id='submitIcon'/> Submit</Button>
             </div>
 }
