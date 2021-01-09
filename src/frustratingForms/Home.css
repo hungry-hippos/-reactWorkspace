@@ -1,32 +1,54 @@
 #homeMainDiv{width:1000px;
-height:500px;
+height:1000px;
 box-sizing: border-box;
 display: block;
 margin:20px auto;
 background-color: white;
 font-family: 'Montserrat';
-padding-top:20px;
 }
 
-#logo{font-size:50px;
-color:#3838ef;
+
+#logo{font-size:120px;
+color:#5580c1;
+text-shadow: 3px 3px 0 white;
 text-align: center;
 font-weight: bold;
-margin-bottom: 20px;
-letter-spacing: 5px;
-}
-#homeNavbar{background-color: black;
-width:18%;
-float:left;
-height:332px;
-box-sizing: border-box;
-}
-.navbarBtn{width:100%;
+padding: 130px 0 140px 0;
+letter-spacing: 7px;
+background-image: url('/pictures/home/phones.jpg') ;
+background-size:120% 200%;
+background-position: -100px -220px;
 margin:0;
-margin-top:10px;
-text-align: left !important;
 }
-#welcomeIntro{width:79%;
-display: inline-block;
-padding:10px;
+
+#homeNavbar{background-color: lightgray;
+width:100%;
+position:sticky;
+top:0;
+margin:0;
+padding-left:30px;
+border-bottom:thin solid lightgray;
+box-shadow: 0 0 5px black;
+box-shadow: 0 2px 2px #a59e9e, 0 -6px 5px lightgrey;
+z-index:5;
+}
+.navbarBtn{display:inline-block;
+margin:10px 10px;
+}
+.rightText{width:80%;
+    display: block;
+    margin:0 auto;
+    padding:10px;
+}
+#testimonialsCarousel{width:700px;
+height:400px;
+box-sizing: border-box;
+background-color:   black !important;
+display:block;
+margin:50px auto;
+}
+.wrapper{width:700px;
+height:400px;
+box-sizing: border-box;
+background-color: red;
 }

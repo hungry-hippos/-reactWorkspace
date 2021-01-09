@@ -48,7 +48,7 @@ const SideBar=(props)=>{
         break;
     }
   }
-  return <div id='mainPageSidebar'>
+  return <div id='mainPageSidebar' className='hidden'>
     <button onClick={()=>{show("robot")}} className="mainPageBtn">Robot</button>
     <button onClick={()=>{show("dob")}} className="mainPageBtn">DOB</button>
     <button onClick={()=>{show('minigame')}} className='mainPageBtn'>Minigame</button>
@@ -63,7 +63,7 @@ const SideBar=(props)=>{
 const CollectedData=(props)=>{
 
   return <React.Fragment>
-    <table id='collectedDataTable'>
+    <table id='collectedDataTable' className='hidden'>
     <tbody>
       <tr>
         <td>FIRST NAME</td>
