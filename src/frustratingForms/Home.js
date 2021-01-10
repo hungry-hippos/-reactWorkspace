@@ -46,7 +46,7 @@ const NavBar=(props)=>{
     }
 
     return <div id='homeNavbar'>
-        <Button variant='outline-dark' className='navbarBtn btn-outline-dark' onClick={()=>{changeComp('testimonials')}}>Home</Button>
+        <Button variant='outline-dark' className='navbarBtn' onClick={()=>{changeComp('testimonials')}}>Home</Button>
         <Button variant='outline-dark' className='navbarBtn' onClick={()=>{changeComp("about")}}>Who We Are</Button>
         <Button variant='outline-dark' className='navbarBtn' onClick={()=>{changeComp('vision')}}>Our Vision</Button>
         <Button variant='outline-dark' className='navbarBtn' onClick={()=>{changeComp('mission')}}>Our Mission</Button>
