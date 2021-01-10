@@ -2,6 +2,7 @@ import React,{useState,useEffect} from 'react'
 import {Button} from 'react-bootstrap'
 import {Carousel} from 'react-bootstrap'
 import {IoIosCloudUpload} from 'react-icons/io'
+import disruptionDen from "../assets/pictures/home/disruptDen.PNG"
 import './Home.css'
 
 const NavBar=(props)=>{
@@ -118,7 +119,7 @@ const Podium=()=>{
     },[])
     return <div id="podiumMain">
         <div id='secondCard' className='awardCard'>
-            <div id='denDiv'><img src='/pictures/home/disruptDen.png' alt='' style={{height:'150px',width:'120px',display:'block',margin:'10% auto'}}/></div>
+            <div id='denDiv'><img src={disruptionDen} alt='' style={{height:'150px',width:'120px',display:'block',margin:'10% auto'}}/></div>
             <div className='awardText' style={{width:'95%',left:'2.5%'}}>Winner of the highly coveted <br/><span style={{fontStyle:'italic'}}>Disruption Den Cup</span><br/> of the 2019 West Coast Tech Olympics.</div>
         </div>
         <div id='firstCard' className='awardCard'>
