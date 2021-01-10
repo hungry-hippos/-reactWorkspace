@@ -15,7 +15,7 @@ text-align: center;
 font-weight: bold;
 padding: 160px 0 170px 0;
 letter-spacing: 7px;
-background-image: url('public/pictures/home/phones.jpg') ;
+background-image: url('../../public/pictures/home/phones.jpg') ;
 background-size:120% 200%;
 background-position: -50px -250px;
 margin:0;
