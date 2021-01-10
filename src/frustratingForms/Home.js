@@ -2,7 +2,7 @@ import React,{useState,useEffect} from 'react'
 import {Button} from 'react-bootstrap'
 import {Carousel} from 'react-bootstrap'
 import {IoIosCloudUpload} from 'react-icons/io'
-import {DisruptionDen} from '../assets/pictures/home/disruptDen.jpg'
+import {DisruptionDen} from '../assets/pictures/home/disruptDen.png'
 import './Home.css'
 
 const NavBar=(props)=>{
