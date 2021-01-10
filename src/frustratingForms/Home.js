@@ -3,6 +3,11 @@ import {Button} from 'react-bootstrap'
 import {Carousel} from 'react-bootstrap'
 import {IoIosCloudUpload} from 'react-icons/io'
 import disruptionDen from "../assets/pictures/home/disruptDen.PNG"
+import techTussle from "../assets/pictures/home/techTussle.PNG"
+import weirdWebWrangle from "../assets/pictures/home/weirdWebWrangle.PNG"
+import christina from "../assets/pictures/home/christina.jpg"
+import ceo from "../assets/pictures/home/ceo.jpg"
+import hipster from "../assets/pictures/home/hipster.jpg"
 import './Home.css'
 
 const NavBar=(props)=>{
@@ -123,11 +128,11 @@ const Podium=()=>{
             <div className='awardText' style={{width:'95%',left:'2.5%'}}>Winner of the highly coveted <br/><span style={{fontStyle:'italic'}}>Disruption Den Cup</span><br/> of the 2019 West Coast Tech Olympics.</div>
         </div>
         <div id='firstCard' className='awardCard'>
-            <div id='tussleDiv'><img src='/pictures/home/techTussle.png' alt='' style={{height:'150px',width:'150px',display:'block',margin:'10% auto'}}/></div>
+            <div id='tussleDiv'><img src={techTussle} alt='' style={{height:'150px',width:'150px',display:'block',margin:'10% auto'}}/></div>
             <div className='awardText'>Last-man standing in <br/>Gold Mansack's<br/> <span style={{fontStyle:'italic'}}>2019 International Tech Tussle.</span></div>
         </div>
         <div id='thirdCard' className='awardCard'>
-            <div id='wrangleDiv'><img src='/pictures/home/weirdWebWrangle.png' alt='' style={{height:'150px',width:'120px',display:'block',margin:'10% auto'}}/></div>
+            <div id='wrangleDiv'><img src={weirdWebWrangle} alt='' style={{height:'150px',width:'120px',display:'block',margin:'10% auto'}}/></div>
             <div className='awardText' >Champ of the world-famous <span style={{fontStyle:'italic'}}>Weird Web Wrangle Elite Champshionship</span> <br/>in 2020.</div>
         </div>
     </div>
@@ -136,21 +141,21 @@ const Testimonials=()=>{
     return <div id='homeBody'>
         <Carousel id='testimonialsCarousel'>
                     <Carousel.Item>
-                    <div className='wrapper'><img src='/pictures/home/christina.jpg' alt='' style={{width:'870px',height:'650px',position:'relative',top:'-30px'}}/></div>
+                    <div className='wrapper'><img src={christina} alt='' style={{width:'870px',height:'650px',position:'relative',top:'-30px'}}/></div>
                         <Carousel.Caption>
                         <p style={{fontSize:'23px',fontFamily:'Merriweather',width:'380px',color:'black',position:'relative',top:'-70px',left:'-30px',lineHeight:'1.8'}}>"I absolutely adore Filter Forms. The quality of my business leads has never been higher. I have not missed a single deal in months" </p>
                         <p style={{fontSize:'18px',fontFamily:'Merriweather',color:'black',position:'relative',top:'-70px',left:'-30px',fontStyle:'italic'}}>-Sally, global mango merchant</p>
                         </Carousel.Caption>
                     </Carousel.Item>
                     <Carousel.Item>
-                    <div className='wrapper'><img src='/pictures/home/ceo.jpg' alt='' style={{width:'1100px',height:'800px',position:'relative',top:'-30px', left:'-300px', transform:'scaleX(-1)'}}/></div>
+                    <div className='wrapper'><img src={ceo} alt='' style={{width:'1100px',height:'800px',position:'relative',top:'-30px', left:'-300px', transform:'scaleX(-1)'}}/></div>
                         <Carousel.Caption>
                         <p style={{fontSize:'22px',fontFamily:'Merriweather',color:'black',position:'relative',top:'-100px',left:'-50px',width:'600px',boxSizing:'border-box'}}>"As a start-up CEO, I can't waste any time going over resumes. Thanks to Filter Forms, I spend less time doing HR stuff, and more time doing CEO stuff."</p>
                         <p style={{fontSize:'18px',fontFamily:'Merriweather',color:'black',position:'relative',top:'-90px',left:'170px',fontStyle:'italic'}}>-Brad, CEO of CEONation</p>
                         </Carousel.Caption>
                     </Carousel.Item>
                     <Carousel.Item>
-                    <div className='wrapper'><img src='/pictures/home/hipster.jpg' alt='' style={{width:'1100px',height:'750px',position:'relative',top:'-30px',left:'-150px'}}/></div>
+                    <div className='wrapper'><img src={hipster} alt='' style={{width:'1100px',height:'750px',position:'relative',top:'-30px',left:'-150px'}}/></div>
                         <Carousel.Caption>
                         <p style={{fontSize:'23px',fontFamily:'Merriweather',color:'black',position:'relative',top:'-100px',right:'-220px',width:'350px',boxSizing:'border-box'}}>"Filter Forms has disrupted this industry. The game will never be the same"</p>
                         <p style={{fontSize:'18px',fontFamily:'Merriweather',color:'black',position:'relative',top:'-100px',right:'-280px',width:'350px',boxSizing:'border-box',fontStyle:'italic'}}>-Betsy, from accounting</p>
