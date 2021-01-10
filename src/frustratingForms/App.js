@@ -5,7 +5,6 @@ import MapContainer from './MapContainer'
 import ContactInfo from './ContactInfo'
 import Summary from './Summary'
 import Home from './Home'
-import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css'
 
 
