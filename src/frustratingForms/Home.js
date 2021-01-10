@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React,{useState,useEffect} from 'react'
 import {Button} from 'react-bootstrap'
 import {Carousel} from 'react-bootstrap'
 import {IoIosCloudUpload} from 'react-icons/io'
@@ -50,7 +50,7 @@ const NavBar=(props)=>{
 const WelcomeIntro=()=>{
     return <div className='rightText'>
         <p>We offer alternative solutions for contact form UIs. Whether you are seeking to provide a more unique and spicy template for your applications and contact forms, or looking for a better way to screen out unmotivated clients, we got you covered.</p>
-        <p>Our number one priority is steamlining business communication by delivering you only the most serious and highly-motivated people. Whether you are a business entrepreneur hunting for talent to join your team or a freelancer looking for the next gig, we filter out all the garbage applications and deliver you a literal silver platter, loaded with hand-picked premium leads that will guarantee YOU and YOUR BUSINESS go places. </p>
+        <p>Our number one priority is steamlining business communication by delivering you only the most serious and highly-motivated people. Whether you are a business entrepreneur hunting for talent to join your team or a freelancer looking for the next gig, we filter out all the subpar applications and deliver you a literal silver platter, loaded with hand-picked premium leads that will guarantee YOU and YOUR BUSINESS go places. </p>
         <p>Stop wasting your time on pointless leads and second-tier talent. Upgrade your forms. Upgrade your opportunities.</p>
         <Button>Start</Button>
     </div>
@@ -62,7 +62,7 @@ const Vision=()=>{
 };
 const Mission=()=>{
     return <div className='rightText'>
-        Establish the first monopoloy in the online-form industry. Through disruptive innovation and strategic marketing, we will compete with the Big Form giants, plunder their market share, plummet their stock value, acquire all their assets and terminate all their boards. Utilizing core business-leadership principles and cutting-edge talent-acquitision practices, we identify, hire and develop only the brightest talent, fostering a competitive and cooperative fast-paced business environment that breeds personal and profession growth, where feedback is requested and provided throughout all leadership levels and no two days are ever the same.</div>
+        Establish the first monopoloy in the online-form industry. Through disruptive innovation and strategic marketing, we will compete with the Big Form giants, plunder their market share, plummet their stock value, auction their assets and terminate their boards. Utilizing core business-leadership principles and cutting-edge talent-acquitision practices, we identify, hire and develop only the brightest talent, fostering a competitive and cooperative fast-paced business environment that breeds personal and profession growth, where feedback is requested and provided throughout all leadership levels and no two days are ever the same.</div>
 };
 const Inspiration=()=>{
     return <div className='rightText'>
@@ -77,31 +77,81 @@ const Inspiration=()=>{
         <p>"If only there was some type of software that could help me pre-screen applicants, weeding out the less motivated ones, and only feed me resumes of the most motivated and serious ones?" is all you can wonder.</p>
     </div>
 };
+
+const Podium=()=>{
+
+    
+    useEffect(()=>{
+        const images=document.getElementsByClassName('awardCard');
+        for (var i=0;i<images.length;i++){
+            images[i].addEventListener('mouseenter',(event)=>{
+                const imageElement=event.target.firstElementChild.firstElementChild;
+                console.log(imageElement.style.height);
+                var height=parseInt(imageElement.style.height,10);
+                var width=parseInt(imageElement.style.width,10);
+                height+=25;
+                width+=25;
+                imageElement.style.height=height+"px";
+                imageElement.style.width=width+"px";
+
+                imageElement.style.margin="2% auto";
+                event.target.firstElementChild.style.top='10px';
+            })
+            images[i].addEventListener('mouseleave',(event)=>{
+                const imageElement=event.target.firstElementChild.firstElementChild;
+                var height=parseInt(imageElement.style.height,10);
+                var width=parseInt(imageElement.style.width,10);
+                height-=25;
+                width-=25;
+                imageElement.style.height=height+"px";
+                imageElement.style.width=width+"px";
+
+                imageElement.style.margin="10% auto";
+                event.target.firstElementChild.style.top='110px';
+            })
+        }
+    },[])
+    return <div id="podiumMain">
+        <div id='secondCard' className='awardCard'>
+            <div id='denDiv'><img src='/pictures/home/disruptDen.png' alt='' style={{height:'150px',width:'120px',display:'block',margin:'10% auto'}}/></div>
+        </div>
+        <div id='firstCard' className='awardCard'>
+            <div id='tussleDiv'><img src='/pictures/home/techTussle.png' alt='' style={{height:'150px',width:'150px',display:'block',margin:'10% auto'}}/></div>
+        </div>
+        <div id='thirdCard' className='awardCard'>
+            <div id='wrangleDiv'><img src='/pictures/home/weirdWebWrangle.png' alt='' style={{height:'150px',width:'120px',display:'block',margin:'10% auto'}}/></div>
+        </div>
+    </div>
+}
 const Testimonials=()=>{
-    return <div id='testimonialsCarousel'> 
-        <Carousel>
-            <Carousel.Item>
-            <div className='wrapper'><img src='/pictures/home/christina.jpg' alt='' style={{width:'870px',height:'650px',position:'relative',top:'-30px'}}/></div>
-                <Carousel.Caption>
-                <p style={{fontSize:'23px',fontFamily:'Merriweather',width:'380px',color:'black',position:'relative',top:'-70px',left:'-30px',lineHeight:'1.8'}}>"I absolutely adore Filter Forms. The quality of my business leads has never been higher. I have not missed a single deal in months" </p>
-                <p style={{fontSize:'18px',fontFamily:'Merriweather',color:'black',position:'relative',top:'-70px',left:'-30px',fontStyle:'italic'}}>-Sally, global mango merchant</p>
-                </Carousel.Caption>
-            </Carousel.Item>
-            <Carousel.Item>
-            <div className='wrapper'><img src='/pictures/home/ceo.jpg' alt='' style={{width:'1100px',height:'800px',position:'relative',top:'-30px', left:'-300px', transform:'scaleX(-1)'}}/></div>
-                <Carousel.Caption>
-                <p style={{fontSize:'22px',fontFamily:'Merriweather',color:'black',position:'relative',top:'-100px',left:'-50px',width:'600px',boxSizing:'border-box'}}>"As a start-up CEO, I can't waste any time going over resumes. Thanks to Filter Forms, I spend less time doing HR stuff, and more time doing CEO stuff."</p>
-                <p style={{fontSize:'18px',fontFamily:'Merriweather',color:'black',position:'relative',top:'-90px',left:'170px',fontStyle:'italic'}}>-Brad, CEO of CEONation</p>
-                </Carousel.Caption>
-            </Carousel.Item>
-            <Carousel.Item>
-            <div className='wrapper'><img src='/pictures/home/hipster.jpg' alt='' style={{width:'1100px',height:'750px',position:'relative',top:'-30px',left:'-150px'}}/></div>
-                <Carousel.Caption>
-                <p style={{fontSize:'23px',fontFamily:'Merriweather',color:'black',position:'relative',top:'-100px',right:'-220px',width:'350px',boxSizing:'border-box'}}>"Filter Forms has disrupted this industry. The game will never be the same"</p>
-                <p style={{fontSize:'18px',fontFamily:'Merriweather',color:'black',position:'relative',top:'-100px',right:'-280px',width:'350px',boxSizing:'border-box',fontStyle:'italic'}}>-Betsy, from accounting</p>
-                </Carousel.Caption>
-            </Carousel.Item>
-        </Carousel>
+    return <div id='homeBody'>
+        <Carousel id='testimonialsCarousel'>
+                    <Carousel.Item>
+                    <div className='wrapper'><img src='/pictures/home/christina.jpg' alt='' style={{width:'870px',height:'650px',position:'relative',top:'-30px'}}/></div>
+                        <Carousel.Caption>
+                        <p style={{fontSize:'23px',fontFamily:'Merriweather',width:'380px',color:'black',position:'relative',top:'-70px',left:'-30px',lineHeight:'1.8'}}>"I absolutely adore Filter Forms. The quality of my business leads has never been higher. I have not missed a single deal in months" </p>
+                        <p style={{fontSize:'18px',fontFamily:'Merriweather',color:'black',position:'relative',top:'-70px',left:'-30px',fontStyle:'italic'}}>-Sally, global mango merchant</p>
+                        </Carousel.Caption>
+                    </Carousel.Item>
+                    <Carousel.Item>
+                    <div className='wrapper'><img src='/pictures/home/ceo.jpg' alt='' style={{width:'1100px',height:'800px',position:'relative',top:'-30px', left:'-300px', transform:'scaleX(-1)'}}/></div>
+                        <Carousel.Caption>
+                        <p style={{fontSize:'22px',fontFamily:'Merriweather',color:'black',position:'relative',top:'-100px',left:'-50px',width:'600px',boxSizing:'border-box'}}>"As a start-up CEO, I can't waste any time going over resumes. Thanks to Filter Forms, I spend less time doing HR stuff, and more time doing CEO stuff."</p>
+                        <p style={{fontSize:'18px',fontFamily:'Merriweather',color:'black',position:'relative',top:'-90px',left:'170px',fontStyle:'italic'}}>-Brad, CEO of CEONation</p>
+                        </Carousel.Caption>
+                    </Carousel.Item>
+                    <Carousel.Item>
+                    <div className='wrapper'><img src='/pictures/home/hipster.jpg' alt='' style={{width:'1100px',height:'750px',position:'relative',top:'-30px',left:'-150px'}}/></div>
+                        <Carousel.Caption>
+                        <p style={{fontSize:'23px',fontFamily:'Merriweather',color:'black',position:'relative',top:'-100px',right:'-220px',width:'350px',boxSizing:'border-box'}}>"Filter Forms has disrupted this industry. The game will never be the same"</p>
+                        <p style={{fontSize:'18px',fontFamily:'Merriweather',color:'black',position:'relative',top:'-100px',right:'-280px',width:'350px',boxSizing:'border-box',fontStyle:'italic'}}>-Betsy, from accounting</p>
+                        </Carousel.Caption>
+                    </Carousel.Item>
+                </Carousel>
+        <div id='carouselWrapper'></div>
+
+        <p style={{fontSize:"25px",fontFamily:"Montserrat",color:'black'}}>A glimpse into the <span style={{fontWeight:'bold'}}>movement</span> that has <span style={{fontWeight:'bold'}}>revolutionized</span> the online-form industry.</p>
+        <Podium />
     </div>
 };
 const GetStarted=()=>{
