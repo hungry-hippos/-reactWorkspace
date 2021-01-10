@@ -1,6 +1,6 @@
 import React from 'react'
 import MapComponent from './Map'
-import Button from 'react-bootstrap'
+import {Button} from 'react-bootstrap'
 import './MapContainer.css'
 
 
