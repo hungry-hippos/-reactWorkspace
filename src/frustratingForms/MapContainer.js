@@ -11,6 +11,8 @@ const MapContainer=()=>{
         const lng=document.getElementById('lngCoord').value;
         document.getElementById('latField').textContent=lat;
         document.getElementById('lngField').textContent=lng;
+
+        document.getElementById('contactSideBar').click();
     }
     
     return <div id='mainMapDiv'>

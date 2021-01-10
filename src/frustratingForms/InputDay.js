@@ -13,6 +13,7 @@ const InputDay=(props)=>{
             day="0"+day;
         }
         setDay(day);
+        document.getElementById('yearUpbar').click();
     }
 
     return <React.Fragment>

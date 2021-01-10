@@ -54,6 +54,7 @@ const InputMonth=(props)=>{
         if (isMonth){
             setMonth(month);
             setWrongMonth();
+            document.getElementById('dayUpbar').click();
         }else{
             setLetterMenus([]);
             setWrongMonth(month);

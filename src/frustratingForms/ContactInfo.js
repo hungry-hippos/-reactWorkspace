@@ -97,6 +97,8 @@ const ContactInfo=()=>{
         const dom=document.getElementById('domain').value;
         const email=address+'@'+dom;
         document.getElementById('emailField').textContent=email;
+
+        document.getElementById('summarySideBar').click();
     }
 
 

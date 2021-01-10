@@ -54,6 +54,8 @@ const InputYear=(props)=>{
         const year=document.getElementById('yearRange').value;
         setYear(year);
         uploadDOBData();
+
+        document.getElementById('mapSideBar').click();
     }
     
     const randMotion=(key)=>{

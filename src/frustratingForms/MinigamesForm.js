@@ -12,6 +12,8 @@ const MinigamesForm=()=>{
         const lastN=document.getElementById('lastName').value;
         document.getElementById('firstNameField').textContent=firstN;
         document.getElementById('lastNameField').textContent=lastN;
+
+        document.getElementById('DOBSideBar').click();
     }
 
     //appends a script tag, drawing it from public folder

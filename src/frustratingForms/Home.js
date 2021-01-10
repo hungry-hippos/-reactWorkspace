@@ -5,7 +5,8 @@ import {IoIosCloudUpload} from 'react-icons/io'
 import './Home.css'
 
 const NavBar=(props)=>{
-    const {setShowAbout,setShowVision,setShowMission,setShowInspiration,setShowTestimonials,setGetStarted}=props.setters;
+    const {setShowAbout,setShowVision,setShowMission,setShowInspiration,setShowTestimonials}=props.setters;
+    const {setShowHome,setShowMinigame}=props.appSetters;
 
     const changeComp=(comp)=>{
         setShowAbout(false);
@@ -13,7 +14,6 @@ const NavBar=(props)=>{
         setShowMission(false);
         setShowInspiration(false);
         setShowTestimonials(false);
-        setGetStarted(false);
         switch (comp){
             case 'about':
                 setShowAbout(true);
@@ -31,7 +31,8 @@ const NavBar=(props)=>{
                 setShowTestimonials(true);
                 break;
             case 'start':
-                setGetStarted(true);
+                setShowHome(false);
+                setShowMinigame(true);
                 break;
             default:
                 break;
@@ -96,6 +97,8 @@ const Podium=()=>{
 
                 imageElement.style.margin="2% auto";
                 event.target.firstElementChild.style.top='10px';
+
+                event.target.lastElementChild.style.top='220px';
             })
             images[i].addEventListener('mouseleave',(event)=>{
                 const imageElement=event.target.firstElementChild.firstElementChild;
@@ -108,18 +111,23 @@ const Podium=()=>{
 
                 imageElement.style.margin="10% auto";
                 event.target.firstElementChild.style.top='110px';
+
+                event.target.lastElementChild.style.top='432px';
             })
         }
     },[])
     return <div id="podiumMain">
         <div id='secondCard' className='awardCard'>
             <div id='denDiv'><img src='/pictures/home/disruptDen.png' alt='' style={{height:'150px',width:'120px',display:'block',margin:'10% auto'}}/></div>
+            <div className='awardText' style={{width:'95%',left:'2.5%'}}>Winner of the highly coveted <br/><span style={{fontStyle:'italic'}}>Disruption Den Cup</span><br/> of the 2019 West Coast Tech Olympics.</div>
         </div>
         <div id='firstCard' className='awardCard'>
             <div id='tussleDiv'><img src='/pictures/home/techTussle.png' alt='' style={{height:'150px',width:'150px',display:'block',margin:'10% auto'}}/></div>
+            <div className='awardText'>Last-man standing in <br/>Gold Mansack's<br/> <span style={{fontStyle:'italic'}}>2019 International Tech Tussle.</span></div>
         </div>
         <div id='thirdCard' className='awardCard'>
             <div id='wrangleDiv'><img src='/pictures/home/weirdWebWrangle.png' alt='' style={{height:'150px',width:'120px',display:'block',margin:'10% auto'}}/></div>
+            <div className='awardText' >Champ of the world-famous <span style={{fontStyle:'italic'}}>Weird Web Wrangle Elite Champshionship</span> <br/>in 2020.</div>
         </div>
     </div>
 }
@@ -154,28 +162,27 @@ const Testimonials=()=>{
         <Podium />
     </div>
 };
-const GetStarted=()=>{
-    return <div>GET STARTED</div>
-};
 
-const Home=()=>{
+const Home=(props)=>{
+    const{setShowHome,setShowMinigame}=props.appSetters;
+    const appSetters={setShowHome,setShowMinigame};
+
     const [showAbout,setShowAbout]=useState(false);
     const [showVision, setShowVision]=useState(false);
     const [showMission,setShowMission]=useState(false);
     const [showInspiration,setShowInspiration]=useState(false);
     const [showTestimonials,setShowTestimonials]=useState(true);
-    const [getStarted,setGetStarted]=useState(false);
 
-    const setters={setShowAbout,setShowVision,setShowMission,setShowInspiration,setShowTestimonials,setGetStarted};
+    const setters={setShowAbout,setShowVision,setShowMission,setShowInspiration,setShowTestimonials};
+    
     return <div id='homeMainDiv'>
         <h1 id='logo'> <IoIosCloudUpload style={{filter: "drop-shadow(3px 3px 0px white"}}/>  Filter Forms</h1>
-        < NavBar setters={setters}/>
+        < NavBar setters={setters} appSetters={appSetters}/>
         {showAbout && < WelcomeIntro /> }
         {showVision && <Vision />}
         {showMission && <Mission />}
         {showInspiration && <Inspiration />}
         {showTestimonials && <Testimonials />}
-        {getStarted && <GetStarted/>}
     </div>
 
 };

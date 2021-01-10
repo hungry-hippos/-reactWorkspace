@@ -49,12 +49,12 @@ const SideBar=(props)=>{
     }
   }
   return <div id='mainPageSidebar' className='hidden'>
-    <button onClick={()=>{show("robot")}} className="mainPageBtn">Robot</button>
-    <button onClick={()=>{show("dob")}} className="mainPageBtn">DOB</button>
-    <button onClick={()=>{show('minigame')}} className='mainPageBtn'>Minigame</button>
-    <button onClick={()=>{show('map')}} className='mainPageBtn'>Map</button>
-    <button onClick={()=>{show('contact')}} className='mainPageBtn'>Contact</button>
-    <button onClick={()=>{show('summary')}} className='mainPageBtn'>Summary</button>
+    <button onClick={()=>{show("robot")}} className="mainPageBtn" id='robotSideBar'>Robot</button>
+    <button onClick={()=>{show("dob")}} className="mainPageBtn" id='DOBSideBar'>DOB</button>
+    <button onClick={()=>{show('minigame')}} className='mainPageBtn' id='minigameSideBar'>Minigame</button>
+    <button onClick={()=>{show('map')}} className='mainPageBtn' id='mapSideBar'>Map</button>
+    <button onClick={()=>{show('contact')}} className='mainPageBtn' id='contactSideBar'>Contact</button>
+    <button onClick={()=>{show('summary')}} className='mainPageBtn' id='summarySideBar'>Summary</button>
     <button onClick={()=>{show('home')}} className='mainPageBtn' id='homeSideBar'>Home</button>
   </div>
 
@@ -113,7 +113,7 @@ function App() {
   return <React.Fragment>
         <SideBar setters={setters} />
         <CollectedData />
-        {showHome && <Home/>}
+        {showHome && <Home appSetters={{setShowHome,setShowMinigame}}/>}
         {showMinigame && <Minigame />}
         {showDOB && <DOB />}
         {showMap && <MapContainer />}

@@ -1,5 +1,5 @@
 #homeMainDiv{width:1000px;
-height:1000px;
+height:3000px;
 box-sizing: border-box;
 display: block;
 margin:20px auto;
@@ -13,11 +13,11 @@ color:#5580c1;
 text-shadow: 3px 3px 0 white;
 text-align: center;
 font-weight: bold;
-padding: 130px 0 140px 0;
+padding: 160px 0 170px 0;
 letter-spacing: 7px;
 background-image: url('/pictures/home/phones.jpg') ;
 background-size:120% 200%;
-background-position: -100px -220px;
+background-position: -50px -250px;
 margin:0;
 }
 
@@ -40,13 +40,11 @@ display: block;
 margin:0 auto;
 padding:10px;
 }
-#homeBody{
-background-image: url('/pictures/home/lights.jpg');
-background-size: 100% 100%;
-position:relative;
+#homeBody{position:relative;
 height:1000px;
 width:100%;
 padding-top:550px;
+background-color: white;
 }
 
 #testimonialsCarousel{width:700px;
@@ -84,7 +82,6 @@ box-sizing: border-box;
 background-color: white;
 margin:0 auto;
 position:relative;
-background-color: black;
 }
 #tussleDiv{position:absolute;
 top: 110px;
@@ -113,10 +110,28 @@ transition:.5s;
 .awardCard{border: 5px solid #c18055;
 background-color: white;
 border-radius: 15px;
-height:90%;
+height:432px;
 width:240px;
 position:relative;
 display: inline-block;
 margin:30px 2%;
+overflow-y: hidden;
+padding:0;
+}
 
+.awardText{padding: 10px;
+    position: absolute;
+    top:432px;
+    left:5%;
+    line-height: 2;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 16px;
+    text-align: center;
+    transition:.5s;
+    box-shadow: 0 0 5px black;
+    width:90%;
+    background: #EAB38E;
+background: -webkit-linear-gradient(top left, #EAB38E, #EEEEEE);
+background: -moz-linear-gradient(top left, #EAB38E, #EEEEEE);
+background: linear-gradient(to bottom right, #EAB38E, #EEEEEE);
 }
