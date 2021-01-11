@@ -46,12 +46,12 @@ const NavBar=(props)=>{
     }
 
     return <div id='homeNavbar'>
-        <Button variant='outline-dark' className='navbarBtn' onClick={()=>{changeComp('testimonials')}}>Home</Button>
-        <Button variant='outline-dark' className='navbarBtn' onClick={()=>{changeComp("about")}}>Who We Are</Button>
-        <Button variant='outline-dark' className='navbarBtn' onClick={()=>{changeComp('vision')}}>Our Vision</Button>
-        <Button variant='outline-dark' className='navbarBtn' onClick={()=>{changeComp('mission')}}>Our Mission</Button>
-        <Button variant='outline-dark' className='navbarBtn' onClick={()=>{changeComp('inspiration')}}>Our Inspiration</Button>
-        <Button variant='outline-primary' className='navbarBtn' onClick={()=>{changeComp('start')}}>Get Started</Button>
+        <Button variant='outline-dark' className='homeNavbarBtn' onClick={()=>{changeComp('testimonials')}}>Home</Button>
+        <Button variant='outline-dark' className='homeNavbarBtn' onClick={()=>{changeComp("about")}}>Who We Are</Button>
+        <Button variant='outline-dark' className='homeNavbarBtn' onClick={()=>{changeComp('vision')}}>Our Vision</Button>
+        <Button variant='outline-dark' className='homeNavbarBtn' onClick={()=>{changeComp('mission')}}>Our Mission</Button>
+        <Button variant='outline-dark' className='homeNavbarBtn' onClick={()=>{changeComp('inspiration')}}>Our Inspiration</Button>
+        <Button variant='outline-primary' className='homeNavbarBtn' onClick={()=>{changeComp('start')}}>Get Started</Button>
     </div>
 };
 const WelcomeIntro=()=>{
