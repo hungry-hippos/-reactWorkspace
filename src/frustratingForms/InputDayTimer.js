@@ -1,3 +1,6 @@
+import postureMan2 from '../assets/pictures/posture/posture2.png'
+import postureMan4 from '../assets/pictures/posture/posture4.png'
+
 //day section
 var runTimer={
     isRunning:false,
@@ -98,11 +101,11 @@ var runTimer={
         const bottomMan=document.createElement('img');
         const magic8Ball=(Math.random()).toFixed(0);
         if (magic8Ball){
-            topMan.setAttribute('src',"/pictures/posture/posture4.png");
-            bottomMan.setAttribute('src',"/pictures/posture/posture4.png");
+            topMan.setAttribute('src',postureMan4);
+            bottomMan.setAttribute('src',postureMan4);
         }else{
-            topMan.setAttribute('src',"/pictures/posture/posture2.png");
-            bottomMan.setAttribute('src',"/pictures/posture/posture2.png");
+            topMan.setAttribute('src',postureMan2);
+            bottomMan.setAttribute('src',postureMan2);
         }
         topMan.classList.add('largeMan');
         bottomMan.classList.add('largeMan');
@@ -142,9 +145,9 @@ var runTimer={
                 const man=document.createElement('img');
                 const magic8Ball=(Math.random()).toFixed(0);
                 if (magic8Ball){
-                    man.setAttribute('src',"/pictures/posture/posture4.png");
+                    man.setAttribute('src',postureMan4);
                 }else{
-                    man.setAttribute('src',"/pictures/posture/posture2.png");
+                    man.setAttribute('src',postureMan2);
                 }
                 man.classList.add('midMan');
                 
@@ -187,9 +190,9 @@ var runTimer={
         const newMan=document.createElement('img');
         const magic8Ball=(Math.random()).toFixed(0);
         if (magic8Ball){
-            newMan.setAttribute('src',"/pictures/posture/posture4.png");
+            newMan.setAttribute('src',postureMan4);
         }else{
-            newMan.setAttribute('src',"/pictures/posture/posture2.png");
+            newMan.setAttribute('src',postureMan2);
         }
 
         newMan.classList.add(name);
@@ -219,9 +222,9 @@ var runTimer={
         const newMan=document.createElement('img');
         const magic8Ball=(Math.random()).toFixed(0);
         if (magic8Ball){
-            newMan.setAttribute('src',"/pictures/posture/posture4.png");
+            newMan.setAttribute('src',postureMan4);
         }else{
-            newMan.setAttribute('src',"/pictures/posture/posture2.png");
+            newMan.setAttribute('src',postureMan2);
         }
 
         newMan.classList.add(name);
@@ -230,8 +233,8 @@ var runTimer={
         newMan.style.left='330px';
     },
     showDancingMen(){
-        const thrustIn="/pictures/posture/posture4.png";
-        const thrustOut="/pictures/posture/posture2.png";
+        const thrustIn=postureMan4;
+        const thrustOut=postureMan2;
         if (runTimer.iteration===2){
 
             const rightMan=document.getElementById('firstRightMan');

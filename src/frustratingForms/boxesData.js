@@ -1,27 +1,34 @@
+import blackBox from '../assets/pictures/boxes/blackbox.webp'
+import box1 from '../assets/pictures/boxes/box1.jpeg'
+import box2 from '../assets/pictures/boxes/box2.jpg'
+import jewelryBox from '../assets/pictures/boxes/jewelrybox.jpg'
+import pizzaBox from '../assets/pictures/boxes/pizzabox.jpg'
+import shoeBox from '../assets/pictures/boxes/shoebox.jpg'
+
 const boxes=[
     {
         id:'0',
-        src:'/pictures/boxes/blackbox.webp'
+        src: blackBox
     },
     {
         id:'1',
-        src:'/pictures/boxes/box1.jpeg'
+        src:box1
     },
     {
         id:'2',
-        src:'/pictures/boxes/box2.jpg'
+        src:box2
     },
     {
         id:'3',
-        src:'/pictures/boxes/jewelrybox.jpg'
+        src:jewelryBox
     },
     {
         id:'4',
-        src:'/pictures/boxes/pizzabox.jpg'
+        src:pizzaBox
     },
     {
         id:'5',
-        src:'/pictures/boxes/shoebox.jpg'
+        src:shoeBox
     }
 ]
 

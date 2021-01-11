@@ -166,9 +166,9 @@ const Redirect=()=>{
         },7000)
     },[])
     return <div id='redirectDiv'>
-        <h2 className='beep'>BEEP BEEP BOOP BOOP</h2>
+        <h2 className='beep'>BEEP BOOP</h2>
         <h3 className='byebye'>You missed all captchas</h3>
-        <h2 className='beep'>BEEP BEEP BOOP BOOP</h2>
+        <h2 className='beep'>BEEP BOOP</h2>
         <h3 className='byebye'>Somebody here is a robot...</h3>
         <h2 className='beep'>BEEP BOOP BEEP BOOP</h2>
         <h1 style={{marginTop:"20px"}}>Redirecting you to HomePage</h1>

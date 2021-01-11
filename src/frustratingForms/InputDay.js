@@ -2,6 +2,7 @@
 import runTimer from './InputDayTimer'
 import Button from 'react-bootstrap/Button'
 import React from 'react'
+import postureMan4 from '../assets/pictures/posture/posture4.png'
 
 const InputDay=(props)=>{
 
@@ -20,8 +21,8 @@ const InputDay=(props)=>{
     <div id="DOBInputDay">
         <div id='DOBElementsHolder'>
             <div id='DOBAlley'>
-                <img className='tinyMan leftMan' id='firstLeftMan' src="/pictures/posture/posture4.png" alt=""/>
-                <img className='tinyMan rightMan' id='firstRightMan' src="/pictures/posture/posture4.png" alt="" />
+                <img className='tinyMan leftMan' id='firstLeftMan' src={postureMan4} alt=""/>
+                <img className='tinyMan rightMan' id='firstRightMan' src={postureMan4} alt="" />
             </div>
             <div id="DOBInputDayNumber">0</div>
         </div>

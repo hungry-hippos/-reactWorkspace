@@ -1,5 +1,4 @@
 import React,{useState,useEffect} from 'react'
-
 import InputDay from './InputDay'
 import InputMonth from './InputMonth'
 import InputYear from './InputYear'
@@ -56,7 +55,7 @@ const ComponentToggle=(props)=>{
         }
     }
 
-    return <div id='DOBComponentsBar' className='hidden'>
+    return <div id='DOBComponentsBar' className=''>
         <button onClick={()=>{show("month")}} id='monthUpbar'>Month</button>
         <button onClick={()=>{show("day")}} id='dayUpbar'>Day</button>
         <button onClick={()=>{show("year")}} id='yearUpbar'>Year</button>

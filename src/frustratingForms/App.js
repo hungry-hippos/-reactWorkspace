@@ -47,7 +47,7 @@ const SideBar=(props)=>{
         break;
     }
   }
-  return <div id='mainPageSidebar' className='hidden'>
+  return <div id='mainPageSidebar' className=''>
     <button onClick={()=>{show("robot")}} className="mainPageBtn" id='robotSideBar'>Robot</button>
     <button onClick={()=>{show("dob")}} className="mainPageBtn" id='DOBSideBar'>DOB</button>
     <button onClick={()=>{show('minigame')}} className='mainPageBtn' id='minigameSideBar'>Minigame</button>
