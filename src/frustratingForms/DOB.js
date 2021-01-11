@@ -2,7 +2,7 @@ import React,{useState,useEffect} from 'react'
 import InputDay from './InputDay'
 import InputMonth from './InputMonth'
 import InputYear from './InputYear'
-import './DOB.css'
+// import './DOB.css'
 
 //month section
 const Header=(props)=>{

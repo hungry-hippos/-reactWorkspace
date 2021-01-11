@@ -109,7 +109,7 @@ border:2px solid black;
     top: -2px;}
 #submitBtn:focus{outline:0}
 
-.backgroundDimmer{background-color:#00000096;
+.backgroundDimmer{background-color:rgb(0 0 0 / 79%);
 box-sizing: border-box;
 position:fixed;
 top:0;
