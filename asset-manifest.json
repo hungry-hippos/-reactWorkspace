@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/-reactWorkspace/static/css/main.4dcc43b5.chunk.css",
-    "main.js": "/-reactWorkspace/static/js/main.b42628f5.chunk.js",
-    "main.js.map": "/-reactWorkspace/static/js/main.b42628f5.chunk.js.map",
+    "main.css": "/-reactWorkspace/static/css/main.0fc0720b.chunk.css",
+    "main.js": "/-reactWorkspace/static/js/main.9c35f5b8.chunk.js",
+    "main.js.map": "/-reactWorkspace/static/js/main.9c35f5b8.chunk.js.map",
     "runtime-main.js": "/-reactWorkspace/static/js/runtime-main.7bd0e4f8.js",
     "runtime-main.js.map": "/-reactWorkspace/static/js/runtime-main.7bd0e4f8.js.map",
     "static/css/2.6414bb7b.chunk.css": "/-reactWorkspace/static/css/2.6414bb7b.chunk.css",
-    "static/js/2.5903f9b6.chunk.js": "/-reactWorkspace/static/js/2.5903f9b6.chunk.js",
-    "static/js/2.5903f9b6.chunk.js.map": "/-reactWorkspace/static/js/2.5903f9b6.chunk.js.map",
+    "static/js/2.0f5b11dc.chunk.js": "/-reactWorkspace/static/js/2.0f5b11dc.chunk.js",
+    "static/js/2.0f5b11dc.chunk.js.map": "/-reactWorkspace/static/js/2.0f5b11dc.chunk.js.map",
     "index.html": "/-reactWorkspace/index.html",
-    "precache-manifest.caa8c94df03abfde261b49232b1bea90.js": "/-reactWorkspace/precache-manifest.caa8c94df03abfde261b49232b1bea90.js",
+    "precache-manifest.3023930968df811335be945ab3fd3c27.js": "/-reactWorkspace/precache-manifest.3023930968df811335be945ab3fd3c27.js",
     "service-worker.js": "/-reactWorkspace/service-worker.js",
     "static/css/2.6414bb7b.chunk.css.map": "/-reactWorkspace/static/css/2.6414bb7b.chunk.css.map",
-    "static/css/main.4dcc43b5.chunk.css.map": "/-reactWorkspace/static/css/main.4dcc43b5.chunk.css.map",
-    "static/js/2.5903f9b6.chunk.js.LICENSE.txt": "/-reactWorkspace/static/js/2.5903f9b6.chunk.js.LICENSE.txt",
+    "static/css/main.0fc0720b.chunk.css.map": "/-reactWorkspace/static/css/main.0fc0720b.chunk.css.map",
+    "static/js/2.0f5b11dc.chunk.js.LICENSE.txt": "/-reactWorkspace/static/js/2.0f5b11dc.chunk.js.LICENSE.txt",
     "static/media/apple.png": "/-reactWorkspace/static/media/apple.5fac7632.png",
     "static/media/blackbox.webp": "/-reactWorkspace/static/media/blackbox.2b3cb12d.webp",
     "static/media/box1.jpeg": "/-reactWorkspace/static/media/box1.a6288dd8.jpeg",
@@ -43,8 +43,8 @@
   "entrypoints": [
     "static/js/runtime-main.7bd0e4f8.js",
     "static/css/2.6414bb7b.chunk.css",
-    "static/js/2.5903f9b6.chunk.js",
-    "static/css/main.4dcc43b5.chunk.css",
-    "static/js/main.b42628f5.chunk.js"
+    "static/js/2.0f5b11dc.chunk.js",
+    "static/css/main.0fc0720b.chunk.css",
+    "static/js/main.9c35f5b8.chunk.js"
   ]
 }
