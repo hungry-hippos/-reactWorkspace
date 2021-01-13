@@ -151,8 +151,6 @@ p {
 }
 .btn {
   display: inline-block;
-  background: var(--clr-primary-5);
-  color: var(--clr-white);
   padding: 0.25rem 0.75rem;
   border-radius: var(--radius);
   border-color: transparent;
@@ -164,10 +162,6 @@ p {
   margin-right: 0.5rem;
   cursor: pointer;
   transition: var(--transition);
-}
-.btn:hover {
-  background: var(--clr-primary-1);
-  color: var(--clr-primary-5);
 }
 .item {
   background: var(--clr-white);
