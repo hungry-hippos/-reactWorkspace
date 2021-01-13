@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/-reactWorkspace/static/css/main.36fd2f1c.chunk.css",
+    "main.css": "/-reactWorkspace/static/css/main.9a542c27.chunk.css",
     "main.js": "/-reactWorkspace/static/js/main.b42628f5.chunk.js",
     "main.js.map": "/-reactWorkspace/static/js/main.b42628f5.chunk.js.map",
     "runtime-main.js": "/-reactWorkspace/static/js/runtime-main.7bd0e4f8.js",
@@ -9,10 +9,10 @@
     "static/js/2.5903f9b6.chunk.js": "/-reactWorkspace/static/js/2.5903f9b6.chunk.js",
     "static/js/2.5903f9b6.chunk.js.map": "/-reactWorkspace/static/js/2.5903f9b6.chunk.js.map",
     "index.html": "/-reactWorkspace/index.html",
-    "precache-manifest.183a0e51702e3db7fb99f3e2a286aa56.js": "/-reactWorkspace/precache-manifest.183a0e51702e3db7fb99f3e2a286aa56.js",
+    "precache-manifest.95041e45b53b34789b19274091042668.js": "/-reactWorkspace/precache-manifest.95041e45b53b34789b19274091042668.js",
     "service-worker.js": "/-reactWorkspace/service-worker.js",
     "static/css/2.6414bb7b.chunk.css.map": "/-reactWorkspace/static/css/2.6414bb7b.chunk.css.map",
-    "static/css/main.36fd2f1c.chunk.css.map": "/-reactWorkspace/static/css/main.36fd2f1c.chunk.css.map",
+    "static/css/main.9a542c27.chunk.css.map": "/-reactWorkspace/static/css/main.9a542c27.chunk.css.map",
     "static/js/2.5903f9b6.chunk.js.LICENSE.txt": "/-reactWorkspace/static/js/2.5903f9b6.chunk.js.LICENSE.txt",
     "static/media/apple.png": "/-reactWorkspace/static/media/apple.5fac7632.png",
     "static/media/blackbox.webp": "/-reactWorkspace/static/media/blackbox.2b3cb12d.webp",
@@ -44,7 +44,7 @@
     "static/js/runtime-main.7bd0e4f8.js",
     "static/css/2.6414bb7b.chunk.css",
     "static/js/2.5903f9b6.chunk.js",
-    "static/css/main.36fd2f1c.chunk.css",
+    "static/css/main.9a542c27.chunk.css",
     "static/js/main.b42628f5.chunk.js"
   ]
 }
