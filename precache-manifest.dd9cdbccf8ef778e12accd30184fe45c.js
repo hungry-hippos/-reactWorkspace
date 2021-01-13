@@ -1,27 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "817c5efef4713dadcfc5181744f8846e",
+    "revision": "6ff05d8f0670e2a5da87ddb77c4b5ae3",
     "url": "/-reactWorkspace/index.html"
   },
   {
-    "revision": "dc8061c60d62dc6522c8",
+    "revision": "d8520da971dc88837dbc",
     "url": "/-reactWorkspace/static/css/2.6414bb7b.chunk.css"
   },
   {
-    "revision": "01856577f3f623386b87",
-    "url": "/-reactWorkspace/static/css/main.0fc0720b.chunk.css"
-  },
-  {
-    "revision": "dc8061c60d62dc6522c8",
-    "url": "/-reactWorkspace/static/js/2.0f5b11dc.chunk.js"
+    "revision": "d8520da971dc88837dbc",
+    "url": "/-reactWorkspace/static/js/2.aed60311.chunk.js"
   },
   {
     "revision": "5ac48c47bb3912b14c2d8de4f56d5ae8",
-    "url": "/-reactWorkspace/static/js/2.0f5b11dc.chunk.js.LICENSE.txt"
+    "url": "/-reactWorkspace/static/js/2.aed60311.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "01856577f3f623386b87",
-    "url": "/-reactWorkspace/static/js/main.9c35f5b8.chunk.js"
+    "revision": "dd01de22488255dc89a7",
+    "url": "/-reactWorkspace/static/js/main.3e7e90ae.chunk.js"
   },
   {
     "revision": "9fbb80bd82107d21561c",
@@ -64,10 +60,6 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/-reactWorkspace/static/media/jewelrybox.8b9c0b1c.jpg"
   },
   {
-    "revision": "6a5bf98577a39c5db8540587dfcc7b5e",
-    "url": "/-reactWorkspace/static/media/motherImage2.6a5bf985.jpg"
-  },
-  {
     "revision": "ebb61fe5172ad64470fc0628f27739bb",
     "url": "/-reactWorkspace/static/media/orange1.ebb61fe5.jpg"
   },
@@ -98,10 +90,6 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "3f683286186844998f46dad87362913a",
     "url": "/-reactWorkspace/static/media/orange8.3f683286.jpg"
-  },
-  {
-    "revision": "3fa620e6695070d9a2d6fb500a993256",
-    "url": "/-reactWorkspace/static/media/phones.3fa620e6.jpg"
   },
   {
     "revision": "960286de4a2709b28c6e674e80c76b76",

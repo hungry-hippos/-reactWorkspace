@@ -1,19 +1,17 @@
 {
   "files": {
-    "main.css": "/-reactWorkspace/static/css/main.0fc0720b.chunk.css",
-    "main.js": "/-reactWorkspace/static/js/main.9c35f5b8.chunk.js",
-    "main.js.map": "/-reactWorkspace/static/js/main.9c35f5b8.chunk.js.map",
+    "main.js": "/-reactWorkspace/static/js/main.3e7e90ae.chunk.js",
+    "main.js.map": "/-reactWorkspace/static/js/main.3e7e90ae.chunk.js.map",
     "runtime-main.js": "/-reactWorkspace/static/js/runtime-main.7bd0e4f8.js",
     "runtime-main.js.map": "/-reactWorkspace/static/js/runtime-main.7bd0e4f8.js.map",
     "static/css/2.6414bb7b.chunk.css": "/-reactWorkspace/static/css/2.6414bb7b.chunk.css",
-    "static/js/2.0f5b11dc.chunk.js": "/-reactWorkspace/static/js/2.0f5b11dc.chunk.js",
-    "static/js/2.0f5b11dc.chunk.js.map": "/-reactWorkspace/static/js/2.0f5b11dc.chunk.js.map",
+    "static/js/2.aed60311.chunk.js": "/-reactWorkspace/static/js/2.aed60311.chunk.js",
+    "static/js/2.aed60311.chunk.js.map": "/-reactWorkspace/static/js/2.aed60311.chunk.js.map",
     "index.html": "/-reactWorkspace/index.html",
-    "precache-manifest.3023930968df811335be945ab3fd3c27.js": "/-reactWorkspace/precache-manifest.3023930968df811335be945ab3fd3c27.js",
+    "precache-manifest.dd9cdbccf8ef778e12accd30184fe45c.js": "/-reactWorkspace/precache-manifest.dd9cdbccf8ef778e12accd30184fe45c.js",
     "service-worker.js": "/-reactWorkspace/service-worker.js",
     "static/css/2.6414bb7b.chunk.css.map": "/-reactWorkspace/static/css/2.6414bb7b.chunk.css.map",
-    "static/css/main.0fc0720b.chunk.css.map": "/-reactWorkspace/static/css/main.0fc0720b.chunk.css.map",
-    "static/js/2.0f5b11dc.chunk.js.LICENSE.txt": "/-reactWorkspace/static/js/2.0f5b11dc.chunk.js.LICENSE.txt",
+    "static/js/2.aed60311.chunk.js.LICENSE.txt": "/-reactWorkspace/static/js/2.aed60311.chunk.js.LICENSE.txt",
     "static/media/apple.png": "/-reactWorkspace/static/media/apple.5fac7632.png",
     "static/media/blackbox.webp": "/-reactWorkspace/static/media/blackbox.2b3cb12d.webp",
     "static/media/box1.jpeg": "/-reactWorkspace/static/media/box1.a6288dd8.jpeg",
@@ -23,7 +21,6 @@
     "static/media/disruptDen.PNG": "/-reactWorkspace/static/media/disruptDen.667c45f7.PNG",
     "static/media/hipster.jpg": "/-reactWorkspace/static/media/hipster.8ed557b0.jpg",
     "static/media/jewelrybox.jpg": "/-reactWorkspace/static/media/jewelrybox.8b9c0b1c.jpg",
-    "static/media/Robot.css": "/-reactWorkspace/static/media/motherImage2.6a5bf985.jpg",
     "static/media/orange1.jpg": "/-reactWorkspace/static/media/orange1.ebb61fe5.jpg",
     "static/media/orange2.jpg": "/-reactWorkspace/static/media/orange2.2a533f8e.jpg",
     "static/media/orange3.png": "/-reactWorkspace/static/media/orange3.c3dba581.png",
@@ -32,7 +29,6 @@
     "static/media/orange6.jpg": "/-reactWorkspace/static/media/orange6.74785b97.jpg",
     "static/media/orange7.png": "/-reactWorkspace/static/media/orange7.62546f5c.png",
     "static/media/orange8.jpg": "/-reactWorkspace/static/media/orange8.3f683286.jpg",
-    "static/media/Home.css": "/-reactWorkspace/static/media/phones.3fa620e6.jpg",
     "static/media/pizzabox.jpg": "/-reactWorkspace/static/media/pizzabox.960286de.jpg",
     "static/media/posture2.png": "/-reactWorkspace/static/media/posture2.46d38a97.png",
     "static/media/posture4.png": "/-reactWorkspace/static/media/posture4.568390d8.png",
@@ -43,8 +39,7 @@
   "entrypoints": [
     "static/js/runtime-main.7bd0e4f8.js",
     "static/css/2.6414bb7b.chunk.css",
-    "static/js/2.0f5b11dc.chunk.js",
-    "static/css/main.0fc0720b.chunk.css",
-    "static/js/main.9c35f5b8.chunk.js"
+    "static/js/2.aed60311.chunk.js",
+    "static/js/main.3e7e90ae.chunk.js"
   ]
 }
