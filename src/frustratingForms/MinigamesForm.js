@@ -1,11 +1,11 @@
+
 import React,{useEffect} from 'react'
 import Button from 'react-bootstrap/Button'
-
 import './MinigamesForm.css'
+import snakeLogic from './snakeLogic'
 
 
 const MinigamesForm=()=>{
-
 
     const submitData=()=>{
         const firstN=document.getElementById('firstName').value;
@@ -16,14 +16,8 @@ const MinigamesForm=()=>{
         document.getElementById('DOBSideBar').click();
     }
 
-    //appends a script tag, drawing it from public folder
-    const appendScript=()=>{
-        const s=document.createElement('script');
-        s.src='/snakeLogic.js';
-        document.body.appendChild(s);
-    }
+    
     const loadBtnHoverListener=()=>{
-        console.log("CHANGE");
         document.getElementById('submitGameBtn').addEventListener('mouseenter',(event)=>{
             document.getElementById('gameConfirmDiv').style.opacity='1';
             event.target.style.opacity='0';
@@ -34,7 +28,8 @@ const MinigamesForm=()=>{
     }
 
     useEffect(()=>{
-        appendScript();
+        snakeLogic();
+        
         window.addEventListener("keydown", function(e) {
             switch(e.key){
                 case "ArrowLeft":case "ArrowUp": case "ArrowRight": case "ArrowDown":

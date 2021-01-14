@@ -1,3 +1,5 @@
+function snakeLogic(){
+
 var mainGrid=document.getElementById('mainGrid');
 for (var i=0;i<525;i++){
 	var square=document.createElement('div');
@@ -43,38 +45,38 @@ function ratCreation(){
 
 
 function headMovement(){
-	if (movementDirection=='left'){
+	if (movementDirection==='left'){
 		snakeSuicide(headLocation-1);
-		if (headLocation%35==0)
+		if (headLocation%35===0)
 			snakeDead();
-		else if (headLocation-1==ratLocation)
+		else if (headLocation-1===ratLocation)
 			snakeEats(headLocation-1);
 		else
 			snakeMoves(headLocation-1);
 	}
-	else if (movementDirection=='up'){
+	else if (movementDirection==='up'){
 		snakeSuicide(headLocation-35);
 		if (0<=headLocation && headLocation<=34)
 			snakeDead();
-		else if (headLocation-35==ratLocation)
+		else if (headLocation-35===ratLocation)
 			snakeEats(headLocation-35);
 		else
 			snakeMoves(headLocation-35);
 	}
-	else if (movementDirection=='right'){
+	else if (movementDirection==='right'){
 		snakeSuicide(headLocation+1);
-		if ((headLocation+1)%35==0)
+		if ((headLocation+1)%35===0)
 			snakeDead();
-		else if (headLocation+1==ratLocation)
+		else if (headLocation+1===ratLocation)
 			snakeEats(headLocation+1);
 		else
 			snakeMoves(headLocation+1);
 	}
-	else if (movementDirection=='down'){
+	else if (movementDirection==='down'){
 		snakeSuicide(headLocation+35);
 		if (490<=headLocation && headLocation<=524)
 			snakeDead();
-		else if (headLocation+35==ratLocation)
+		else if (headLocation+35===ratLocation)
 			snakeEats(headLocation+35);
 		else
 			snakeMoves(headLocation+35);
@@ -83,7 +85,7 @@ function headMovement(){
 
 function snakeSuicide(nextHead){
 	bodyLocation.forEach(function(bodyPart){
-		if (nextHead==bodyPart)
+		if (nextHead===bodyPart)
 			snakeDead();
 	})
 }
@@ -99,7 +101,7 @@ function snakeDead(){
 	bodyLocation=[];
 	ratLocation=ratCreation();
 	
-	if (document.getElementById('gameConfirmText').textContent!='Submit when ready.'){
+	if (document.getElementById('gameConfirmText').textContent!=='Submit when ready.'){
 		document.getElementById('appleCounter').textContent="10";
 	}
 
@@ -114,7 +116,7 @@ function snakeEats(nextHead){
 	headLocation=nextHead;
 	ratLocation=ratCreation();
 	
-	if (document.getElementById('gameConfirmText').textContent!='Submit when ready.'){
+	if (document.getElementById('gameConfirmText').textContent!=='Submit when ready.'){
 		const counter=document.getElementById('appleCounter');
 		var num=parseInt(counter.textContent,10);
 		num--;
@@ -146,27 +148,30 @@ var time=150;
 function changeDirection(event){
 	
 	clearInterval(currentIntervalCode);
-	if (event.keyCode==37 && movementDirection!='right'){
+	if (event.keyCode===37 && movementDirection!=='right'){
 		//move left
 		movementDirection='left';
 		document.getElementById('initialInstructions').style.display='none';
 	}
-	if (event.keyCode==38 && movementDirection!='down'){
+	if (event.keyCode===38 && movementDirection!=='down'){
 		//move up
 		movementDirection='up';
 		document.getElementById('initialInstructions').style.display='none';
 	}
-	if (event.keyCode==39 && movementDirection!='left'){
+	if (event.keyCode===39 && movementDirection!=='left'){
 		//move right
 		movementDirection='right';
 		document.getElementById('initialInstructions').style.display='none';
 	}
-	if (event.keyCode==40 && movementDirection!='up'){
+	if (event.keyCode===40 && movementDirection!=='up'){
 		//move down
 		movementDirection='down';
 		document.getElementById('initialInstructions').style.display='none';
 	}
 	currentIntervalCode=setInterval(headMovement,time);
 }
+}
+
+export default snakeLogic
 
 
