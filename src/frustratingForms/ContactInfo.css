@@ -40,15 +40,15 @@ font-size: 15px;
 margin: 0 0 0 35px;
 font-weight: bold;
 width:125px;
-box-shadow:0 0 3px #7d7575;
 }
+#contactGenerate:hover{box-shadow:0 0 3px #7d7575;}
 #contactThisIsIt{display:block;
 margin:0 auto;
 font-size:18px;
 opacity:0;
 transition:.5s;
-box-shadow:0 0 3px #7d7575;
 }
+#contactThisIsIt{box-shadow:0 0 3px #7d7575;}
 #SMSverification{    width: 270px;
     line-height: 2;
     height: 100%;

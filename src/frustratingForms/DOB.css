@@ -45,7 +45,7 @@ padding:20px 10px 10px 10px;
 position:relative;
 }
 
-.DOBAddLetterBtn{padding: 5px;
+.DOBAddLetterBtn{padding: 5px 10px;
     position:absolute;
     left:5px;
     bottom:10px;
@@ -54,14 +54,17 @@ position:relative;
 }
 .DOBAddLetterBtn:focus{box-shadow: 0 0 0 0 !important;}
 
-#DOBEnterBtn{padding: 5px;
-    box-shadow: 0 0 5px #676666;
-    position:absolute;
-    right:10px;
-    bottom:10px;
-    font-family: 'Montserrat';
-    z-index:100;
+#DOBEnterBtn{position:absolute;
+    padding: 5px 10px;
+    right: 10px;
+    bottom: 10px;
+    font-size: 19px;
+    color: black;
+    font-weight: bold;
+    z-index: 100;
+    border:none !important;
 }
+#DOBEnterBtn:hover{color:white}
 
 #DOBInvalidMonthError{
     position: absolute;
@@ -216,7 +219,7 @@ top:0;
     box-sizing: border-box;
     opacity:0;
     transition:.5s;
-    background-color: #c7c3c5;
+    background-color: #5580c1;
 }
 .DOBSubmissions{margin: 10px;
 color: black;
