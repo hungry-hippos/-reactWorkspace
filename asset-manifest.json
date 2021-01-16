@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/-reactWorkspace/static/css/main.6418b669.chunk.css",
-    "main.js": "/-reactWorkspace/static/js/main.c80fefbf.chunk.js",
-    "main.js.map": "/-reactWorkspace/static/js/main.c80fefbf.chunk.js.map",
+    "main.css": "/-reactWorkspace/static/css/main.b80d44e8.chunk.css",
+    "main.js": "/-reactWorkspace/static/js/main.24745ee6.chunk.js",
+    "main.js.map": "/-reactWorkspace/static/js/main.24745ee6.chunk.js.map",
     "runtime-main.js": "/-reactWorkspace/static/js/runtime-main.7bd0e4f8.js",
     "runtime-main.js.map": "/-reactWorkspace/static/js/runtime-main.7bd0e4f8.js.map",
     "static/css/2.6414bb7b.chunk.css": "/-reactWorkspace/static/css/2.6414bb7b.chunk.css",
     "static/js/2.5903f9b6.chunk.js": "/-reactWorkspace/static/js/2.5903f9b6.chunk.js",
     "static/js/2.5903f9b6.chunk.js.map": "/-reactWorkspace/static/js/2.5903f9b6.chunk.js.map",
     "index.html": "/-reactWorkspace/index.html",
-    "precache-manifest.8c1887f5610b57a7ebcebcd1f2482032.js": "/-reactWorkspace/precache-manifest.8c1887f5610b57a7ebcebcd1f2482032.js",
+    "precache-manifest.fb4134fe2999ca3f75e1de17a0f8afcc.js": "/-reactWorkspace/precache-manifest.fb4134fe2999ca3f75e1de17a0f8afcc.js",
     "service-worker.js": "/-reactWorkspace/service-worker.js",
     "static/css/2.6414bb7b.chunk.css.map": "/-reactWorkspace/static/css/2.6414bb7b.chunk.css.map",
-    "static/css/main.6418b669.chunk.css.map": "/-reactWorkspace/static/css/main.6418b669.chunk.css.map",
+    "static/css/main.b80d44e8.chunk.css.map": "/-reactWorkspace/static/css/main.b80d44e8.chunk.css.map",
     "static/js/2.5903f9b6.chunk.js.LICENSE.txt": "/-reactWorkspace/static/js/2.5903f9b6.chunk.js.LICENSE.txt",
     "static/media/apple.png": "/-reactWorkspace/static/media/apple.5fac7632.png",
     "static/media/blackbox.webp": "/-reactWorkspace/static/media/blackbox.2b3cb12d.webp",
@@ -20,7 +20,7 @@
     "static/media/box2.jpg": "/-reactWorkspace/static/media/box2.d3cbcd7a.jpg",
     "static/media/ceo.jpg": "/-reactWorkspace/static/media/ceo.19f7b955.jpg",
     "static/media/christina.jpg": "/-reactWorkspace/static/media/christina.5ef9d99b.jpg",
-    "static/media/disruptDen.PNG": "/-reactWorkspace/static/media/disruptDen.667c45f7.PNG",
+    "static/media/disruptionDenClear.png": "/-reactWorkspace/static/media/disruptionDenClear.c43c16a8.png",
     "static/media/hipster.jpg": "/-reactWorkspace/static/media/hipster.8ed557b0.jpg",
     "static/media/jewelrybox.jpg": "/-reactWorkspace/static/media/jewelrybox.8b9c0b1c.jpg",
     "static/media/Robot.css": "/-reactWorkspace/static/media/motherImage2.6a5bf985.jpg",
@@ -37,14 +37,14 @@
     "static/media/posture2.png": "/-reactWorkspace/static/media/posture2.46d38a97.png",
     "static/media/posture4.png": "/-reactWorkspace/static/media/posture4.568390d8.png",
     "static/media/shoebox.jpg": "/-reactWorkspace/static/media/shoebox.28e32d1d.jpg",
-    "static/media/techTussle.PNG": "/-reactWorkspace/static/media/techTussle.33d1b7e4.PNG",
-    "static/media/weirdWebWrangle.PNG": "/-reactWorkspace/static/media/weirdWebWrangle.1b8300f9.PNG"
+    "static/media/techTussleClear.png": "/-reactWorkspace/static/media/techTussleClear.59ac1105.png",
+    "static/media/weirdWebWrangleClear.png": "/-reactWorkspace/static/media/weirdWebWrangleClear.0934d5c1.png"
   },
   "entrypoints": [
     "static/js/runtime-main.7bd0e4f8.js",
     "static/css/2.6414bb7b.chunk.css",
     "static/js/2.5903f9b6.chunk.js",
-    "static/css/main.6418b669.chunk.css",
-    "static/js/main.c80fefbf.chunk.js"
+    "static/css/main.b80d44e8.chunk.css",
+    "static/js/main.24745ee6.chunk.js"
   ]
 }
