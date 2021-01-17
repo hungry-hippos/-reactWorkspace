@@ -28,7 +28,7 @@ const InputDay=(props)=>{
         </div>
         <Button variant="outline-dark" id="DOBDayStartBtn" className='DOBStart' onClick={runTimer.toggle}>START</Button>
     </div>
-    <div id="DOBAnswersDisplay">
+    <div id="DOBAnswersDisplay" className="fade-in-section">
         <p className='DOBSubmissions'>Your submissions:</p>
         <div id='eqLeftSide'>
             <div id='eqTop'>

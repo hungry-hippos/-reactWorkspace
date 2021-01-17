@@ -577,11 +577,17 @@ var runTimer={
         //if !first stop, reveals each submission
         var slots=document.getElementsByClassName('DOBDaySubmission');
         if (runTimer.iteration===1){
-            document.getElementById('DOBAnswersDisplay').style.opacity='1';
+            
+            setTimeout(()=>{
+                document.getElementById("DOBMainSection").style.margin="10px auto";
+            },500);
+            setTimeout(()=>{
+                document.getElementById('DOBAnswersDisplay').classList.add('is-visible');
+            },1500);
             slots[0].textContent=document.getElementById('DOBInputDayNumber').textContent;
             setTimeout(()=>{
                 slots[0].style.opacity='1';
-            },700)
+            },4000);
         }else{
             for (var j=0;j<slots.length;j++){
                 if (slots[j].textContent===""){

@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React,{useEffect, useState} from 'react'
 import DOB from './DOB'
 import Minigame from './MinigamesForm'
 import MapContainer from './MapContainer'
@@ -109,6 +109,16 @@ function App() {
 
   const setters={setShowRobot,setShowDOB,setShowMinigame,setShowMap,setShowContactInfo, setShowSummary,setShowHome};
   
+  useEffect(()=>{
+    const body=document.getElementById('DOMBody');
+    if (showHome){
+      body.style.backgroundColor="#f8f9fa";
+    }else{
+      body.style.backgroundColor="#cee1fb";
+    }
+  },[showHome])
+
+
   return <React.Fragment>
         <SideBar setters={setters} />
         <CollectedData />

@@ -14,18 +14,13 @@ margin:5px;
     padding-left: 5px;
 }
 #submitGameBtn{display: block;
-    font-size: 15px;
-    margin-top: 7px;
-    margin-left: 273px;
-    padding: 5px 6px;
-    border-radius: 5px;
-    box-sizing: content-box;
-    width: 75px;
+    margin-left: 271px;
+    margin-top:5px;
     font-weight: bold;
     letter-spacing: 1px;
-    font-family: 'Montserrat';
-    transition:.5s;}
-#submitGameBtn:focus{outline:none; border: 2px solid blue;}
+    border:1px solid #007bff;
+    font-family: 'Montserrat';}
+#submitGameBtn:focus{outline:none;}
 #minigameMain{display: block;
 margin: 100px auto 20px auto;
 width:400px;
@@ -38,7 +33,7 @@ box-shadow: 0 0 3px black;
 
 #gameConfirmDiv{position:relative;
 width:400px;
-background-color: #5580c1;
+background-color: #79b3f1;
 box-shadow: 0 0 3px black;
 display: block;
 margin:10px auto;
@@ -57,8 +52,7 @@ margin: 0 0 0 74%;
 font-family: 'Montserrat';
 font-weight:bold;
 opacity:0;
-box-shadow: 0 0 5px #65686b;
-transition:1s;
+transition:.3s;
 }
 #mainGrid {width:350px;
     height:150px;

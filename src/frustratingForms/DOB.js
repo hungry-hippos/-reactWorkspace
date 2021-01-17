@@ -91,7 +91,9 @@ const DOB=()=>{
     var data=[month,day,year];
     var isComponentActive=[showMonth,showDay,showYear];
 
-    
+    useEffect(()=>{
+        document.getElementById('DOBMainSection').style.margin="100px auto";
+    },[showYear])
 
     return <React.Fragment>
         < ComponentToggle setters={setters} />
