@@ -8,6 +8,7 @@ import weirdWebWrangle from "../assets/pictures/home/weirdWebWrangleClear.png"
 import christina from "../assets/pictures/home/christina.jpg"
 import ceo from "../assets/pictures/home/ceo.jpg"
 import hipster from "../assets/pictures/home/hipster.jpg"
+import homeText from "./HomeTextArray"
 import './Home.css'
 
 const NavBar=(props)=>{
@@ -54,40 +55,9 @@ const NavBar=(props)=>{
         <Button variant='outline-primary' className='homeNavbarBtn' onClick={()=>{changeComp('start')}}>Get Started</Button>
     </div>
 };
-const WelcomeIntro=()=>{
-    return <div className='rightText'>
-        <p>We offer alternative solutions for contact form UIs. Whether you are seeking to provide a more unique and spicy template for your applications and contact forms, or looking for a better way to screen out unmotivated clients, we got you covered.</p>
-        <p>Our number one priority is steamlining business communication by delivering you only the most serious and highly-motivated people. Whether you are a business entrepreneur hunting for talent to join your team or a freelancer looking for the next gig, we filter out all the subpar applications and deliver you a literal silver platter, loaded with hand-picked premium leads that will guarantee YOU and YOUR BUSINESS go places. </p>
-        <p>Stop wasting your time on pointless leads and second-tier talent. Upgrade your forms. Upgrade your opportunities.</p>
-        <Button>Start</Button>
-    </div>
-};
-
-const Vision=()=>{
-    return <div className='rightText'> 
-        A world where talent-acquisition teams no longer have to sort through thousands of resumes and conduct dozens of interviews to find the right talent. A world where business can be conducted quick and efficiently, without wasting any time pursuing fruitless leads. A world where finding the brightest talent and the most motivated clients no longer resembles looking for a needle in a haystack, but rather looking for a needle in a needle warehouse. </div>
-};
-const Mission=()=>{
-    return <div className='rightText'>
-        Establish the first monopoloy in the online-form industry. Through disruptive innovation and strategic marketing, we will compete with the Big Form giants, plunder their market share, plummet their stock value, auction their assets and terminate their boards. Utilizing core business-leadership principles and cutting-edge talent-acquitision practices, we identify, hire and develop only the brightest talent, fostering a competitive and cooperative fast-paced business environment that breeds personal and profession growth, where feedback is requested and provided throughout all leadership levels and no two days are ever the same.</div>
-};
-const Inspiration=()=>{
-    return <div className='rightText'>
-        <p>It's four o'clock on a Friday afternoon. You have spent the entire week reviewing resumes, calling references, planning shift scheduling, and acting as a mediator in all sorts of employee conflict. The placard over your desk says "HR Specialist", but in reality, you feel like your job is to be dragged into everyone's playground drama. But it's okay because you are a people person.</p>
-        <p>After having poured over 300 resumes over the last few days and conducted dozens of phone and in-person interviews, you have finally found a perfect fit for the job opening the company posted a month ago. You spent dozens of hours looking for the best candidate, and you have found finally found one: young, from a prestigious school, with plenty of professional and leadership experience, without being overqualified or asking for fair compensation. You feel a sense of satisfaction and fulfillment; the refreshening breeze of having one less responsibility on your plate.</p>
-        <p>As you put on your thick framed glasses and pack your laptop into your hipster-brand leather briefcase, Mr. Lumbergh, the office manager, pops his head into your office.</p>
-        <p>"Great job this week getting that new hire. Unfortunately, Sally from accounting just quit. Something about finding her calling in life in some Greek island. So if you could post a job opening for accounting before leaving today, that would be great. Great job on those TPS reports by the way".</p>
-        <p>You open up the company's Indeed profile, copy and paste a generic post for an accounting job opening. You sprint accross the open floor space to avoid getting bogged down by employees asking last minute HR-related questions about PTO and other nonesense. You spend the next two days hanging with your Schnauzer and drinking mojitos with your S.O.</p>
-        <p>But Monday morning arrives. You come back to the office, ready to tackle another week of professional opportunities and challenges. You boot your computer and check the Indeed job opening you posted not even three days ago for that accounting opening Mr.Lumbergh told you about. Your jaw locks and your hands start shaking. Palms sweaty. Knees weak. Arms get heavy.</p>
-        <p>"1529 resumes... in three days?... How?", you whisper.</p>
-        <p>"Hey, if you could submit those TPS reports ASAP, that would be great.", Mr.Lumbergh says as he strolls past your office. Now you gotta go through all those resumes, make all those phone calls, conduct all those interviews. Just like you did the week before. And the week prior. And the week prior.</p>
-        <p>"If only there was some type of software that could help me pre-screen applicants, weeding out the less motivated ones, and only feed me resumes of the most motivated and serious ones?" is all you can wonder.</p>
-    </div>
-};
 
 const Podium=()=>{
 
-    
     useEffect(()=>{
         const images=document.getElementsByClassName('awardCard');
         for (var i=0;i<images.length;i++){
@@ -137,6 +107,26 @@ const Podium=()=>{
         </div>
     </div>
 }
+function FadeInSection(props) {
+    const [isVisible, setVisible] = React.useState(true);
+    const domRef = React.useRef();
+    React.useEffect(() => {
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => setVisible(entry.isIntersecting));
+      });
+      observer.observe(domRef.current);
+      return () => observer.unobserve(domRef.current);
+    }, []);
+    return (
+      <div
+        className={`fade-in-section ${isVisible ? 'is-visible' : ''}`}
+        ref={domRef}
+      >
+        {props.children}
+      </div>
+    );
+  }
+
 const Testimonials=()=>{
     return <div id='homeBody'>
         <Carousel id='testimonialsCarousel'>
@@ -164,11 +154,33 @@ const Testimonials=()=>{
                     </Carousel>
         <div id='carouselWrapper'></div>
         <div id='awardsDiv'>
-            <p style={{fontSize:"25px",fontFamily:"Montserrat",color:'black',textAlign:'center'}}>The <span style={{fontWeight:'bold'}}>award-winning movement</span> that has <span style={{fontWeight:'bold'}}>disrupted</span> the online-form industry.</p>
-            <Podium />
+            <FadeInSection>
+                <p style={{fontSize:"25px",fontFamily:"Montserrat",color:'#dae0e5',textAlign:'center',margin:'90px 0 50px 0'}}>The <span style={{fontWeight:'bold', color:'#d39e00'}}>award-winning</span> movement that has <span style={{fontWeight:'bold',color:'#d39e00'}}>disrupted</span> the online-form industry.</p>
+                <Podium />
+            </FadeInSection>
+
+            <FadeInSection>
+                <p style={{fontSize:"25px",fontFamily:"Montserrat",color:'black',textAlign:'center',margin:'90px 0 70px 0'}}>See what the big fuss is all about.<br/>Try it out for free now.</p>
+                <Button variant='outline-primary' style={{fontSize:'25px',display:'block',margin:'0 auto',border:'2px solid #007bff'}}>GET STARTED</Button>
+            </FadeInSection>
         </div>
     </div>
 };
+
+const HomeTextComp=(props)=>{
+    const [title,body]=props.data;
+
+    useEffect(()=>{
+        document.getElementById('bodyContentDiv').innerHTML=body;
+        document.getElementById('homeTextMainDiv').classList.add('blueBackground');
+    },[])
+
+    return <div id="homeTextMainDiv">
+        <h1>{title}</h1>
+        <hr style={{margin:"20px 0", borderTop:"1px solid black"}}></hr>
+        <div id="bodyContentDiv"></div>
+    </div>
+}
 
 const Home=(props)=>{
     const{setShowHome,setShowMinigame}=props.appSetters;
@@ -185,10 +197,10 @@ const Home=(props)=>{
     return <div id='homeMainDiv'>
         <h1 id='logo'> <IoIosCloudUpload style={{filter: "drop-shadow(3px 3px 0px white"}}/>  Filter Forms</h1>
         < NavBar setters={setters} appSetters={appSetters}/>
-        {showAbout && < WelcomeIntro /> }
-        {showVision && <Vision />}
-        {showMission && <Mission />}
-        {showInspiration && <Inspiration />}
+        {showAbout && < HomeTextComp data={homeText[0]}/> }
+        {showVision && <HomeTextComp data={homeText[1]}/>}
+        {showMission && <HomeTextComp data={homeText[2]}/>}
+        {showInspiration && <HomeTextComp data={homeText[3]}/>}
         {showTestimonials && <Testimonials />}
     </div>
 
