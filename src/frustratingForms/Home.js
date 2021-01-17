@@ -128,6 +128,10 @@ function FadeInSection(props) {
   }
 
 const Testimonials=()=>{
+
+    const getStarted=()=>{
+        document.getElementById('minigameSideBar').click();
+    }
     return <div id='homeBody'>
         <Carousel id='testimonialsCarousel'>
                         <Carousel.Item>
@@ -161,7 +165,7 @@ const Testimonials=()=>{
 
             <FadeInSection>
                 <p style={{fontSize:"25px",fontFamily:"Montserrat",color:'black',textAlign:'center',margin:'90px 0 70px 0'}}>See what the big fuss is all about.<br/>Try it out for free now.</p>
-                <Button variant='outline-primary' style={{fontSize:'25px',display:'block',margin:'0 auto',border:'2px solid #007bff'}}>GET STARTED</Button>
+                <Button variant='outline-primary' style={{fontSize:'25px',display:'block',margin:'0 auto',border:'2px solid #007bff'}} onClick={getStarted}>GET STARTED</Button>
             </FadeInSection>
         </div>
     </div>
