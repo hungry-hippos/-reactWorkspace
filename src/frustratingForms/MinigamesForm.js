@@ -1,8 +1,8 @@
 
 import React,{useEffect} from 'react'
 import Button from 'react-bootstrap/Button'
+import kruskals from './kruskalsGeneration'
 import './MinigamesForm.css'
-import snakeLogic from './snakeLogic'
 
 
 const MinigamesForm=()=>{
@@ -14,35 +14,21 @@ const MinigamesForm=()=>{
         document.getElementById('lastNameField').textContent=lastN;
 
         document.getElementById('DOBSideBar').click();
-    }
-
-    
+    } 
     const loadBtnHoverListener=()=>{
         document.getElementById('submitGameBtn').removeAttribute('disabled');
+    }
+    useEffect(()=>{
         document.getElementById('submitGameBtn').addEventListener('mouseenter',(event)=>{
             document.getElementById('gameConfirmDiv').style.opacity='1';
             event.target.style.opacity='0';
+            kruskals.createMaze();
+
             setTimeout(()=>{
                 document.getElementById('submitGameBtn').style.display="none";
             },500)
         })
-    }
-
-    useEffect(()=>{
-        snakeLogic();
-        
-        window.addEventListener("keydown", function(e) {
-            switch(e.key){
-                case "ArrowLeft":case "ArrowUp": case "ArrowRight": case "ArrowDown":
-                    e.preventDefault();
-                    break;
-                default:
-                    break; 
-            }
-        });
-        
-    },[])
-
+    })  
 
     return <>
         <div id='minigameMain'>
@@ -56,12 +42,12 @@ const MinigamesForm=()=>{
                     <label htmlFor='lastName' className='nameLabel'>Last Name:</label>
                     <input type='text' id='lastName' className='nameInput' onChange={loadBtnHoverListener}></input>
                 </div>
-                <Button variant="outline-primary" id='submitGameBtn' disabled>Submit</Button>
+                <Button variant="primary" id='submitGameBtn' disabled>Submit</Button>
         </div>
         <div id='gameConfirmDiv'>
-            <div id='gameConfirmText' style={{fontSize:"17px"}}>Eat <div id='appleCounter' style={{fontWeight:'bold', display:'inline'}}>10</div> apples to submit.</div>
+            <div id='gameConfirmText' style={{fontSize:"17px",opacity:'0',transition:'1s'}}>Why did the chicken cross the maze?</div>
             <div id="mainGrid"></div>
-            <div id='initialInstructions'>Press any arrow key.</div>
+            <div id='initialInstructions' className='hidden'>Press any arrow key.</div>
             <Button variant="primary" id='gameConfirmBtn' onClick={submitData} >Submit</Button>
         </div>
         </>

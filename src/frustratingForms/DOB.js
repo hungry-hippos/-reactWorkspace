@@ -55,7 +55,7 @@ const ComponentToggle=(props)=>{
         }
     }
 
-    return <div id='DOBComponentsBar' className=''>
+    return <div id='DOBComponentsBar' className='hidden'>
         <button onClick={()=>{show("month")}} id='monthUpbar'>Month</button>
         <button onClick={()=>{show("day")}} id='dayUpbar'>Day</button>
         <button onClick={()=>{show("year")}} id='yearUpbar'>Year</button>

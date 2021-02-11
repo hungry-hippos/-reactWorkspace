@@ -32,7 +32,8 @@ box-shadow: 0 0 3px black;
 }
 
 #gameConfirmDiv{position:relative;
-width:400px;
+width:1000px;
+height:400px;
 background-color: #79b3f1;
 box-shadow: 0 0 3px black;
 display: block;
@@ -47,41 +48,53 @@ transition:1s;
 font-size:15px;
 letter-spacing: 1px;
 border-radius:7px;
-display: block;
-margin: 0 0 0 74%;
+position:absolute;
+bottom:10px;
+right:16px;
 font-family: 'Montserrat';
 font-weight:bold;
 opacity:0;
 transition:.3s;
 }
-#mainGrid {width:350px;
-    height:150px;
-    display:flex;
-    flex-wrap: wrap;
-    margin: 13px 0;}
-
-.snakeSquare{width:10px;
-height:10px;
+#mainGrid {width:960px;
+height:300px;
+box-sizing: border-box;
+margin: 13px 0;
+}
+.easySquare{height:50px;
+width:50px;
 margin:0;
+float:left;
+box-sizing: border-box;
 background-color: black;
 }
+.visited{background-color: black;}
+.top{border-top:3px solid rgb(0, 4, 255)}
+.bottom{border-bottom:3px solid rgb(0, 4, 255)}
+.left{border-left:3px solid rgb(0, 4, 255)}
+.right{border-right:3px solid rgb(0, 4, 255)}
 
-#snakeHead{background-color: green;
-border:thin solid rgb(2, 59, 10);
+.chicken{height:50px;
+width:50px;
+}
+.rightFacing{transform:scaleX(-1)}
+.minigameExit{background: repeating-linear-gradient(
+    -45deg,
+    #ffffff,
+    #ffffff 5px,
+    #ff0202 5px,
+    #f10a0a 10px
+  );
 }
 
-.snakeBody{background-color: rgb(7, 202, 7);
-border:thin solid rgb(2, 59, 10);
-}
 
-#rat{background-color: red}
-#initialInstructions{display: inline-block;
-width: 300px;
-font-size: 25px;
+#initialInstructions{font-size: 50px;
+letter-spacing: 2px;
+text-shadow: 3px 3px 0px #6d6d6d;
 color: white;
 position: absolute;
-left: 70px;
-top: 100px;
+left: 27%;
+top: 37%;
 }
 
 #minigameTitle{font-size: 25px;

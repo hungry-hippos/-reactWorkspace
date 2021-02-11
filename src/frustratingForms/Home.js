@@ -75,6 +75,7 @@ const Podium=()=>{
                 event.target.firstElementChild.style.top='10px';
 
                 event.target.lastElementChild.style.top='220px';
+                event.target.lastElementChild.style.opacity="1";
             })
             images[i].addEventListener('mouseleave',(event)=>{
                 const imageElement=event.target.firstElementChild.firstElementChild;
@@ -89,6 +90,7 @@ const Podium=()=>{
                 event.target.firstElementChild.style.top='110px';
 
                 event.target.lastElementChild.style.top='480px';
+                event.target.lastElementChild.style.opacity="0";
             })
         }
     },[])
