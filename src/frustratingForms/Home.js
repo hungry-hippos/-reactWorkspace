@@ -140,7 +140,7 @@ const Testimonials=()=>{
                         <div className='wrapper'><img src={christina} alt='' style={{width:'870px',height:'650px',position:'relative',top:'-30px'}}/></div>
                             <Carousel.Caption>
                             <p style={{fontSize:'23px',fontFamily:'Merriweather',width:'380px',color:'black',position:'relative',top:'-70px',left:'-30px',lineHeight:'1.8'}}>"I absolutely adore Filter Forms. The quality of my business leads has never been higher. I have not missed a single deal in months" </p>
-                            <p style={{fontSize:'18px',fontFamily:'Merriweather',color:'black',position:'relative',top:'-70px',left:'-30px',fontStyle:'italic'}}>-Sally,our first client</p>
+                            <p style={{fontSize:'18px',fontFamily:'Merriweather',color:'black',position:'relative',top:'-70px',left:'-30px',fontStyle:'italic'}}>-Sally, our first client</p>
                             </Carousel.Caption>
                         </Carousel.Item>
                         <Carousel.Item>
