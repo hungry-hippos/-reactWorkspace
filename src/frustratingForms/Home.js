@@ -140,14 +140,14 @@ const Testimonials=()=>{
                         <div className='wrapper'><img src={christina} alt='' style={{width:'870px',height:'650px',position:'relative',top:'-30px'}}/></div>
                             <Carousel.Caption>
                             <p style={{fontSize:'23px',fontFamily:'Merriweather',width:'380px',color:'black',position:'relative',top:'-70px',left:'-30px',lineHeight:'1.8'}}>"I absolutely adore Filter Forms. The quality of my business leads has never been higher. I have not missed a single deal in months" </p>
-                            <p style={{fontSize:'18px',fontFamily:'Merriweather',color:'black',position:'relative',top:'-70px',left:'-30px',fontStyle:'italic'}}>-Sally, global mango merchant</p>
+                            <p style={{fontSize:'18px',fontFamily:'Merriweather',color:'black',position:'relative',top:'-70px',left:'-30px',fontStyle:'italic'}}>-Sally,our first client</p>
                             </Carousel.Caption>
                         </Carousel.Item>
                         <Carousel.Item>
                         <div className='wrapper'><img src={ceo} alt='' style={{width:'1100px',height:'800px',position:'relative',top:'-30px', left:'-300px', transform:'scaleX(-1)'}}/></div>
                             <Carousel.Caption>
                             <p style={{fontSize:'22px',fontFamily:'Merriweather',color:'black',position:'relative',top:'-100px',left:'-50px',width:'600px',boxSizing:'border-box'}}>"As a start-up CEO, I can't waste any time going over resumes. Thanks to Filter Forms, I spend less time doing HR stuff, and more time doing CEO stuff."</p>
-                            <p style={{fontSize:'18px',fontFamily:'Merriweather',color:'black',position:'relative',top:'-90px',left:'170px',fontStyle:'italic'}}>-Brad, CEO of CEONation</p>
+                            <p style={{fontSize:'18px',fontFamily:'Merriweather',color:'black',position:'relative',top:'-90px',left:'170px',fontStyle:'italic'}}>-Brad, our second client</p>
                             </Carousel.Caption>
                         </Carousel.Item>
                         <Carousel.Item>

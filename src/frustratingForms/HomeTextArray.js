@@ -9,7 +9,7 @@ const homeText=[
     ],
     [
         "Our Mission",
-        "<p>Establish the first monopoloy in the online-form industry. Through disruptive innovation and strategic marketing, we will compete with the Big Form giants, plunder their market share, plummet their stock value, auction their assets and terminate their boards. Utilizing core business-leadership principles and cutting-edge talent-acquitision practices, we identify, hire and develop only the brightest talent, fostering a competitive and cooperative fast-paced business environment that breeds personal and profession growth, where feedback is requested and provided throughout all leadership levels and no two days are ever the same.</p>"
+        "<p>Establish the first monopoloy in the online-form industry. Through disruptive innovation and strategic marketing, we will compete with the Big Form giants, plunder their market share, plummet their stock value, auction their assets and terminate their boards.</p>"
     ],
     [
         "Our Inspiration",
