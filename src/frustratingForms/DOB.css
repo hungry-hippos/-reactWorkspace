@@ -45,6 +45,8 @@ box-shadow: 0 0 5px #717171;
 padding:10px;
 position:relative;
 }
+#spellOutMonth{font-size: 15px;
+    font-family: 'Montserrat';}
 
 .DOBAddLetterBtn{padding: 5px 10px;
     position:absolute;

@@ -19,7 +19,7 @@ const InputDay=(props)=>{
 
     return <React.Fragment>
     <div id="DOBInputDay">
-        <div style={{paddingLeft:'10px'}}>Please enter the day you were born in.</div>
+        <div style={{paddingLeft:'10px', fontFamily:'Montserrat', fontSize:'15px'}}>Please enter the day you were born in.</div>
         <div id='DOBElementsHolder'>
             <div id='DOBAlley'>
                 <img className='tinyMan leftMan' id='firstLeftMan' src={postureMan4} alt=""/>

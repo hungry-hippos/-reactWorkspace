@@ -63,7 +63,7 @@ const InputMonth=(props)=>{
 
     var i=0;
     return <div id='DOBInputMonth'>
-        Please spell out the month you were born in.
+        <div id='spellOutMonth'>Please spell out the month you were born in.</div>
         {letterMenus.map(()=>{
             i++;
             return <DropDownAlphabet key={i}/>
