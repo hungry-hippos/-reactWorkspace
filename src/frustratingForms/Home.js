@@ -137,6 +137,13 @@ const Testimonials=()=>{
     return <div id='homeBody'>
         <Carousel id='testimonialsCarousel'>
                         <Carousel.Item>
+                        <div className='wrapper'><img src={hipster} alt='' style={{width:'1100px',height:'750px',position:'relative',top:'-30px',left:'-150px'}}/></div>
+                            <Carousel.Caption>
+                            <p style={{fontSize:'23px',fontFamily:'Merriweather',color:'black',position:'relative',top:'-100px',right:'-180px',width:'350px',boxSizing:'border-box'}}>"I used to sort through thousands of resumes every day. Now, it's just a dozen."</p>
+                            <p style={{fontSize:'18px',fontFamily:'Merriweather',color:'black',position:'relative',top:'-100px',right:'-240px',width:'350px',boxSizing:'border-box',fontStyle:'italic'}}>-Betsy, HR specialist</p>
+                            </Carousel.Caption>
+                        </Carousel.Item>
+                        <Carousel.Item>
                         <div className='wrapper'><img src={christina} alt='' style={{width:'870px',height:'650px',position:'relative',top:'-30px'}}/></div>
                             <Carousel.Caption>
                             <p style={{fontSize:'23px',fontFamily:'Merriweather',width:'380px',color:'black',position:'relative',top:'-70px',left:'-30px',lineHeight:'1.8'}}>"I absolutely adore Filter Forms. The quality of my business leads has never been higher. I have not missed a single deal in months" </p>
@@ -146,15 +153,8 @@ const Testimonials=()=>{
                         <Carousel.Item>
                         <div className='wrapper'><img src={ceo} alt='' style={{width:'1100px',height:'800px',position:'relative',top:'-30px', left:'-300px', transform:'scaleX(-1)'}}/></div>
                             <Carousel.Caption>
-                            <p style={{fontSize:'22px',fontFamily:'Merriweather',color:'black',position:'relative',top:'-100px',left:'-50px',width:'600px',boxSizing:'border-box'}}>"As a start-up CEO, I can't waste any time going over resumes. Thanks to Filter Forms, I spend less time doing HR stuff, and more time doing CEO stuff."</p>
+                            <p style={{fontSize:'22px',fontFamily:'Merriweather',color:'black',position:'relative',top:'-100px',left:'-50px',width:'600px',boxSizing:'border-box'}}>"As a start-up CEO, I can't waste any time going over resumes. Thanks to Filter Forms, I can pick any resume and it'll be a guaranteed rockstar."</p>
                             <p style={{fontSize:'18px',fontFamily:'Merriweather',color:'black',position:'relative',top:'-90px',left:'170px',fontStyle:'italic'}}>-Brad, our second client</p>
-                            </Carousel.Caption>
-                        </Carousel.Item>
-                        <Carousel.Item>
-                        <div className='wrapper'><img src={hipster} alt='' style={{width:'1100px',height:'750px',position:'relative',top:'-30px',left:'-150px'}}/></div>
-                            <Carousel.Caption>
-                            <p style={{fontSize:'23px',fontFamily:'Merriweather',color:'black',position:'relative',top:'-100px',right:'-220px',width:'350px',boxSizing:'border-box'}}>"Filter Forms has disrupted this industry. The game will never be the same"</p>
-                            <p style={{fontSize:'18px',fontFamily:'Merriweather',color:'black',position:'relative',top:'-100px',right:'-280px',width:'350px',boxSizing:'border-box',fontStyle:'italic'}}>-Betsy, from accounting</p>
                             </Carousel.Caption>
                         </Carousel.Item>
                     </Carousel>

@@ -167,6 +167,7 @@ const InputYear=(props)=>{
     }
 
     return <div id="yearMainCard">
+        <div style={{paddingLeft:'10px',marginBottom:'10px'}}>Please enter the year you were born in.</div>
         <input type="range" id="yearRange" name="yearRange" min="0" max="2020" 
         onChange={changeOnRange} />
         <div id='rangeValDisplay'>{yearShown}</div>

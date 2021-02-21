@@ -73,13 +73,13 @@ var runTimer={
         },14000)
         setTimeout(()=>{
             confirmBtns[2].style.opacity='1';
-        },15000)
+        },14500)
         setTimeout(()=>{
             confirmBtns[1].style.opacity='1';
-        },17000)
+        },14700)
         setTimeout(()=>{
             confirmBtns[0].style.opacity='1';
-        },19000)
+        },14900)
     },
     hideDancingMen(){
         const men=document.getElementsByTagName('img');
@@ -579,15 +579,17 @@ var runTimer={
         if (runTimer.iteration===1){
             
             setTimeout(()=>{
-                document.getElementById("DOBMainSection").style.margin="10px auto";
+                document.getElementById("DOBMainSection").style.margin="5px auto";
             },500);
             setTimeout(()=>{
                 document.getElementById('DOBAnswersDisplay').classList.add('is-visible');
             },1500);
             slots[0].textContent=document.getElementById('DOBInputDayNumber').textContent;
             setTimeout(()=>{
-                slots[0].style.opacity='1';
-            },4000);
+                for (var i=0;i<slots.length;i++){
+                    slots[i].style.opacity='1';
+                }
+            },3200);
         }else{
             for (var j=0;j<slots.length;j++){
                 if (slots[j].textContent===""){
@@ -610,7 +612,6 @@ var runTimer={
         if (runTimer.iteration!==5){
             runTimer.hideDancingMen();
             setTimeout(()=>{document.getElementById('DOBInputDayNumber').textContent='1';},1000)
-            
         }
 
     },
